@@ -39,8 +39,111 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankAccount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contragent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Demand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnterPosition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\ChangeMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\CompanyType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\OverheadDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\ReadMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\StockMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GoodRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InternalOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Loss.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LossPosition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyCompany.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Price.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PurchaseOrderPositions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Requisite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RetailDemand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShipmentIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShipmentOut.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Slot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StockTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Supply.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tags.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Things.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Warehouse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="СustomerOrderPosition.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

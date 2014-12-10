@@ -39,10 +39,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBuyerAccountClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IBuyerReturnClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IDemandClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IEnterClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IIncomingPaymentClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\ILossClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IMoveClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IOutcomingPaymentClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IStockClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\IStorageClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\ISupplierExpenseClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\ISupplierOrderClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Abstract\ISupplyClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\DreamsIT.MoySklad.RestClient.Models\DreamsIT.MoySklad.RestClient.Models.csproj">
+      <Project>{f13781ac-4b9c-451c-ae3f-2b247338703e}</Project>
+      <Name>DreamsIT.MoySklad.RestClient.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

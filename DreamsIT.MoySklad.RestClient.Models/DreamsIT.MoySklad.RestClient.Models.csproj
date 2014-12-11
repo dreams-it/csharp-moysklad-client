@@ -43,10 +43,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CashOut.cs" />
-    <Compile Include="Contact.cs">
+    <Compile Include="Company.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Company.cs">
+    <Compile Include="Contact.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CustomerOrder.cs">

@@ -7,7 +7,7 @@ using DreamsIT.MoySklad.RestClient.Models.Enums;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    class Organization
+  public  class Organization
     {
         /// <summary>
         /// Тип компании

@@ -7,7 +7,7 @@ using DreamsIT.MoySklad.RestClient.Models.Enums;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    class Order
+    public class Order
     {
         /// <summary>
         /// Зарезервирована сумма (ожидаемая)

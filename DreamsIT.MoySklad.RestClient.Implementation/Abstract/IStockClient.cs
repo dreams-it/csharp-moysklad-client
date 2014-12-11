@@ -1,4 +1,5 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
+﻿using DreamsIT.MoySklad.RestClient.Models;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface IStockClient
     {
-        List<> StockBalance(StockMode stockMode = StockMode.ALL_STOCK, string moment = "",
-            Guid goodUuid = Guid.Empty, string goodName = "", Guid storeId = Guid.Empty, 
+        List<StockTO> StockBalance(StockMode stockMode = StockMode.AllStock, string moment = "",
+            Guid? goodUuid = null, string goodName = "", Guid? storeId = null, 
             bool includeAboardOperations = false, bool showConsignments = false);
     }
 }

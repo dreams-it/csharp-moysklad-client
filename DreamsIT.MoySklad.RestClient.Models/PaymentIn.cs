@@ -85,10 +85,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public ChangeMode ChangeMode { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public Guid AccountUuid { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

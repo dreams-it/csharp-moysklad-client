@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Сумма
         /// </summary>
-        public double Sum { get; set; }
+        public double SumVal { get; set; }
 
         /// <summary>
         /// Сумма в валюте

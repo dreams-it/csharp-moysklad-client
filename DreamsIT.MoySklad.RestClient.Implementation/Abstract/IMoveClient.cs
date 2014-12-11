@@ -9,10 +9,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface IMoveClient
     {
-        List<Enter> SearchByInternalOrder(List<Guid> internalOrderId);
-
-        List<Enter> SearchByParameters(List<Guid> internalOrderIds = null, List<Guid> ids = null, List<string> updated = null, List<string> names = null,
-List<Guid> customerOrderIds = null, List<double> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
-List<string> days = null);
+        
     }
 }

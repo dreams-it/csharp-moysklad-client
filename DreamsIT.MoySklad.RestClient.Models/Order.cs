@@ -1,46 +1,47 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    /// <summary>
-    /// Модель розничной торговли
-    /// </summary>
-    public class RetailDemand
+    class Order
     {
         /// <summary>
-        /// Идентификатор контрагента
+        /// Зарезервирована сумма (ожидаемая)
+        /// </summary>
+        public double ReservedSum { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         public Guid TargetAgentUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid RetailStoreUuid { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public Guid SourceAgentUuid { get; set; }
-
-        /// <summary>
-        /// Идентификатор складу з которого выгружают товар
-        /// </summary>
-        public Guid SourceStoreUuid { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
         public bool Applicable { get; set; }
 
         /// <summary>
-        /// Время проведения торговли
+        /// Дата заказа покупателя
         /// </summary>
         public string Moment { get; set; }
+
+        /// <summary>
+        /// идентификатор покупателя
+        /// </summary>
+        public Guid TargetAccountUuid { get; set; }
+
+        /// <summary>
+        /// Идентификатор продавца (тот, кто отдает товар)
+        /// </summary>
+        public Guid SourceAccountUuid { get; set; }
 
         /// <summary>
         /// 
@@ -51,36 +52,49 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public double Rate { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
-        public bool vatIncluded { get; set; }
+        public bool VatIncluded { get; set; }
 
         /// <summary>
-        /// Дата создания записи розничной торговли
+        /// Дата создания
         /// </summary>
         public string Created { get; set; }
 
         /// <summary>
-        /// Имя того, кто создал запись розничной торговли
+        /// Имя того, кто создал запись
         /// </summary>
         public string CreatedBy { get; set; }
 
         /// <summary>
-        /// Имя записи розничной торговли
+        /// Идентификатор работника, который сделал запись
+        /// </summary>
+        public Guid EmployeeUuid { get; set; }
+
+        /// <summary>
+        /// Название заказа покупателя
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Дата последнего обновления записи
+        /// Дата последнего обновления информации о заказе покупателя (запись)
         /// </summary>
         public string Updated { get; set; }
 
         /// <summary>
-        /// Имя того, кто последний обновлял запись
+        /// Имя того, кто последний обновлял информацию о заказе покупателя (запись)
         /// </summary>
         public string UpdatedBy { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public ReadMode ReadMode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChangeMode ChangeMode { get; set; }
 
         /// <summary>
         /// Идентификатор пользователя создавшего запись
@@ -93,33 +107,31 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Guid AccountId { get; set; }
 
         /// <summary>
-        /// Идентификатор записи розничной торговли
+        /// Идентификатор записи о заказе покупателя
         /// </summary>
         public Guid Uuid { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
         public string ExternalCode { get; set; }
 
         /// <summary>
+        /// Сумма заказу
+        /// </summary>
+        public Sum Sum { get; set; }
+        /// <summary>
         /// 
         /// </summary>
-        public Price Sum { get; set; }
+        public List<Guid> IncoicesUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public List<LossPosition> LossPositions { get; set; }
+        public List<Guid> PaymentsUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ChangeMode ChangeMode { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ReadMode ReadMode { get; set; }
-    }
+        public PurchaseOrderPosition PurchaseOrderPosition { get; set; }
+            }
 }

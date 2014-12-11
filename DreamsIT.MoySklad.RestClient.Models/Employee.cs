@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель работника (employee):
+    /// </summary>
     public class Employee
     {
         /// <summary>

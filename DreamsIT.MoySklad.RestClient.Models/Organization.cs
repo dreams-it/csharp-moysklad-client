@@ -1,16 +1,17 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Contragent
+    class Organization
     {
-        public bool PayerVat { get; set; }
-
+        /// <summary>
+        /// Тип компании
+        /// </summary>
         public CompanyType CompanyType { get; set; }
 
         /// <summary>
@@ -19,14 +20,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public double Discount { get; set; }
 
         public double AutoDiscount { get; set; }
-
         /// <summary>
         /// Коррекция скидки
         /// </summary>
         public double DiscountCorrection { get; set; }
 
         /// <summary>
-        /// Не ли активный контрагент
+        /// Не активный ли Organization
         /// </summary>
         public bool Archived { get; set; }
 
@@ -36,7 +36,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public string Created { get; set; }
 
         /// <summary>
-        /// Название контрагента
+        /// Название Organization
         /// </summary>
         public string Name { get; set; }
 
@@ -49,7 +49,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Имя того, кто делал последнее обновление
         /// </summary>
         public string UpdatedBy { get; set; }
-
         /// <summary>
         /// 
         /// </summary>
@@ -71,7 +70,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Guid AccountId { get; set; }
 
         /// <summary>
-        /// Идентификатор контрагента
+        /// Идентификатор 
         /// </summary>
         public Guid Uuid { get; set; }
 
@@ -84,14 +83,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public string ExternalCode { get; set; }
-
         /// <summary>
-        /// Описание контрагента
+        /// Описание 
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// Модель реквизитов контрагента
+        /// Модель реквизитов 
         /// </summary>
         public Requisite Requisite { get; set; }
 
@@ -109,9 +107,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public List<Tags> Tags { get; set; }
-
-
-
 
 
 

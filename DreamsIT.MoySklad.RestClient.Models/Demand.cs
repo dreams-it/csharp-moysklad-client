@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Demand
+    /// <summary>
+    /// Модель отгрузки товара
+    /// </summary>
+    public class Demand : Product
     {
         /// <summary>
         /// 
@@ -33,82 +36,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public Guid SourceAccountUuid { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool PayerVat { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public double Rate { get; set; }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool VatIncluded { get; set; }
-
-        /// <summary>
-        /// Дата создания записи
-        /// </summary>
-        public string Created { get; set; }
-
-        /// <summary>
-        /// Имя того, кто создал запись
-        /// </summary>
-        public string CreatedBy { get; set; }
-
-        /// <summary>
-        /// Идентификатор работника кто создал запись
-        /// </summary>
-        public Guid EmployeeUuid { get; set; }
-
-        /// <summary>
-        /// Имя отгрузки товара
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Дата последнего обновления записи о товаре
-        /// </summary>
-        public string Updated { get; set; }
-
-        /// <summary>
-        /// Имя того, кто последний обновил запись об отгрузке товара
-        /// </summary>
-        public string UpdatedBy { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ReadMode ReadMode { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ChangeMode ChangeMode { get; set; }
-
-        /// <summary>
-        /// Идентификатор пользователя создавшего запись
-        /// </summary>
-        public Guid AccountUuid { get; set; }
-
-        /// <summary>
-        /// Идентификатор профиля пользователя, создал запись
-        /// </summary>
-        public Guid AccountId { get; set; }
-
-        /// <summary>
-        /// Идентификатор записи о отгрузку товара
-        /// </summary>
-        public Guid Uuid { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string ExternalCode { get; set; }
-
         /// <summary>
         /// Цена (сумма) за товар
         /// </summary>

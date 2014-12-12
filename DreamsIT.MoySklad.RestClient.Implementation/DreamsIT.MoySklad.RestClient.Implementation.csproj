@@ -63,6 +63,7 @@
     <Compile Include="Abstract\IOutcomingPaymentClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Abstract\ISalePointClient.cs" />
     <Compile Include="Abstract\IStockClient.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -1,4 +1,5 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
+﻿using DreamsIT.Data.BaseTypes;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель складу (warehouse):
     /// </summary>
-    public class Warehouse
+    public class Warehouse : IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -30,7 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DreamsIT.Data">
+      <HintPath>..\packages\DreamsIT.Data.1.0.0\lib\DreamsIT.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -82,6 +92,8 @@
     <Compile Include="Extension.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Good.cs" />
+    <Compile Include="GoodFolder.cs" />
     <Compile Include="GoodRef.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -105,7 +117,7 @@
     <Compile Include="Price.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Product.cs" />
+    <Compile Include="RecordOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseOrder.cs">
       <SubType>Code</SubType>
@@ -116,9 +128,11 @@
     <Compile Include="Requisite.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ResultOrError.cs" />
     <Compile Include="RetailDemand.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RetailStore.cs" />
     <Compile Include="ShipmentIn.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -150,7 +164,10 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
+﻿using DreamsIT.Data.BaseTypes;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class PurchaseOrderPosition
+    public class PurchaseOrderPosition : IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         /// Скидка
         /// </summary>
@@ -62,12 +64,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Цена без скидки
         /// </summary>
-        public Price BasePrice { get; set; }
+        public Sum BasePrice { get; set; }
 
         /// <summary>
         /// Цена со скидкой
         /// </summary>
-        public Price Price { get; set; }
+        public Sum Price { get; set; }
 
         /// <summary>
         /// 

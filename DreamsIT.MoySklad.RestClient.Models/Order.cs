@@ -9,6 +9,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class Order
     {
+       
         /// <summary>
         /// Зарезервирована сумма (ожидаемая)
         /// </summary>

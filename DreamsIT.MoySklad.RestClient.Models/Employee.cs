@@ -1,4 +1,5 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
+﻿using DreamsIT.Data.BaseTypes;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель работника (employee):
     /// </summary>
-    public class Employee
+    public class Employee : IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         /// Идентификатор пользователя, который создал запись
         /// </summary>

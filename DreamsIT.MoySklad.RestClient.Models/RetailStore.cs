@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
+using DreamsIT.Data.BaseTypes;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
     /// Модель точки продажу
     /// </summary>
-    class RetailStore
+    public class RetailStore : IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         /// Активная ли точка продажа
         /// </summary>

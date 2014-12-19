@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DreamsIT.Data.BaseTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// stockTO - модель залишку на складі
     /// </summary>
-    public class StockTO
+    public class StockTO : IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         /// единицы измерения
         /// </summary>

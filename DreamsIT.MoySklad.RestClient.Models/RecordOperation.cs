@@ -7,7 +7,7 @@ using DreamsIT.MoySklad.RestClient.Models.Enums;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-   public class Product
+   public class RecordOperation
     {
 
         /// <summary>

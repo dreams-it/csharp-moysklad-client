@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
+using DreamsIT.Data.BaseTypes;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
     /// Модель безналичной выплаты
     /// </summary>
-    class PaymentOut : Payment
+    public class PaymentOut : Payment, IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class Price
     {
-        /// <summary>
-        /// Сумма (цена)
-        /// </summary>
-        public double Sum { get; set; }
-
-        /// <summary>
-        /// Сумма в валюте
-        /// </summary>
-        public double SumInCurrency { get; set; }
+        public int ID { get; set; }
+        public Guid PriceTypeUuid { get; set; }
+        public double Value { get; set; }
+        public ReadMode ReadMode { get; set; }
+        public ChangeMode ChangeMode { get; set; }
+        public Guid AccountUuid { get; set; }
+        public Guid AccountId { get; set; }
+        public Guid Uuid { get; set; }
     }
 }

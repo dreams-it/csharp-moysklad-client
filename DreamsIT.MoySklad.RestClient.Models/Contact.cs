@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DreamsIT.Data.BaseTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Contact
+    public class Contact : IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         /// Адреса
         /// </summary>

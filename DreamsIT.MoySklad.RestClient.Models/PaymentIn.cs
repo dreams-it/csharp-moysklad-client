@@ -4,14 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
+using DreamsIT.Data.BaseTypes;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
     /// Модель безналичного прихода 
     /// </summary>
-    class PaymentIn
+    public class PaymentIn : Payment, IKeyItem<int>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public int ID { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public Guid incomingNumber { get; set; }
         /// <summary>
         /// 
@@ -110,8 +118,20 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public List<Guid> DemandsUuid { get; set; }
-        
 
 
+
+
+        public int Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

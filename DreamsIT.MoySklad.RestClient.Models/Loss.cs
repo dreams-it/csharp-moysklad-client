@@ -1,4 +1,5 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
+﻿using DreamsIT.Data.BaseTypes;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель списания 
     /// </summary>
-    public class Loss : Product
+    public class Loss : RecordOperation, IKeyItem<int>
     {
+        public int ID { get; set; }
         /// <summary>
         ///     
         /// </summary>
@@ -35,7 +37,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Сумма (цена) списания
         /// </summary>
-        public Price Sum { get; set; }
+        public Sum Sum { get; set; }
 
         /// <summary>
         /// 

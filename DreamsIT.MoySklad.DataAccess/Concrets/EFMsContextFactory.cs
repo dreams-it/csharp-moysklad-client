@@ -12,7 +12,6 @@ namespace DreamsIT.MoySklad.DataAccess.Concrets
 {
     public class EFMsContextFactory : IMsContextFactory
     {
-        #region old
         private IDependencyResolver _dependencyResolver;
         public EFMsContextFactory(IDependencyResolver dependencyResolver)
         {
@@ -262,7 +261,5 @@ namespace DreamsIT.MoySklad.DataAccess.Concrets
             }
             
         }
-
-
-    }
+}
 }

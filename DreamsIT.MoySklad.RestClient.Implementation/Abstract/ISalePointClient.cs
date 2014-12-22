@@ -10,7 +10,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
     /// <summary>
     /// Интерфейс клиента получения точек продажу 
     /// </summary>
-    class ISalePointClient
+    public interface ISalePointClient
     {
         /// <summary>
         /// Метод получения точек продажу через API

@@ -130,7 +130,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public List<ResultOrError<T>> Save(T type, List<T> itemsForSave)
         {
-            
+            return null;
         }
 
         public bool Delete(T type, List<Guid> uuids = null, List<string> names = null)

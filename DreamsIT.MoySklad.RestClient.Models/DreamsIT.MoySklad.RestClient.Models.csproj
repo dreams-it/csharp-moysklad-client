@@ -97,6 +97,7 @@
     <Compile Include="GoodRef.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Images.cs" />
     <Compile Include="InternalOrder.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -114,6 +115,7 @@
     <Compile Include="Payment.cs" />
     <Compile Include="PaymentIn.cs" />
     <Compile Include="PaymentOut.cs" />
+    <Compile Include="Preferences.cs" />
     <Compile Include="Price.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -118,20 +118,5 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public List<Guid> DemandsUuid { get; set; }
-
-
-
-
-        public int Id
-        {
-            get
-            {
-                throw new NotImplementedException();
             }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-    }
 }

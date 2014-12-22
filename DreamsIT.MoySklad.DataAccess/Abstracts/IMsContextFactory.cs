@@ -14,17 +14,17 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         public IRepository<BankAccount,int> BankAccounts { get; set; }
         public IRepository<Demand,int> Demands { get; set; }
         public IRepository<CashOut , int> CashOuts { get; set; }
-        public IRepository<Company , int> Companis { get; set; }
+        public IRepository<Company , int> Companies { get; set; }
         public IRepository<GoodFolder , int> GoodFolders { get; set; }
         public IRepository<Good , int> Goods { get; set; }
         public IRepository<Contact , int> Contacts { get; set; }
         public IRepository<CustomerOrder , int> CustomerOrders { get; set; }
-        public IRepository<Employee , int> Employes { get; set; }
+        public IRepository<Employee , int> Employees { get; set; }
         public IRepository<Enter , int> Enters { get; set; }
         public IRepository<EnterPosition , int> EnterPositions { get; set; }
         public IRepository<GoodRef , int> GoodRefs { get; set; }
         public IRepository<Loss , int> Losses { get; set; }
-        public IRepository<MyCompany , int> MyCompanis { get; set; }
+        public IRepository<MyCompany , int> MyCompanies { get; set; }
         public IRepository<PurchaseOrderPosition , int> PurchaseOrderPositions { get; set; }
         public IRepository<PaymentIn , int> PaymentIns { get; set; }
         public IRepository<PaymentOut , int> PaymentOuts { get; set; }
@@ -36,7 +36,7 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         public IRepository<StockTO , int> StockTOs { get; set; }
         public IRepository<CustomerOrderPosition , int> CustomerOrderPositions { get; set; }
         public IRepository<Sum , int> Sums { get; set; }
-        public IRepository<Supply , int> Supplis { get; set; }
+        public IRepository<Supply , int> Supplies { get; set; }
         public IRepository<Warehouse,int> Warehouses { get; set; }
        
     }

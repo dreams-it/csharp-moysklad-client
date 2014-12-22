@@ -9,7 +9,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class Sum : IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Сумма
         /// </summary>

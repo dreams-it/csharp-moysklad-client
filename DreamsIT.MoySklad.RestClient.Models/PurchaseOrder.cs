@@ -10,7 +10,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class PurchaseOrder : Order, IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Запланированная дата поставки
         /// </summary>

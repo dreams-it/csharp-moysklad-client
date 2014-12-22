@@ -9,7 +9,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class GoodRef : IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Идентификатор ссылки на объект класса Type (идентификатор товара для типа Good)
         /// </summary>

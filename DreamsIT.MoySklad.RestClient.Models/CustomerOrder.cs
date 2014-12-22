@@ -14,7 +14,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     public class CustomerOrder : Order, IKeyItem<int>
     {
 
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 
         /// </summary>

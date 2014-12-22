@@ -13,7 +13,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     public class RetailDemand : IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Идентификатор контрагента
         /// </summary>

@@ -10,7 +10,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class BankAccount:IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Номер счета
         /// </summary>

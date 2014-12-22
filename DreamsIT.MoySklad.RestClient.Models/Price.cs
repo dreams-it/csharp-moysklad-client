@@ -9,7 +9,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class Price
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public Guid PriceTypeUuid { get; set; }
         public double Value { get; set; }
         public ReadMode ReadMode { get; set; }

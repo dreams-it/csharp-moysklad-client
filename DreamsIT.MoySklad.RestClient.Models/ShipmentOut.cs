@@ -10,7 +10,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class ShipmentOut : IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// Скидка
         /// </summary>

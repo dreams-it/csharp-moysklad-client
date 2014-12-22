@@ -13,7 +13,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     public class PaymentOut : Payment, IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -10,7 +10,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class GoodFolder : IKeyItem<int>
     {
-      public int ID { get; set; }
+      public int Id { get; set; }
       /// <summary>
       /// Не активная ли категория
       /// </summary>

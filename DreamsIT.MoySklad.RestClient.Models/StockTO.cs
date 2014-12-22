@@ -12,7 +12,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     public class StockTO : IKeyItem<int>
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// единицы измерения
         /// </summary>

@@ -102,7 +102,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return success;
         }
 
-        public ResultOrError<T> GetList(T type)
+        public ResultOrError<List<T>> GetList(T type)
         {
             string address = string.Format("{0}/ms/xml/{1}/list", host, type.ToString());
 
@@ -123,19 +123,21 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
             var ms = new MemoryStream(data);
 
-            var result = serializer.ReadObject(ms) as T;
+            var result = serializer.ReadObject(ms) as List<T>;
 
-            return new ResultOrError<T>() { Result = result, Error = error };
+            return new ResultOrError<List<T>>() { Result = result, Error = error };
         }
 
-        public List<ResultOrError<T>> Save(T type, List<T> itemsForSave)
+        public List<ResultOrError<List<T>>> Save(T type, List<T> itemsForSave)
         {
-            return null;
+            throw new NotImplementedException();
         }
 
         public bool Delete(T type, List<Guid> uuids = null, List<string> names = null)
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

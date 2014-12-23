@@ -13,8 +13,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         ResultOrError<T> Get(T type, Guid uuid);
         ResultOrError<T> Save(T type, T item);
         bool Delete(T type, Guid uuid);
-        ResultOrError<T> GetList(T type);
-        List<ResultOrError<T>> Save(T type, List<T> itemsForSave);
+        ResultOrError<List<T>> GetList(T type);
+        List<ResultOrError<List<T>>> Save(T type, List<T> itemsForSave);
         bool Delete(T type, List<Guid> uuids = null, List<string> names = null);
     }
 }

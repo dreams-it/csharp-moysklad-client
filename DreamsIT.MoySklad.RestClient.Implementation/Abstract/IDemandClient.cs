@@ -15,9 +15,9 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         /// </summary>
         /// <param name="customerOrderIds">идентификаторы заказов</param>
         /// <returns>Возвращает список объектов, с идентификатором заказа полученный из API</returns>
-        List<Demand> SearchByCustomerOrder(List<Guid> customerOrderIds);
+        ResultOrError<List<Demand>> SearchByCustomerOrder(List<Guid> customerOrderIds);
 
-        List<Demand> SearchByParameters(List<Guid> ids = null, List<string> updated = null, List<string> names = null,
+        ResultOrError<List<Demand>> SearchByParameters(List<Guid> uuids = null, List<string> updated = null, List<string> names = null,
             List<Guid> customerOrderIds = null, List<double> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
             List<string> days = null);
     }

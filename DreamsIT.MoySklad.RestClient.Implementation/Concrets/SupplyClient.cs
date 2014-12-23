@@ -25,34 +25,19 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public ResultOrError<List<Supply>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
-            string customerOrderIdsInString = "";
-            foreach (var customerOrder in customerOrderIds)
-            {
-                customerOrderIdsInString = customerOrderIdsInString + ";uuid=" + customerOrder;
-            }
-            customerOrderIdsInString = customerOrderIdsInString.Substring(1);
+            string customerOrderIdsInString = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrder");
             return reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingDate(List<double> incomingDates)
         {
-            string dates = "";
-            foreach (var incomingDate in incomingDates)
-            {
-                dates = dates + ";incomingDate=" + incomingDate;
-            }
-            dates = dates.Substring(1);
+            string dates = ConvertParamsInString<double>.ConvertList(incomingDates, "incomingDate");
             return reqestGenerator.getItemsFromAPI(dates);
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingNumber(List<long> incomingNumbers)
         {
-            string incomingNumbersInString = "";
-            foreach (var incomingNumber in incomingNumbers)
-            {
-                incomingNumbersInString = incomingNumbersInString + ";incomingNumber=" + incomingNumber;
-            }
-            incomingNumbersInString = incomingNumbersInString.Substring(1);
+            string incomingNumbersInString = ConvertParamsInString<long>.ConvertList(incomingNumbers, "incomingNumber");
             return reqestGenerator.getItemsFromAPI(incomingNumbersInString);
         }
 
@@ -118,7 +103,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
             #endregion params for methods
-            return reqestGenerator.getItemsFromAPI(paramsInString);
+            return reqestGenerator.getItemsFromAPI(paramsInString.Substring(1));
         }
     }
 }

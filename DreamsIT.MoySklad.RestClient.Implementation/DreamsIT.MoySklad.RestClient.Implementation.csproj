@@ -92,6 +92,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Concrets\DemandClient.cs" />
+    <Compile Include="Concrets\SalePointClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Concrets\StorageClient.cs" />
     <Compile Include="Concrets\SupplyClient.cs" />
     <Compile Include="EnvitomentMethods\ConvertParamsInString.cs" />

@@ -17,9 +17,11 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public StorageClient(string login, string password)
         {
-
+            _login = login;
+            _password = password;
         }
-
+        private string _login { get; set; }
+        private string _password { get; set; }
         private string login = "";
         private string password = "";
         private string host = "https://online.moysklad.ru/exchange/rest";
@@ -128,14 +130,55 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return new ResultOrError<List<T>>() { Result = result, Error = error };
         }
 
-        public List<ResultOrError<List<T>>> Save(T type, List<T> itemsForSave)
+        public ResultOrError<List<T>> Save(T type, List<T> itemsForSave)
         {
-            throw new NotImplementedException();
+            string address = string.Format("{0}/ms/xml/{1}/list/update", host, type.ToString());
+
+            DataContractSerializer serializer = new DataContractSerializer(typeof(List<T>));
+
+            var ms1 = new MemoryStream();
+            serializer.WriteObject(ms1,  itemsForSave);
+
+            WebClient client = new WebClient();
+            client.Credentials = new NetworkCredential(login, password);
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
+            string error = "";
+            byte[] data = null;
+            try
+            {
+                data = client.UploadData(address, "PUT", ms1.ToArray());
+            }
+            catch (Exception exc)
+            {
+                error = exc.Message;
+            }
+            var ms = new MemoryStream(data);
+
+            var result = serializer.ReadObject(ms) as List<T>;
+
+            return new ResultOrError<List<T>>() { Result = result, Error = error }; 
         }
 
         public bool Delete(T type, List<Guid> uuids = null, List<string> names = null)
         {
-            throw new NotImplementedException();
+            string address = string.Format("{0}/ms/xml/{1}/list/delete", host, type.ToString());
+
+            WebClient client = new WebClient();
+            client.Credentials = new NetworkCredential(login, password);
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
+            string error = "";
+            bool success = true;
+            string data = "";
+            try
+            {
+                data = client.UploadString(address, "POST", "");
+            }
+            catch (Exception exc)
+            {
+                success = false;
+                error = exc.Message;
+            }
+            return success;
         }
 
 

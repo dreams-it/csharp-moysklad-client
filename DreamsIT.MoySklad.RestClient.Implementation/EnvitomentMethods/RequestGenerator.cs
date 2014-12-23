@@ -11,15 +11,27 @@ using System.Web;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.EnvitomentMethods
 {
-    public static class RequestGenerator<T>
+    public class RequestGenerator<T>
     {
-        public static ResultOrError<List<T>> getItemsFromAPI(string login, string password, string host, string filterParams)
+        public RequestGenerator(string login, string password, string host)
+        {
+            _login = login;
+            _password = password;
+            _host = host;
+        }
+
+
+        private string _login = "";
+        private string _password = "";
+        private string _host = "";
+
+        public ResultOrError<List<T>> getItemsFromAPI(string filterParams)
         {
             string encodedParams = HttpUtility.UrlEncode(filterParams);
-            string address = string.Format("{0}/list?filter={1}", host, encodedParams);
+            string address = string.Format("{0}/list?filter={1}", _host, encodedParams);
 
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(login, password);
+            client.Credentials = new NetworkCredential(_login, _password);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
             string error = "";
             byte[] data = null;

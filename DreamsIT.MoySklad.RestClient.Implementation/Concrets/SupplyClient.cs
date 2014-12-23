@@ -17,12 +17,10 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
     {
         public SupplyClient(string login, string password)
         {
-            _login = login;
-            _password = password;
+            reqestGenerator = new RequestGenerator<Supply>(login, password, host);
         }
 
-        private string _login { get; set; }
-        private string _password { get; set; }
+        private RequestGenerator<Supply> reqestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Supply";
 
         public ResultOrError<List<Supply>> SearchByCustomerOrder(List<Guid> customerOrderIds)
@@ -33,7 +31,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 customerOrderIdsInString = customerOrderIdsInString + ";uuid=" + customerOrder;
             }
             customerOrderIdsInString = customerOrderIdsInString.Substring(1);
-            return getItemsFromAPI(customerOrderIdsInString);
+            return reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingDate(List<double> incomingDates)
@@ -44,7 +42,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 dates = dates + ";incomingDate=" + incomingDate;
             }
             dates = dates.Substring(1);
-            return getItemsFromAPI(dates);
+            return reqestGenerator.getItemsFromAPI(dates);
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingNumber(List<long> incomingNumbers)
@@ -55,7 +53,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 incomingNumbersInString = incomingNumbersInString + ";incomingNumber=" + incomingNumber;
             }
             incomingNumbersInString = incomingNumbersInString.Substring(1);
-            return getItemsFromAPI(incomingNumbersInString);
+            return reqestGenerator.getItemsFromAPI(incomingNumbersInString);
         }
 
         public ResultOrError<List<Supply>> SearchByParameters(List<Guid> customerOrderIds = null, List<double> incomingDates = null, List<long> incomingNumbers = null, 
@@ -63,6 +61,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             List<string> years = null, List<string> months = null, List<string> days = null)
         {
             string paramsInString = "";
+            #region params for methods
             if (customerOrderIds!=null)
             {
                 string customerOrderIdsInString = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrder");
@@ -118,35 +117,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 string daysInString = ConvertParamsInString<string>.ConvertList(days, "day");
                 paramsInString = paramsInString + ";" + daysInString;
             }
-            return getItemsFromAPI(paramsInString.Substring(1));
-        }
-
-        private ResultOrError<List<Supply>> getItemsFromAPI(string filterParams)
-        {
-            string encodedParams = HttpUtility.UrlEncode(filterParams);
-            string address = string.Format("{0}/list?filter={1}", host, encodedParams);
-
-            WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(_login, _password);
-            client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
-            string error = "";
-            byte[] data = null;
-            try
-            {
-                data = client.DownloadData(address);
-            }
-            catch (Exception exc)
-            {
-                error = exc.Message;
-            }
-
-            DataContractSerializer serializer = new DataContractSerializer(typeof(List<Supply>));
-
-            var ms = new MemoryStream(data);
-
-            var result = serializer.ReadObject(ms) as List<Supply>;
-
-            return new ResultOrError<List<Supply>>() { Error = error, Result = result, Success = result != null && string.IsNullOrWhiteSpace(error) };
+            #endregion params for methods
+            return reqestGenerator.getItemsFromAPI(paramsInString);
         }
     }
 }

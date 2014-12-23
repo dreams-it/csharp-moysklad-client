@@ -51,12 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IBuyerAccountClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\IBuyerReturnClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Abstract\ICompanyClient.cs" />
+    <Compile Include="Abstract\IContragentClient.cs" />
     <Compile Include="Abstract\IDemandClient.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -80,12 +76,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Abstract\IStorageClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\ISupplierExpenseClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\ISupplierOrderClient.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Abstract\ISupplyClient.cs">

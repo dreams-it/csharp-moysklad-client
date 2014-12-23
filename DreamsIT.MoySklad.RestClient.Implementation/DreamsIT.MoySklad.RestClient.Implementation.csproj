@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICompanyClient.cs" />
+    <Compile Include="Abstract\IContragentClient.cs" />
     <Compile Include="Abstract\IDemandClient.cs">
       <SubType>Code</SubType>
     </Compile>

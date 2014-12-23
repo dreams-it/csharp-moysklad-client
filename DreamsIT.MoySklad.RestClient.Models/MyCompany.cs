@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Юр. лицо
+    /// </summary>
     public class MyCompany : Organization, IKeyItem<int>
     {
         public int Id { get; set; }

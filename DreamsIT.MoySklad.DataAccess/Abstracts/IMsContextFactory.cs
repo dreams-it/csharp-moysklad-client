@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.DataAccess.Abstracts
 {
-    interface IMsContextFactory
+    public interface IMsContextFactory
     {
         IRepository<Price, int> Prices { get; }
         IRepository<BankAccount,int> BankAccounts { get; }

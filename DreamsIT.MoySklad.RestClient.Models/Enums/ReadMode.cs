@@ -8,6 +8,8 @@ namespace DreamsIT.MoySklad.RestClient.Models.Enums
 {
     public enum ReadMode
     {
-        SELF
+        SELF,
+        NONE,
+        ALL
     }
 }

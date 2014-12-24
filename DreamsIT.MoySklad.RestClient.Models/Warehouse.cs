@@ -27,7 +27,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public Guid ParentUuid { get; set; }
+        public Guid? ParentUuid { get; set; }
 
         /// <summary>
         /// Имя склада в системе

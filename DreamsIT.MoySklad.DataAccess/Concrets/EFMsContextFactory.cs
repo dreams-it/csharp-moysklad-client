@@ -1,4 +1,5 @@
-﻿using DreamsIT.Data.BaseTypes;
+﻿using System.Web.Mvc;
+using DreamsIT.Data.BaseTypes;
 using DreamsIT.MoySklad.DataAccess.Abstracts;
 using DreamsIT.MoySklad.RestClient.Models;
 using System;
@@ -6,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace DreamsIT.MoySklad.DataAccess.Concrets
 {

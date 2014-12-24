@@ -12,6 +12,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
     /// </summary>
     public interface IMyCompanyClient
     {
-        List<MyCompany> GetMyCompanies(List<Guid> ids = null, double startDateUpdate = 0, double endDateUpdate = 0, List<string> names = null);
+        ResultOrError<List<MyCompany>> GetMyCompanies(List<Guid> ids = null, List<string> names = null);
     }
 }

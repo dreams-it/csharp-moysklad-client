@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\ICompanyClient.cs" />
+    <Compile Include="Abstract\IMyCompanyClient.cs" />
     <Compile Include="Abstract\IContragentClient.cs" />
     <Compile Include="Abstract\IDemandClient.cs">
       <SubType>Code</SubType>
@@ -81,7 +81,9 @@
     <Compile Include="Abstract\ISupplyClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Concrets\ContragentClient.cs" />
     <Compile Include="Concrets\DemandClient.cs" />
+    <Compile Include="Concrets\MyCompanyClient.cs" />
     <Compile Include="Concrets\SalePointClient.cs">
       <SubType>Code</SubType>
     </Compile>

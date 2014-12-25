@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
-    /// Модель работника (employee):
+    /// Модель работника:
     /// </summary>
     public class Employee : IKeyItem<Guid>
     {
@@ -25,7 +25,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Guid AccountId { get; set; }
 
         /// <summary>
-        /// 
+        /// Идентификатор работника
         /// </summary>
         public Guid Uid { get; set; }
 

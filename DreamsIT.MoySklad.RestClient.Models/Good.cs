@@ -10,6 +10,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class Good : IKeyItem<Guid>
     {
+        /// <summary>
+        /// Модель продукта
+        /// </summary>
         public Guid Id { get; set; }
         /// <summary>
         /// 

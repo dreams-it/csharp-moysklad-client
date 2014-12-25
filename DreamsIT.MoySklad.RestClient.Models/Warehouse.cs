@@ -17,7 +17,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         [Key]
         public Guid Id { get; set; }
         /// <summary>
-        /// 
+        /// Идентификатор компании
         /// </summary>
         public Guid AgentUuid { get; set; }
 

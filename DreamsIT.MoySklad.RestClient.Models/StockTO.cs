@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
-    /// stockTO - модель залишку на складі
+    /// Модель остатка на складе - stockTO
     /// </summary>
     public class StockTO:IKeyItem<Guid>
     {

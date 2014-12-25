@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель банкового счета
+    /// </summary>
     [ComplexType]
     public class BankAccount
     {

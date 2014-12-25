@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+
     public class ShipmentIn:IKeyItem<Guid>
     {
         [Key]

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель заказов поставщику
+    /// </summary>
     public class PurchaseOrder : Order
     {
         /// <summary>

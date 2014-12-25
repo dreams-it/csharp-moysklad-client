@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель позиции оприходования 
+    /// </summary>
     public class EnterPosition : IKeyItem<Guid>
     {
         public Guid Id { get; set; }

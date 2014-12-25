@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель цена
+    /// </summary>
     public class Price: IKeyItem<Guid>
     {
         [Key]

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель позиции заказа покупателя
+    /// </summary>
     public class CustomerOrderPosition : IKeyItem<Guid>
     {
         public Guid Id { get; set; }

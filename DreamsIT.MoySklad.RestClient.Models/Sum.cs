@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель Сумма
+    /// </summary>
     [ComplexType]
     public class Sum
     {

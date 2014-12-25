@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель записи остатка на складе
+    /// </summary>
     public class GoodRef : IKeyItem<Guid>
     {
         public Guid Id { get; set; }

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель реквизитов
+    /// </summary>
     [ComplexType]
     public class Requisite
     {

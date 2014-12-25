@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель категории товару
+    /// </summary>
     public class GoodFolder : IKeyItem<Guid>
     {
         public Guid Id { get; set; }

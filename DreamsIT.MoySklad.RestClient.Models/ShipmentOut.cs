@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+    /// <summary>
+    /// Модель отгрузки товара
+    /// </summary>
     [ComplexType]
     public class ShipmentOut
     {

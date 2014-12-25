@@ -11,9 +11,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Юр. лицо
     /// </summary>
-    public class MyCompany : Organization, IKeyItem<int>
+    public class MyCompany : Organization
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Идентификатор 
+        /// </summary>
+        public Guid Uuid { get; set; }
+
         public string Director { get; set; }
 
         /// <summary>

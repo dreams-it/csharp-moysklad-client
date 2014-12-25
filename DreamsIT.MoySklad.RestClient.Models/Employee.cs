@@ -11,9 +11,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель работника (employee):
     /// </summary>
-    public class Employee : IKeyItem<int>
+    public class Employee : IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// Идентификатор пользователя, который создал запись
         /// </summary>

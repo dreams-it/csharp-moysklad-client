@@ -11,9 +11,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель оприходования 
     /// </summary>
-    public class Enter : RecordOperation, IKeyItem<int>
+    public class Enter : RecordOperation
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Идентификатор записи
+        /// </summary>
+        public Guid Uuid { get; set; }
         /// <summary>
         /// 
         /// </summary>

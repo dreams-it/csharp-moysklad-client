@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
 using DreamsIT.Data.BaseTypes;
+using System.ComponentModel.DataAnnotations;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
     /// Модель точки продажу
     /// </summary>
-    public class RetailStore : IKeyItem<int>
+    public class RetailStore : IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         /// <summary>
         /// Активная ли точка продажа
         /// </summary>

@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
+using DreamsIT.Data.BaseTypes;
+using System.ComponentModel.DataAnnotations;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Payment
+    public class Payment: IKeyItem<Guid>
     {
+        [Key]
+        public Guid Id { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -88,10 +93,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public Guid Uuid { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
         public string Externalcode { get; set; }
         /// <summary>
         /// 
@@ -101,22 +102,5 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public Sum Sum { get; set; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

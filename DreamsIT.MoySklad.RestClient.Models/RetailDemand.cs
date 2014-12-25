@@ -2,6 +2,7 @@
 using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,10 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель розничной торговли
     /// </summary>
-    public class RetailDemand : IKeyItem<int>
+    public class RetailDemand : IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         /// <summary>
         /// Идентификатор контрагента
         /// </summary>

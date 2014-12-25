@@ -34,72 +34,63 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
 
         private List<Price> _prices = new List<Price>();
 
-        public IRepository<Price, int> Prices
+        public IRepository<Price, Guid> Prices
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.BankAccount, int> BankAccounts
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Demand, Guid> Demands
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Demand, int> Demands
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.CashOut, Guid> CashOuts
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.CashOut, int> CashOuts
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Company, Guid> Companies
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Company, int> Companies
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.GoodFolder, Guid> GoodFolders
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.GoodFolder, int> GoodFolders
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Good, Guid> Goods
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Good, int> Goods
+
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.CustomerOrder, Guid> CustomerOrders
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Contact, int> Contacts
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Employee, Guid> Employees
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.CustomerOrder, int> CustomerOrders
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Enter, Guid> Enters
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Employee, int> Employees
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.EnterPosition, Guid> EnterPositions
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Enter, int> Enters
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.GoodRef, Guid> GoodRefs
         {
             get { throw new NotImplementedException(); }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.EnterPosition, int> EnterPositions
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.GoodRef, int> GoodRefs
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Loss, int> Losses
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Loss, Guid> Losses
         {
             get { throw new NotImplementedException(); }
         }
@@ -108,7 +99,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
         {
             new MyCompany()
             {
-                Id=1, 
+                Id=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"),
                 AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Archived=false, 
@@ -118,7 +109,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 ChiefAccountant="Медков С.С.", 
                 Code="1", 
                 CompanyType=RestClient.Models.Enums.CompanyType.Urli,
-                Contact=new Contact(){Address="", Email="061412@gmail.com", Faxes="", Id=1, Mobiles="", Phones=""}, 
+                Contact=new Contact(){Address="", Email="061412@gmail.com", Faxes="", Mobiles="", Phones=""}, 
                 Created="2010-09-27T02:30:22.529+04:00", 
                 Description="", 
                 Director="Медков С.С.", 
@@ -126,58 +117,52 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 DiscountCorrection=0.0, 
                 ExternalCode="1", 
                 Name="ооо нарджилия", 
-                Requisite=new Requisite(){Id=1, ActualAddress="190031, Спасский пер. д.11\\1", Inn=7838432080, Kpp=783801001, LegalAddress="190031, Спасский пер. д.11\\1", LegalTitle="Общество с ограниченной ответственностью \"Нарджилия\"", Okpo=62993750},
+                Requisite=new Requisite(){ActualAddress="190031, Спасский пер. д.11\\1", Inn=7838432080, Kpp=783801001, LegalAddress="190031, Спасский пер. д.11\\1", LegalTitle="Общество с ограниченной ответственностью \"Нарджилия\"", Okpo=62993750},
                 Tags=null, 
                 Updated="2010-09-27T02:30:22.529+04:00", 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"),
-                BankAccount=new BankAccount(){AccountNumber="", BankLocation="", BankName="", Bic="", ChangeMode=RestClient.Models.Enums.ChangeMode.All, CorrectspondentAccount="", Id=1, IsDefault=true, ReadMode=RestClient.Models.Enums.ReadMode.ALL, Updated="2014-05-28T00:19:29.207+04:00", UpdatedBy="admin@ооо нарджилия"}
+                BankAccount=new BankAccount(){AccountNumber="", BankLocation="", BankName="", Bic="", ChangeMode=RestClient.Models.Enums.ChangeMode.All, CorrectspondentAccount="", IsDefault=true, ReadMode=RestClient.Models.Enums.ReadMode.ALL, Updated="2014-05-28T00:19:29.207+04:00", UpdatedBy="admin@ооо нарджилия"}
             }
         };
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.MyCompany, int> MyCompanies
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.MyCompany, Guid> MyCompanies
         {
-            get { return constructRepo("MyCompanies", () => new BaseFakeRepository<MyCompany, int>(_myCompanies)) as IRepository<MyCompany, int>; }
+            get { return constructRepo("MyCompanies", () => new BaseFakeRepository<MyCompany, Guid>(_myCompanies)) as IRepository<MyCompany, Guid>; }
         }
 
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PurchaseOrderPosition, int> PurchaseOrderPositions
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PurchaseOrderPosition, Guid> PurchaseOrderPositions
         {
             get { throw new NotImplementedException(); }
         }
 
         private List<PaymentIn> _paymentIns = new List<PaymentIn>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PaymentIn, int> PaymentIns
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PaymentIn, Guid> PaymentIns
         {
-            get { return constructRepo("PaymentIns", () => new BaseFakeRepository<PaymentIn, int>(_paymentIns)) as IRepository<PaymentIn, int>; }
+            get { return constructRepo("PaymentIns", () => new BaseFakeRepository<PaymentIn, Guid>(_paymentIns)) as IRepository<PaymentIn, Guid>; }
         }
 
         private List<PaymentOut> _paymentOuts = new List<PaymentOut>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PaymentOut, int> PaymentOuts
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PaymentOut, Guid> PaymentOuts
         {
-            get { return constructRepo("PaymentOuts", () => new BaseFakeRepository<PaymentOut, int>(_paymentOuts)) as IRepository<PaymentOut, int>; }
+            get { return constructRepo("PaymentOuts", () => new BaseFakeRepository<PaymentOut, Guid>(_paymentOuts)) as IRepository<PaymentOut, Guid>; }
         }
 
         private List<PurchaseOrder> _purshseOrders = new List<PurchaseOrder>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PurchaseOrder, int> PurchaseOrders
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.PurchaseOrder, Guid> PurchaseOrders
         {
-            get { return constructRepo("PurchaseOrders", () => new BaseFakeRepository<PurchaseOrder, int>(_purshseOrders)) as IRepository<PurchaseOrder, int>; }
+            get { return constructRepo("PurchaseOrders", () => new BaseFakeRepository<PurchaseOrder, Guid>(_purshseOrders)) as IRepository<PurchaseOrder, Guid>; }
         }
-
-        private List<Requisite> _requisites = new List<Requisite>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Requisite, int> Requisites
-        {
-            get { return constructRepo("Requisites", () => new BaseFakeRepository<Requisite, int>(_requisites)) as IRepository<Requisite, int>; }
-        }
-
+        
         private List<RetailDemand> _retailDemands = new List<RetailDemand>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.RetailDemand, int> RetailDemands
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.RetailDemand, Guid> RetailDemands
         {
-            get { return constructRepo("RetailDemands", () => new BaseFakeRepository<RetailDemand, int>(_retailDemands)) as IRepository<RetailDemand, int>; }
+            get { return constructRepo("RetailDemands", () => new BaseFakeRepository<RetailDemand, Guid>(_retailDemands)) as IRepository<RetailDemand, Guid>; }
         }
 
         private List<RetailStore> _retailStore = new List<RetailStore>(){
             new RetailStore()
-            { 
-                Id=1, 
+            {
+                Id=Guid.Parse("4870a47a-7f94-11e4-90a2-8ecb0025a5ab"),
                 accountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 accountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Active=true, 
@@ -196,7 +181,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
             },
             new RetailStore()
             {
-                Id=2, 
+                Id=Guid.Parse("afb8aace-1328-11e4-03e3-002590a28eca"),
                 accountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 accountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Active=true, 
@@ -215,7 +200,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
             },
             new RetailStore()
             {
-                Id=3, 
+                Id=Guid.Parse("d755aa8f-43c5-11e4-90a2-8eca002101ad"),
                 accountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 accountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Active=true, 
@@ -233,53 +218,41 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 warehouseUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
             }
         };
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.RetailStore, int> RetailStores
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.RetailStore, Guid> RetailStores
         {
-            get { return constructRepo("RetailStores", () => new BaseFakeRepository<RetailStore, int>(_retailStore)) as IRepository<RetailStore, int>; }
-        }
-
-        private List<ShipmentOut> _shipmentsOut = new List<ShipmentOut>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.ShipmentOut, int> ShipmentOuts
-        {
-            get { return constructRepo("ShipmentOuts", () => new BaseFakeRepository<ShipmentOut, int>(_shipmentsOut)) as IRepository<ShipmentOut, int>; }
+            get { return constructRepo("RetailStores", () => new BaseFakeRepository<RetailStore, Guid>(_retailStore)) as IRepository<RetailStore, Guid>; }
         }
 
         private List<StockTO> _stockTOs = new List<StockTO>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.StockTO, int> StockTOs
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.StockTO, Guid> StockTOs
         {
-            get { return constructRepo("StockTOs", () => new BaseFakeRepository<StockTO, int>(_stockTOs)) as IRepository<StockTO, int>; }
+            get { return constructRepo("StockTOs", () => new BaseFakeRepository<StockTO, Guid>(_stockTOs)) as IRepository<StockTO, Guid>; }
         }
 
         private List<CustomerOrderPosition> _customerOrderPositions = new List<CustomerOrderPosition>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.CustomerOrderPosition, int> CustomerOrderPositions
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.CustomerOrderPosition, Guid> CustomerOrderPositions
         {
-            get { return constructRepo("CustomerOrderPositions", () => new BaseFakeRepository<CustomerOrderPosition, int>(_customerOrderPositions)) as IRepository<CustomerOrderPosition, int>; }
-        }
-
-        private List<Sum> _sums = new List<Sum>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Sum, int> Sums
-        {
-            get { return constructRepo("Sums", () => new BaseFakeRepository<Sum, int>(_sums)) as IRepository<Sum, int>; }
+            get { return constructRepo("CustomerOrderPositions", () => new BaseFakeRepository<CustomerOrderPosition, Guid>(_customerOrderPositions)) as IRepository<CustomerOrderPosition, Guid>; }
         }
 
         private List<Supply> _supplies = new List<Supply>();
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Supply, int> Supplies
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Supply, Guid> Supplies
         {
-            get { return constructRepo("Supplies", () => new BaseFakeRepository<Supply, int>(_supplies)) as IRepository<Supply, int>; }
+            get { return constructRepo("Supplies", () => new BaseFakeRepository<Supply, Guid>(_supplies)) as IRepository<Supply, Guid>; }
         }
 
         private List<Warehouse> _warehouses = new List<Warehouse>()
             {
                 new Warehouse()
                 {
-                    Id=1, 
+                    Id=Guid.Parse("570c7c96-7f91-11e4-90a2-8ecb0024f582"),
                     AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                     AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                     AgentUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
                     Archived=false, 
                     ChangeMode=ChangeMode.SELF, 
                     Code="", 
-                    Contact=new Contact(){Id=1, Phones="", Mobiles="", Faxes="", Email="", Address=""}, 
+                    Contact=new Contact(){ Phones="", Mobiles="", Faxes="", Email="", Address=""}, 
                     Description="", 
                     ExternalCode="1QcYvIrkh76BiB2rIXYhk3", 
                     Name="The LOFT СПБ", 
@@ -292,14 +265,14 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 },
                 new Warehouse()
                 {
-                    Id=2, 
+                    Id=Guid.Parse("79e2fd2c-4314-11e4-90a2-8eca000d33f3"),
                     AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                     AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                     AgentUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
                     Archived=false, 
                     ChangeMode=ChangeMode.SELF, 
                     Code="", 
-                    Contact=new Contact(){Id=2, Phones="", Mobiles="", Faxes="", Email="", Address=""}, 
+                    Contact=new Contact(){ Phones="", Mobiles="", Faxes="", Email="", Address=""}, 
                     Description="", 
                     ExternalCode="eiIedzCSjlmhhwOnHvcJz3", 
                     Name="Владивосток Кацура", 
@@ -312,14 +285,14 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 },
                 new Warehouse()
                 {
-                    Id=3, 
+                    Id=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8"),
                     AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                     AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                     AgentUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
                     Archived=false, 
                     ChangeMode=ChangeMode.SELF, 
                     Code="1", 
-                    Contact=new Contact(){Id=3, Phones="", Mobiles="", Faxes="", Email="", Address="Спб, Рубинштейна 30, лит. А"}, 
+                    Contact=new Contact(){ Phones="", Mobiles="", Faxes="", Email="", Address="Спб, Рубинштейна 30, лит. А"}, 
                     Description="Склад", 
                     ExternalCode="1", 
                     Name="The Office", 
@@ -331,9 +304,14 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     ParentUuid=null
                 }
             };
-        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Warehouse, int> Warehouses
+        public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Warehouse, Guid> Warehouses
         {
-            get { return constructRepo("Warehouses", () => new BaseFakeRepository<Warehouse, int>(_warehouses)) as IRepository<Warehouse, int>; }
+            get { return constructRepo("Warehouses", () => new BaseFakeRepository<Warehouse, Guid>(_warehouses)) as IRepository<Warehouse, Guid>; }
+        }
+
+        public IRepository<ShipmentIn, Guid> ShipmentIns
+        {
+            get { throw new NotImplementedException(); }
         }
     }
 }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Good : IKeyItem<int>
+    public class Good : IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// 
         /// </summary>

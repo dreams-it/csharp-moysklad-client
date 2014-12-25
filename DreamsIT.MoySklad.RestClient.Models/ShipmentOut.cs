@@ -2,15 +2,16 @@
 using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class ShipmentOut : IKeyItem<int>
+    [ComplexType]
+    public class ShipmentOut
     {
-        public int Id { get; set; }
         /// <summary>
         /// Скидка
         /// </summary>

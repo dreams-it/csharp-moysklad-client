@@ -2,15 +2,17 @@
 using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class PurchaseOrderPosition : IKeyItem<int>
+    public class PurchaseOrderPosition : IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         /// <summary>
         /// Скидка
         /// </summary>

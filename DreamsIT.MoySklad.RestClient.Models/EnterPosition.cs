@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class EnterPosition : IKeyItem<int>
+    public class EnterPosition : IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// скидка
         /// </summary>

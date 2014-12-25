@@ -11,10 +11,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель заказ покупателя 
     /// </summary>
-    public class CustomerOrder : Order, IKeyItem<int>
+    public class CustomerOrder : Order
     {
 
-        public int Id { get; set; }
+        /// <summary>
+        /// Идентификатор записи о заказе покупателя
+        /// </summary>
+        public Guid Uuid { get; set; }
         /// <summary>
         /// 
         /// </summary>

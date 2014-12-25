@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
+using DreamsIT.Data.BaseTypes;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-   public class RecordOperation
+    public class RecordOperation : IKeyItem<Guid>
     {
-
+        public Guid Id { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -68,10 +69,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public Guid AccountId { get; set; }
 
-        /// <summary>
-        /// Идентификатор записи
-        /// </summary>
-        public Guid Uuid { get; set; }
         /// <summary>
         /// 
         /// </summary>

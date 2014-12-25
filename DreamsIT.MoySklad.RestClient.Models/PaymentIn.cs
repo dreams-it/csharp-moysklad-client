@@ -11,12 +11,8 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель безналичного прихода 
     /// </summary>
-    public class PaymentIn : Payment, IKeyItem<int>
+    public class PaymentIn : Payment
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public int Id { get; set; }
         /// <summary>
         /// 
         /// </summary>

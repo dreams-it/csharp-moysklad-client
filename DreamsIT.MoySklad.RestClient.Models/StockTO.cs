@@ -10,9 +10,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// stockTO - модель залишку на складі
     /// </summary>
-    public class StockTO : IKeyItem<int>
+    public class StockTO:IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// единицы измерения
         /// </summary>

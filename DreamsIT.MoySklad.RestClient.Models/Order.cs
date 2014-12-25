@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
+using DreamsIT.Data.BaseTypes;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Order
+    public class Order:IKeyItem<Guid>
     {
-       
+
+        public Guid Id { get; set; }
         /// <summary>
         /// Зарезервирована сумма (ожидаемая)
         /// </summary>
@@ -108,10 +110,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Guid AccountId { get; set; }
 
         /// <summary>
-        /// Идентификатор записи о заказе покупателя
-        /// </summary>
-        public Guid Uuid { get; set; }
-        /// <summary>
         /// 
         /// </summary>
         public string ExternalCode { get; set; }
@@ -134,5 +132,5 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public PurchaseOrderPosition PurchaseOrderPosition { get; set; }
-            }
+    }
 }

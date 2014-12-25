@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
+using DreamsIT.Data.BaseTypes;
+using System.ComponentModel.DataAnnotations;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-  public  class Organization
+    public class Organization : IKeyItem<Guid>
     {
+        [Key]
+        public Guid Id { get; set; }
         /// <summary>
         /// Тип компании
         /// </summary>
@@ -70,11 +74,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Guid AccountId { get; set; }
 
         /// <summary>
-        /// Идентификатор 
-        /// </summary>
-        public Guid Uuid { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         public string Code { get; set; }
@@ -107,8 +106,5 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public List<Tags> Tags { get; set; }
-
-
-
     }
 }

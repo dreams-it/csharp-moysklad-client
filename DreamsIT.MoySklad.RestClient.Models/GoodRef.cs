@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class GoodRef : IKeyItem<int>
+    public class GoodRef : IKeyItem<Guid>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         /// <summary>
         /// Идентификатор ссылки на объект класса Type (идентификатор товара для типа Good)
         /// </summary>

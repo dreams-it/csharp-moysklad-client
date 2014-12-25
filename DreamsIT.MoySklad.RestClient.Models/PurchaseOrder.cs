@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class PurchaseOrder : Order, IKeyItem<int>
+    public class PurchaseOrder : Order
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Идентификатор записи о заказе покупателя
+        /// </summary>
+        public Guid Uuid { get; set; }
         /// <summary>
         /// Запланированная дата поставки
         /// </summary>
@@ -20,7 +23,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public Guid TargetStoreUuid { get; set; }
-            
+
         /// <summary>
         /// 
         /// </summary>

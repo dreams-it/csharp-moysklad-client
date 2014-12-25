@@ -8,52 +8,52 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class GoodFolder : IKeyItem<int>
+    public class GoodFolder : IKeyItem<Guid>
     {
-      public int Id { get; set; }
-      /// <summary>
-      /// Не активная ли категория
-      /// </summary>
-        public bool archived { get; set; }
+        public Guid Id { get; set; }
+        /// <summary>
+        /// Не активная ли категория
+        /// </summary>
+        public bool Archived { get; set; }
         /// <summary>
         /// 
         /// </summary>
-      public string productCode { get; set; }
-      /// <summary>
-      /// Дата последнего обновления категории
-      /// </summary>
-      public string name { get; set; }
-      /// <summary>
-      ///Дата последнего обновления категории
-      /// </summary>
-      public string updated { get; set; }
-      /// <summary>
-      /// Имя того, кто последний обновил запись
-      /// </summary>
-      public string updatedBy { get; set; }
-      /// <summary>
-      /// 
-      /// </summary>
-      public ReadMode ReadMode { get; set; }
-      /// <summary>
-      /// 
-      /// </summary>
-      public Guid changeMode { get; set; }
-      /// <summary>
-      /// Идентификатор пользователя создавшего запись
-      /// </summary>
-      public Guid accountUuid { get; set; }
-      /// <summary>
-      /// Идентификатор профиля пользователя, создал запись
-      /// </summary>
-      public Guid accountId { get; set; }
-      /// <summary>
-      /// Идентификатор категории
-      /// </summary>
-      public Guid uuid { get; set; }
-      /// <summary>
-      /// 
-      /// </summary>
-      public String externalcode { get; set; }
+        public string ProductCode { get; set; }
+        /// <summary>
+        /// Дата последнего обновления категории
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        ///Дата последнего обновления категории
+        /// </summary>
+        public string Updated { get; set; }
+        /// <summary>
+        /// Имя того, кто последний обновил запись
+        /// </summary>
+        public string UpdatedBy { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public ReadMode ReadMode { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Guid ChangeMode { get; set; }
+        /// <summary>
+        /// Идентификатор пользователя создавшего запись
+        /// </summary>
+        public Guid AccountUuid { get; set; }
+        /// <summary>
+        /// Идентификатор профиля пользователя, создал запись
+        /// </summary>
+        public Guid AccountId { get; set; }
+        /// <summary>
+        /// Идентификатор категории
+        /// </summary>
+        public Guid Uuid { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public String Externalcode { get; set; }
     }
 }

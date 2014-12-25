@@ -11,9 +11,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель списания 
     /// </summary>
-    public class Loss : RecordOperation, IKeyItem<int>
+    public class Loss : RecordOperation
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Идентификатор записи
+        /// </summary>
+        public Guid Uuid { get; set; }
+
         /// <summary>
         ///     
         /// </summary>

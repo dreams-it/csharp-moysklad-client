@@ -11,9 +11,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель класса приема 
     /// </summary>
-    public class Supply : RecordOperation, IKeyItem<int>
+    public class Supply : RecordOperation
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Идентификатор записи
+        /// </summary>
+        public Guid Uuid { get; set; }
         /// <summary>
         /// Номер приема товара
         /// </summary>

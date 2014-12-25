@@ -20,10 +20,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             _login = login;
             _password = password;
         }
-        private string _login { get; set; }
-        private string _password { get; set; }
-        private string login = "";
-        private string password = "";
+        private string _login = "";
+        private string _password = "";
         private string host = "https://online.moysklad.ru/exchange/rest";
 
         public ResultOrError<T> Get(T type, Guid uuid)
@@ -31,7 +29,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             string address = string.Format("{0}/ms/xml/{1}/{2}", host, type.ToString(), uuid.ToString());
 
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(login, password);
+            client.Credentials = new NetworkCredential(_login, _password);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
             string error = "";
             byte[] data = null;
@@ -63,7 +61,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             serializer.WriteObject(ms1, item);
 
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(login, password);
+            client.Credentials = new NetworkCredential(_login, _password);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
             string error = "";
             byte[] data = null;
@@ -87,7 +85,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             string address = string.Format("{0}/ms/xml/{1}/{2}", host, type.ToString(), uuid.ToString());
 
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(login, password);
+            client.Credentials = new NetworkCredential(_login, _password);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
             string error = "";
             bool success = true;
@@ -109,7 +107,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             string address = string.Format("{0}/ms/xml/{1}/list", host, type.ToString());
 
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(login, password);
+            client.Credentials = new NetworkCredential(_login, _password);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
             string error = "";
             byte[] data = null;
@@ -140,7 +138,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             serializer.WriteObject(ms1,  itemsForSave);
 
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(login, password);
+            client.Credentials = new NetworkCredential(_login, _password);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
             string error = "";
             byte[] data = null;
@@ -164,7 +162,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             string address = string.Format("{0}/ms/xml/{1}/list/delete", host, type.ToString());
 
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(login, password);
+            client.Credentials = new NetworkCredential(_login, _password);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
             string error = "";
             bool success = true;

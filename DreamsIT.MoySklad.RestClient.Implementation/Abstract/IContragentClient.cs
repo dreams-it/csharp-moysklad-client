@@ -20,6 +20,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         /// <param name="endDateUpdate"></param>
         /// <param name="names"></param>
         /// <returns></returns>
-        List<Company> GetContragent(List<Guid> ids = null, double startDateUpdate = 0, double endDateUpdate = 0, List<string> names = null);
+         ResultOrError<List<Company>> GetContragent(List<Guid> ids = null, List<string> names = null);
     }
 }

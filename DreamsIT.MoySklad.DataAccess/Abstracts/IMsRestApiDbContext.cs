@@ -1,5 +1,4 @@
-﻿using DreamsIT.MoySklad.DataAccess.Abstracts;
-using DreamsIT.MoySklad.RestClient.Models;
+﻿using DreamsIT.MoySklad.RestClient.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DreamsIT.MoySklad.DataAccess.DataDbContext
+namespace DreamsIT.MoySklad.DataAccess.Abstracts
 {
-    public class MsRestApiDbContext : DbContext, IMsRestApiDbContext
+    class IMsRestApiDbContext
     {
         public DbSet<Good> Goods { get; set; }
         public DbSet<CashOut> CashOut { get; set; }

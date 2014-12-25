@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\IMsContextFactory.cs" />
+    <Compile Include="Abstracts\IMsRestApiDbContext.cs" />
     <Compile Include="Concrets\EFMsContextFactory.cs" />
     <Compile Include="DataDbContext\MsRestApiDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

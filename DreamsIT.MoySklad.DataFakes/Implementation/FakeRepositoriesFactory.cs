@@ -70,9 +70,73 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
             get { throw new NotImplementedException(); }
         }
 
+
+        private List<Employee> _employeeses = new List<Employee>(){
+            new Employee(){
+                Id=Guid.Parse("0c7f4b7e-456d-11e4-90a2-8eca0022bfab"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.All, 
+                Description="", 
+                Email="061412@gmail.com", 
+                ExternalCode="hsSOfC1diM62IbD4UUjn13", 
+                FirstName="Станислав", 
+                LastName="Медков", 
+                MiddleName="Сергеевич", 
+                Name="Медков С. С.", 
+                Phone="8-911-702-23-91", 
+                ReadMode=ReadMode.ALL, 
+                Uid="stas@ооо нарджилия",
+                Updated="2014-09-26T15:05:39.138+04:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("0c7f4b7e-456d-11e4-90a2-8eca0022bfab")
+            },
+            new Employee(){
+                Id=Guid.Parse("1f5ac880-7f94-11e4-90a2-8ecb00259772"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.All, 
+                Description="", 
+                Email="", 
+                ExternalCode="NVugPUPQi-qrSODD75afj1", 
+                FirstName="Вадим и Артем", 
+                LastName="The LOFT СПБ", 
+                MiddleName="", 
+                Name="The LOFT СПБ В.", 
+                Phone="", 
+                ReadMode=ReadMode.ALL, 
+                Uid="loft-spb@ооо нарджилия",
+                Updated="2014-12-09T14:11:26.405+03:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("1f5ac880-7f94-11e4-90a2-8ecb00259772")
+            },
+            new Employee(){
+                Id=Guid.Parse("be01fb87-1326-11e4-c801-002590a28eca"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.All, 
+                Description="Кладовщик-продавец", 
+                Email="", 
+                ExternalCode="BcxvDPR0iqiGFBKftqKqF0", 
+                FirstName="Кирилл", 
+                LastName="Федорищев", 
+                MiddleName="Максимович", 
+                Name="Федорищев К. М.", 
+                Phone="8-981-839-34-88", 
+                ReadMode=ReadMode.ALL, 
+                Uid="klad.prod.@ооо нарджилия",
+                Updated="2014-09-19T15:39:15.628+04:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("be01fb87-1326-11e4-c801-002590a28eca")
+            }
+        };
+
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Employee, Guid> Employees
         {
-            get { throw new NotImplementedException(); }
+            get { return constructRepo("Employees", () => new BaseFakeRepository<Employee, Guid>(_employeeses)) as IRepository<Employee, Guid>; }
         }
 
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Enter, Guid> Enters

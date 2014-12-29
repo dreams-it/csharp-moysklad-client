@@ -11,8 +11,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
     {
         List<Loss> SearchByInventoryId(List<Guid> inentoryIds);
 
-        List<Loss> SearchByParameters(List<Guid> inentoryIds = null, List<Guid> ids = null, List<string> updated = null, 
-            List<string> names = null, List<Guid> customerOrderIds = null, List<double> created = null, 
+        List<Loss> SearchByParameters(List<Guid> inentoryIds = null, List<Guid> ids = null, List<string> updated = null,
+            List<string> names = null, List<Guid> customerOrderIds = null, List<string> created = null, 
             List<string> createdBy = null, List<string> years = null, List<string> months = null, List<string> days = null);
     }
 }

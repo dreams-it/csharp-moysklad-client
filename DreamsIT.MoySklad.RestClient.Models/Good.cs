@@ -96,7 +96,8 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Идентификатор профиля пользователя, создал запись
         /// </summary>
-       
+        public Guid AccountId { get; set; }
+
         /// <summary>
         /// 
         /// </summary>

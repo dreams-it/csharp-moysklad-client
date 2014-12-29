@@ -9,10 +9,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface IEnterClient
     {
-        List<Enter> SearchByInternalOrder(List<Guid> internalOrderId);
+        ResultOrError<List<Enter>> SearchByInternalOrder(List<Guid> internalOrderId);
 
-        List<Enter> SearchByParameters(List<Guid> internalOrderIds = null, List<Guid> ids = null, List<string> updated = null, List<string> names = null,
-List<Guid> customerOrderIds = null, List<double> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
+        ResultOrError<List<Enter>> SearchNewEnter(string updated);
+
+        ResultOrError<List<Enter>> SearchDeletedEnter(string deleted);
+
+        ResultOrError<List<Enter>> SearchByParameters(List<Guid> internalOrderIds = null, List<Guid> ids = null, List<string> updated = null, List<string> names = null,
+List<Guid> customerOrderIds = null, List<string> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
 List<string> days = null);
     }
 }

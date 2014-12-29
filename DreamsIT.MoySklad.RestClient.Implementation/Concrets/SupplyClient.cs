@@ -29,9 +29,9 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
         }
 
-        public ResultOrError<List<Supply>> SearchByIncomingDate(List<double> incomingDates)
+        public ResultOrError<List<Supply>> SearchByIncomingDate(List<string> incomingDates)
         {
-            string dates = ConvertParamsInString<double>.ConvertList(incomingDates, "incomingDate");
+            string dates = ConvertParamsInString<string>.ConvertList(incomingDates, "incomingDate");
             return reqestGenerator.getItemsFromAPI(dates);
         }
 
@@ -41,8 +41,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return reqestGenerator.getItemsFromAPI(incomingNumbersInString);
         }
 
-        public ResultOrError<List<Supply>> SearchByParameters(List<Guid> customerOrderIds = null, List<double> incomingDates = null, List<long> incomingNumbers = null, 
-            List<Guid> uuids = null, List<string> updated = null, List<string> names = null, List<double> created = null, List<string> createdBy = null, 
+        public ResultOrError<List<Supply>> SearchByParameters(List<Guid> customerOrderIds = null, List<string> incomingDates = null, List<long> incomingNumbers = null,
+            List<Guid> uuids = null, List<string> updated = null, List<string> names = null, List<string> created = null, List<string> createdBy = null, 
             List<string> years = null, List<string> months = null, List<string> days = null)
         {
             string paramsInString = "";
@@ -54,7 +54,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             }
             if (incomingDates!=null)
             {
-                string datesInString = ConvertParamsInString<double>.ConvertList(incomingDates, "incomingDate");
+                string datesInString = ConvertParamsInString<string>.ConvertList(incomingDates, "incomingDate");
                 paramsInString = paramsInString + ";" + datesInString;
             }
             if (incomingNumbers!=null)
@@ -79,7 +79,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             }
             if (created!=null)
             {
-                string createdInString = ConvertParamsInString<double>.ConvertList(created, "created");
+                string createdInString = ConvertParamsInString<string>.ConvertList(created, "created");
                 paramsInString = paramsInString + ";" + createdInString;
             }
             if (createdBy!=null)

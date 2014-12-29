@@ -4,17 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D3F0502-B9A5-43C4-957E-3920DEBA84FB}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{4E9535F6-50AC-4D3E-9D85-7FF1D41286B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DreamsIT.MoySklad.DataAccess</RootNamespace>
-    <AssemblyName>DreamsIT.MoySklad.DataAccess</AssemblyName>
+    <RootNamespace>DreamsIT.MoySklad.IntegrationService</RootNamespace>
+    <AssemblyName>DreamsIT.MoySklad.IntegrationService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,66 +34,83 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="DreamsIT.Data">
       <HintPath>..\packages\DreamsIT.Data.1.0.0\lib\DreamsIT.Data.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.3\lib\net40\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstracts\IMsContextFactory.cs" />
-    <Compile Include="Abstracts\IMsRestApiDbContext.cs" />
-    <Compile Include="Concrets\EFMsContextFactory.cs" />
-    <Compile Include="DataDbContext\MsRestApiDbContext.cs" />
+    <Compile Include="EnviromentServices\UnixDateTimeConverter.cs" />
+    <Compile Include="Integration.cs" />
+    <Compile Include="IntegrationJob.cs" />
+    <Compile Include="IntegrationJobService.cs" />
+    <Compile Include="IntegrationServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IntegrationServiceInstaller.Designer.cs">
+      <DependentUpon>IntegrationServiceInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntegrationService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IntegrationService.Designer.cs">
+      <DependentUpon>IntegrationService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integrators\ContragentIntegrator.cs" />
+    <Compile Include="Integrators\DemandIntegrator.cs" />
+    <Compile Include="Integrators\EnterIntegrator.cs" />
+    <Compile Include="Integrators\GoodFolderIntegrator.cs" />
+    <Compile Include="Integrators\GoodsIntegrator.cs" />
+    <Compile Include="Integrators\SalePointsIntegrator.cs" />
+    <Compile Include="Integrators\WarehousesIntegrator.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="IntegrationServiceInstaller.resx">
+      <DependentUpon>IntegrationServiceInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DreamsIT.MoySklad.DataAccess\DreamsIT.MoySklad.DataAccess.csproj">
+      <Project>{0d3f0502-b9a5-43c4-957e-3920deba84fb}</Project>
+      <Name>DreamsIT.MoySklad.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DreamsIT.MoySklad.RestClient.Implementation\DreamsIT.MoySklad.RestClient.Implementation.csproj">
+      <Project>{dd175c88-fbb5-4347-8018-78755d1af34f}</Project>
+      <Name>DreamsIT.MoySklad.RestClient.Implementation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DreamsIT.MoySklad.RestClient.Models\DreamsIT.MoySklad.RestClient.Models.csproj">
       <Project>{f13781ac-4b9c-451c-ae3f-2b247338703e}</Project>
       <Name>DreamsIT.MoySklad.RestClient.Models</Name>

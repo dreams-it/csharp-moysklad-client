@@ -24,8 +24,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return requestGenerator.getItemsFromAPI(filters);
         }
 
-        public Models.ResultOrError<List<Models.Demand>> SearchByParameters(List<Guid> uuids = null, List<string> updated = null, 
-            List<string> names = null, List<Guid> customerOrderIds = null, List<double> created = null, List<string> createdBy = null, 
+        public Models.ResultOrError<List<Models.Demand>> SearchByParameters(List<Guid> uuids = null, List<string> updated = null,
+            List<string> names = null, List<Guid> customerOrderIds = null, List<string> created = null, List<string> createdBy = null, 
             List<string> years = null, List<string> months = null, List<string> days = null)
         {
             string paramsInString = "";
@@ -51,12 +51,12 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             }
             if (created != null)
             {
-                string createdInString = ConvertParamsInString<double>.ConvertList(created, "created");
+                string createdInString = ConvertParamsInString<string>.ConvertList(created, "created");
                 paramsInString = paramsInString + ";" + createdInString;
             }
             if (created != null)
             {
-                string createdByInString = ConvertParamsInString<double>.ConvertList(created, "createdBy");
+                string createdByInString = ConvertParamsInString<string>.ConvertList(created, "createdBy");
                 paramsInString = paramsInString + ";" + createdByInString;
             }
             if (years != null)
@@ -75,6 +75,17 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
             return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+        }
+
+
+        public ResultOrError<List<Demand>> SearchDeletedDemands(string deleted)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResultOrError<List<Demand>> SearchNewDemands(string updated)
+        {
+            throw new NotImplementedException();
         }
     }
 }

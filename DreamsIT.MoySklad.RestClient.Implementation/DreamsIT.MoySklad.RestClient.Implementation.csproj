@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IGoodClient.cs" />
+    <Compile Include="Abstract\IGoodFolderClient.cs" />
     <Compile Include="Abstract\IMyCompanyClient.cs" />
     <Compile Include="Abstract\IContragentClient.cs" />
     <Compile Include="Abstract\IDemandClient.cs">
@@ -83,14 +85,19 @@
     <Compile Include="Abstract\ISupplyClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Abstract\IWarehousesClient.cs" />
     <Compile Include="Concrets\ContragentClient.cs" />
     <Compile Include="Concrets\DemandClient.cs" />
+    <Compile Include="Concrets\EnterClient.cs" />
+    <Compile Include="Concrets\GoodClient.cs" />
+    <Compile Include="Concrets\GoodFolderClient.cs" />
     <Compile Include="Concrets\MyCompanyClient.cs" />
     <Compile Include="Concrets\SalePointClient.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Concrets\StorageClient.cs" />
     <Compile Include="Concrets\SupplyClient.cs" />
+    <Compile Include="Concrets\WarehousesClient.cs" />
     <Compile Include="EnvitomentMethods\ConvertParamsInString.cs" />
     <Compile Include="EnvitomentMethods\RequestGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

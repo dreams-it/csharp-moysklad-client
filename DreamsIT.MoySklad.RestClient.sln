@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5B3A1A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamsIT.MoySklad.DataFakes", "DreamsIT.MoySklad.DataFakes\DreamsIT.MoySklad.DataFakes.csproj", "{D83181DE-F704-4412-BB27-C3FB7F2002D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamsIT.MoySklad.IntegrationService", "DreamsIT.MoySklad.IntegrationService\DreamsIT.MoySklad.IntegrationService.csproj", "{4E9535F6-50AC-4D3E-9D85-7FF1D41286B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{D83181DE-F704-4412-BB27-C3FB7F2002D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D83181DE-F704-4412-BB27-C3FB7F2002D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D83181DE-F704-4412-BB27-C3FB7F2002D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9535F6-50AC-4D3E-9D85-7FF1D41286B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9535F6-50AC-4D3E-9D85-7FF1D41286B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9535F6-50AC-4D3E-9D85-7FF1D41286B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9535F6-50AC-4D3E-9D85-7FF1D41286B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

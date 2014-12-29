@@ -45,7 +45,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
             var result = serializer.ReadObject(ms) as List<RetailStore>;
 
-            return new ResultOrError<List<RetailStore>>() { Result = result, Error = error, Success = result != null && string.IsNullOrWhiteSpace(error) };
+            return new ResultOrError<List<RetailStore>>() { 
+                Result = result, Error = error, Success = result != null && string.IsNullOrWhiteSpace(error) };
+        }
+
+
+        public ResultOrError<List<RetailStore>> GetSalePointsById(List<Guid> ids)
+        {
+            throw new NotImplementedException();
         }
     }
 }

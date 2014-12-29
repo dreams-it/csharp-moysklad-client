@@ -24,27 +24,27 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Адреса точки продажу
         /// </summary>
-        public string address { get; set; }
+        public string Address { get; set; }
 
         /// <summary>
         /// Идентификатор юр.лица
         /// </summary>
-        public Guid myCompanyUuid { get; set; }
+        public Guid MyCompanyUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Guid priceTypeUuid { get; set; }
+        public Guid PriceTypeUuid { get; set; }
 
         /// <summary>
         /// Идентификатор склада
         /// </summary>
-        public Guid warehouseUuid { get; set; }
+        public Guid WarehouseUuid { get; set; }
 
         /// <summary>
         /// Имя точки продажу
         /// </summary>
-        public string name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Дата последнего обновления
@@ -54,7 +54,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Имя того, кто последний раз делал обновление
         /// </summary>
-        public string updatedBy { get; set; }
+        public string UpdatedBy { get; set; }
 
         /// <summary>
         /// 
@@ -69,17 +69,17 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Идентификатор пользователя создавшего запись
         /// </summary>
-        public Guid accountUuid { get; set; }
+        public Guid AccountUuid { get; set; }
 
         /// <summary>
         /// Идентификатор профиля пользователя, который создал запись
         /// </summary>
-        public Guid accountId { get; set; }
+        public Guid AccountId { get; set; }
 
         /// <summary>
         /// Идентификатор точки продажу
         /// </summary>
-        public Guid uuid { get; set; }
+        public Guid Uuid { get; set; }
 
         /// <summary>
         /// 
@@ -89,7 +89,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Описание
         /// </summary>       
-        public string description { get; set; }
+        public string Description { get; set; }
         
 
     }

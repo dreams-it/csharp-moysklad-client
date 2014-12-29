@@ -21,7 +21,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 
         ResultOrError<List<PaymentOut>> SearchByParameters(List<Guid> customerOrderIds = null, List<Guid> supplyIds = null, List<Guid> invoiceOutIds = null,
             List<Guid> salesReturnIds = null, List<Guid> uuids = null, List<Guid> ids = null, List<string> updated = null, List<string> names = null,
-            List<double> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
+            List<string> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
             List<string> days = null);
 
 

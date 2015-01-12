@@ -9,10 +9,15 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface IEnterClient
     {
-        List<Enter> SearchByInternalOrder(List<Guid> internalOrderId);
+        /// <summary>
+        /// Метод получения документов из API с помощью идентификатора инвентаризации
+        /// </summary>
+        /// <param name="internalOrderId"></param>
+        /// <returns> Возвращает список объектов, с идентификатором инвентаризации полученный из API</returns>
+        ResultOrError<List<Enter>> SearchByInternalOrder(List<Guid> internalOrderId);
 
-        List<Enter> SearchByParameters(List<Guid> internalOrderIds = null, List<Guid> ids = null, List<string> updated = null, List<string> names = null,
-List<Guid> customerOrderIds = null, List<double> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
+       ResultOrError<List<Enter>> SearchByParameters(List<Guid> internalOrderIds = null, List<Guid> ids = null, List<string> updateds = null, List<string> names = null,
+List<Guid> customerOrderIds = null, List<double> createds = null, List<string> createdBies = null, List<string> years = null, List<string> months = null,
 List<string> days = null);
     }
 }

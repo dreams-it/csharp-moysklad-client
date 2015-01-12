@@ -10,6 +10,12 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
     public interface IStorageClient<T>
         where T:class
     {
+        /// <summary>
+        /// Базовой интерфейс клиент 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="uuid"></param>
+        /// <returns>Возвращает объект полученный из API</returns>
         ResultOrError<T> Get(T type, Guid uuid);
         ResultOrError<T> Save(T type, T item);
         bool Delete(T type, Guid uuid);

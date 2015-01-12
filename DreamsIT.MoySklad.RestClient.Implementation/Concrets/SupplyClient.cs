@@ -21,7 +21,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         }
 
         private RequestGenerator<Supply> reqestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Supply";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Supply/list";
 
         public ResultOrError<List<Supply>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {

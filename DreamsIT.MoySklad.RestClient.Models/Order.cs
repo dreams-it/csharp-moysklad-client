@@ -8,6 +8,7 @@ using DreamsIT.Data.BaseTypes;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
+
     public class Order:IKeyItem<Guid>
     {
 

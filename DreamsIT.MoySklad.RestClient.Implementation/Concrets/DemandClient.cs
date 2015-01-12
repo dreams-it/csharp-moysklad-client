@@ -17,7 +17,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             requestGenerator = new RequestGenerator<Demand>(login, password, host);
         }
         private RequestGenerator<Demand> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Demand";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Demand/list";
         public Models.ResultOrError<List<Models.Demand>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrder");

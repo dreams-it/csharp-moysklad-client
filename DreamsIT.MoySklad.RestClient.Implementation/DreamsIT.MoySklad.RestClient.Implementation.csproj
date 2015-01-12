@@ -85,10 +85,15 @@
     </Compile>
     <Compile Include="Concrets\ContragentClient.cs" />
     <Compile Include="Concrets\DemandClient.cs" />
+    <Compile Include="Concrets\EnterClient.cs" />
+    <Compile Include="Concrets\IncomingPaymentClient.cs" />
+    <Compile Include="Concrets\LossClient.cs" />
     <Compile Include="Concrets\MyCompanyClient.cs" />
+    <Compile Include="Concrets\OutcomingPaymentClient.cs" />
     <Compile Include="Concrets\SalePointClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Concrets\StockClient.cs" />
     <Compile Include="Concrets\StorageClient.cs" />
     <Compile Include="Concrets\SupplyClient.cs" />
     <Compile Include="EnvitomentMethods\ConvertParamsInString.cs" />

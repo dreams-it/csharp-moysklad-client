@@ -9,10 +9,15 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface ILossClient
     {
-        List<Loss> SearchByInventoryId(List<Guid> inentoryIds);
+        /// <summary>
+        /// Метод получения документов из API с помощью идентификатора инвентаризации
+        /// </summary>
+        /// <param name="inentoryIds"></param>
+        /// <returns>Возвращает список объектов, с идентификатором инвентаризации полученный из API</returns>
+        ResultOrError<List<Loss>> SearchByInventoryId(List<Guid> inentoryIds);
 
-        List<Loss> SearchByParameters(List<Guid> inentoryIds = null, List<Guid> ids = null, List<string> updated = null, 
-            List<string> names = null, List<Guid> customerOrderIds = null, List<double> created = null, 
-            List<string> createdBy = null, List<string> years = null, List<string> months = null, List<string> days = null);
+        ResultOrError<List<Loss>> SearchByParameters(List<Guid> inentoryIds = null, List<Guid> ids = null, List<string> updateds = null, 
+            List<string> names = null, List<Guid> customerOrderIds = null, List<double> createds = null, 
+            List<string> createdBies = null, List<string> years = null, List<string> months = null, List<string> days = null);
     }
 }

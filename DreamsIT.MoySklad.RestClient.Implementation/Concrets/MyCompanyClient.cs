@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         {
             requestGenerator = new RequestGenerator<MyCompanyCollection>(login, password, host);
         }
-        private RequestGenerator<MyCompany> requestGenerator = null;
+        private RequestGenerator<MyCompanyCollection> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/MyCompany/list";
         public Models.ResultOrError<List<Models.MyCompany>> GetMyCompanies(List<Guid> ids = null, List<string> names = null)
         {
@@ -44,7 +44,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public ResultOrError<List<MyCompany>> GetNewMyCompanies(string updated)
         {
-            string requestParams = "updated=" + updated;
+            string requestParams = "updated>" + updated;
             var requestResult= requestGenerator.getItemsFromAPI(requestParams);
             return getMyCompanies(requestResult);
         }

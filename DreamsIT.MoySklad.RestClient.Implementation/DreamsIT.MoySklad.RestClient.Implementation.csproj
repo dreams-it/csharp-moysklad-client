@@ -91,7 +91,6 @@
     <Compile Include="Concrets\EnterClient.cs" />
     <Compile Include="Concrets\GoodClient.cs" />
     <Compile Include="Concrets\GoodFolderClient.cs" />
-    <Compile Include="Concrets\EnterClient.cs" />
     <Compile Include="Concrets\IncomingPaymentClient.cs" />
     <Compile Include="Concrets\LossClient.cs" />
     <Compile Include="Concrets\MyCompanyClient.cs" />

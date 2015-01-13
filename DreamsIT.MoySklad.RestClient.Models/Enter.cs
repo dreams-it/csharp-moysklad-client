@@ -52,4 +52,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public List<EnterPosition> EnterPositions { get; set; }
     }
+
+    public class EnterCollection
+    {
+        public EnterCollection()
+        {
+            Enters = new List<Enter>();
+        }
+
+        public List<Enter> Enters { get; set; }
+    }
 }

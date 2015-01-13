@@ -26,4 +26,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public Guid SourceAccountUuid { get; set; }
     }
+
+    public class PaymentOutCollection
+    {
+        public PaymentOutCollection()
+        {
+            PaymentOutList = new List<PaymentOut>();
+        }
+
+        public List<PaymentOut> PaymentOutList { get; set; }
+    }
 }

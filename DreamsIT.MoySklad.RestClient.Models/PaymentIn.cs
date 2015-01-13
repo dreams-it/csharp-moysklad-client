@@ -115,4 +115,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public List<Guid> DemandsUuid { get; set; }
             }
+
+    public class PaymentInCollection
+    {
+        public PaymentInCollection()
+        {
+            PaymentInCollection = new List<PaymentIn>();
+        }
+
+        public List<PaymentIn> PaymentInCollection { get; set; }
+    }
 }

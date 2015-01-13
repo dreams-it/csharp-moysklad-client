@@ -136,4 +136,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         
 
     }
+
+    public class GoodCollection
+    {
+        public GoodCollection()
+        {
+            GoodList = new List<Good>();
+        }
+
+        public List<Good> GoodList { get; set; }
+    }
 }

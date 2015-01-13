@@ -83,4 +83,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public List<GoodRef> GoodRefs { get; set; }
     }
+
+    public class StockTOCollection
+    {
+        public StockTOCollection()
+        {
+            StockTOList = new List<StockTO>();
+        }
+
+        public List<StockTO> StockTOList { get; set; }
+    }
 }

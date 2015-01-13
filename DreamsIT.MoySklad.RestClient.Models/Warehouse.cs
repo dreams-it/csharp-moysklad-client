@@ -96,4 +96,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public List<Slot> Slots { get; set; }
     }
+
+    public class WarehouseColllection
+    {
+        public WarehouseColllection()
+        {
+            WarehouseList = new List<Warehouse>();
+        }
+
+        public List<Warehouse> WarehouseList { get; set; }
+    }
 }

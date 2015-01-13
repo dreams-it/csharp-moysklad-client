@@ -29,12 +29,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class CompanyCollection
     {
-        [XmlElement(ElementName = "company")]
         public CompanyCollection()
         {
             Companies = new List<Company>();
         }
 
+        [XmlElement(ElementName = "company")]
         public List<Company> Companies { get; set; }
     }
 }

@@ -59,4 +59,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public String Externalcode { get; set; }
     }
+
+    public class GoodFolderCollection
+    {
+        public GoodFolderCollection()
+        {
+            GoodFolders = new List<GoodFolder>();
+        }
+
+        public List<GoodFolder> GoodFolders { get; set; }
+    }
 }

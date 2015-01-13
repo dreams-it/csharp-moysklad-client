@@ -48,4 +48,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public List<LossPosition> LossPositions { get; set; }
     }
+
+    public class LossCollection
+    {
+        public LossCollection()
+        {
+            LossList = new List<Loss>();
+        }
+
+        public List<Loss> LossList { get; set; }
+    }
 }

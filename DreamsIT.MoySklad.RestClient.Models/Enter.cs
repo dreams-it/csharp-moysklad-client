@@ -5,54 +5,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
     /// Модель оприходования 
     /// </summary>
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "enter", IsNullable = false)]
     public class Enter : RecordOperation
     {
         /// <summary>
         /// Идентификатор записи
         /// </summary>
+        [XmlElement(ElementName="uuid")]
         public Guid Uuid { get; set; }
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "targetAgentUuid")]
         public Guid TargetAgentUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "targetAgentUuid")]
         public Guid TargetSourceUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "targetAgentUuid")]
         public bool Applicable { get; set; }
 
         /// <summary>
         /// Время оприходования
         /// </summary>
+        [XmlAttribute(AttributeName = "targetAgentUuid")]
         public string Moment { get; set; }
 
         /// <summary>
         /// Описание оприходования
         /// </summary>
+        [XmlElement(ElementName = "description")]
         public string Description { get; set; }
 
         /// <summary>
         /// Сумма (цена) оприходования
         /// </summary>
+        [XmlElement(ElementName = "sum")]
         public Sum Price { get; set; }
 
         /// <summary>
         /// Список значений оприходования
         /// </summary>
+        [XmlArray(ElementName = "enterPosition")]
         public List<EnterPosition> EnterPositions { get; set; }
     }
 
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class EnterCollection
     {
         public EnterCollection()

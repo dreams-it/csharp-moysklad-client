@@ -31,7 +31,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 string namesInString = ConvertParamsInString<string>.ConvertList(names, "name");
                 paramsInString = paramsInString + ";" + namesInString;
             }
-            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = !string.IsNullOrWhiteSpace(paramsInString) ? requestGenerator.getItemsFromAPI(paramsInString.Substring(1)) : requestGenerator.getItemsFromAPI(paramsInString);
             return getCompanies(requestResult);
         }
 

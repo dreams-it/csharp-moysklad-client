@@ -27,27 +27,32 @@ namespace DreamsIT.MoySklad.IntegrationService
 
         static void Main()
         {
-            SalePointClient client = new SalePointClient("stas@ооо нарджилия", "nargilia2014");
+            //string login="stas@ооо нарджилия";
+            //string password="nargilia2014";
+            //SalePointClient client = new SalePointClient("stas@ооо нарджилия", "nargilia2014");
+            //var salePoints = client.GetSalePoints();
 
-            var data = client.GetSalePoints();
+            //ContragentClient caClient = new ContragentClient(login, password);
+            //var contragentAll = caClient.GetContragent();
+            //var contragent1 = caClient.GetContragent(names: new List<string>() { "ООО Любава" });
+
+            //DemandClient demandClient = new DemandClient(login, password);
+
+            //var allData = demandClient.SearchByParameters();
+            //var conc = demandClient.SearchByParameters(names: new List<string>() { "00004" });
 
             //var data = File.ReadAllBytes(@"C:\logs\testXml.xml");
-            //XmlSerializer xmlSerializer = new XmlSerializer(typeof(RetailStores));
+            //XmlSerializer xmlSerializer = new XmlSerializer(typeof(CompanyCollection));
 
             //MemoryStream ms = new MemoryStream(data);
 
-            //var objectDes=xmlSerializer.Deserialize(ms) as RetailStores;
+            //var objectDes = xmlSerializer.Deserialize(ms) as CompanyCollection;
 
-            //DataContractSerializer serializer = new DataContractSerializer(typeof(RetailStores));
-            //DataContractSerializer serializer = new DataContractSerializer(typeof(RetailStore));
-            //var result = serializer.ReadObject(ms) as RetailStores;
-            //var result = serializer.ReadObject(ms) as RetailStore;
-            //var rrrr = result.First().MyCompanyUuid;
 
-            int i = 0;
-            //IntegrationService service = new IntegrationService();
-            //service.OnStart(null);
-            //Console.ReadLine();
+            //int i = 0;
+            IntegrationService service = new IntegrationService();
+            service.OnStart(null);
+            Console.ReadLine();
 
 
 

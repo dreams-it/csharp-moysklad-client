@@ -12,88 +12,110 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель класса приема 
     /// </summary>
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "supply", IsNullable = false)]
     public class Supply : RecordOperation
     {
         /// <summary>
         /// Идентификатор записи
         /// </summary>
+        [XmlElement(ElementName="uuid")]
         public Guid Uuid { get; set; }
         /// <summary>
         /// Номер приема товара
         /// </summary>
+        [XmlAttribute(AttributeName = "incomingNumber")]
         public int? IncomingNumber { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "overheadDistribution")]
         public OverheadDistribution OverheadDistribution { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "targetAgentUuid")]
         public Guid TargetAgentUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "sourceAgentUuid")]
         public Guid SourceAgentUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "targetStoreUuid")]
         public Guid TargetStoreUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "applicable")]
         public bool Applicable { get; set; }
 
         /// <summary>
         /// Дата приема товара
         /// </summary>
+        [XmlAttribute(AttributeName = "moment")]
         public string Moment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "targetAccountUuid")]
         public Guid TargetAccountUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "sourceAccountUuid")]
         public Guid SourceAccountId { get; set; }
 
         /// <summary>
         /// Сумма приема товара
         /// </summary>
+        [XmlElement(ElementName = "sum")]
         public Sum Sum { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public List<Guid> IncoicesInUuid { get; set; }
+        [XmlElement(ElementName = "invoicesInUuid")]
+        public List<Guid> InvoicesInUuid { get; set; }
 
         /// <summary>
         /// Накладные расходы
         /// </summary>
+        [XmlElement(ElementName = "overhead")]
         public Sum Overhead { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlArray(ElementName = "paymentsUuid")]
         public List<Guid> PaymentsUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlArray(ElementName = "shipmentIn")]
         public ShipmentIn ShipmentIn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [XmlArray(ElementName = "purchaseReturnsUuid")]
         public List<Guid> PurchaseReturnsUuid { get; set; }
     }
 
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class SupplyCollection
     {
         public SupplyCollection()

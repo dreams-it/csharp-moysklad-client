@@ -13,38 +13,45 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
     {
         public IncomingPaymentClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<PaymentIn>(login, password, host);
+            requestGenerator = new RequestGenerator<PaymentInCollection>(login, password, host);
         }
-        private RequestGenerator<PaymentIn> requestGenerator = null;
+        private RequestGenerator<PaymentInCollection> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/PaymentIn/list";
         public Models.ResultOrError<List<Models.PaymentIn>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrderId");
-            return requestGenerator.getItemsFromAPI(filters);
+
+            var requestResult= requestGenerator.getItemsFromAPI(filters);
+
+            return getPaymentIns(requestResult);
         }
 
         public Models.ResultOrError<List<Models.PaymentIn>> SearchByDemand(List<Guid> demandIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(demandIds, "demandId");
-            return requestGenerator.getItemsFromAPI(filters);
+            var requestResult= requestGenerator.getItemsFromAPI(filters);
+            return getPaymentIns(requestResult);
         }
 
         public Models.ResultOrError<List<Models.PaymentIn>> SearchByInvoiceOut(List<Guid> invoiceOutIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(invoiceOutIds, "invoiceOutId");
-            return requestGenerator.getItemsFromAPI(filters);
+            var requestResult= requestGenerator.getItemsFromAPI(filters);
+            return getPaymentIns(requestResult);
         }
 
         public Models.ResultOrError<List<Models.PaymentIn>> SearchByPurchaseReturn(List<Guid> purchaseReturnIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(purchaseReturnIds, "purchaseReturnId");
-            return requestGenerator.getItemsFromAPI(filters);
+            var requestResult= requestGenerator.getItemsFromAPI(filters);
+            return getPaymentIns(requestResult);
         }
 
         public Models.ResultOrError<List<Models.PaymentIn>> SearchByPaymentPurpose(List<Guid> uuids)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(uuids, "uuid");
-            return requestGenerator.getItemsFromAPI(filters);
+            var requestResult= requestGenerator.getItemsFromAPI(filters);
+            return getPaymentIns(requestResult);
         }
 
         public Models.ResultOrError<List<Models.PaymentIn>> SearchByParameters(List<Guid> customerOrderIds = null, List<Guid> demandIds = null, List<Guid> invoiceOutIds = null,
@@ -113,7 +120,13 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            return getPaymentIns(requestResult);
+        }
+
+        private ResultOrError<List<PaymentIn>> getPaymentIns(ResultOrError<PaymentInCollection> requestResult)
+        {
+            return new ResultOrError<List<PaymentIn>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.PaymentInList };
         }
     }
 }

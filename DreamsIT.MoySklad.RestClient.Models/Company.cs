@@ -13,6 +13,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Контрагент
     /// </summary>
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "company", IsNullable = false)]
     public class Company : Organization
     {
         /// <summary>
@@ -21,12 +24,16 @@ namespace DreamsIT.MoySklad.RestClient.Models
         [XmlElement(ElementName="uuid")]
         public Guid Uuid { get; set; }
 
+        [XmlAttribute(AttributeName = "payerVat")]
         public bool PayerVat { get; set; }
+
+        [XmlAttribute(AttributeName = "discountCardNumber")]
+        public string DiscountCardNumber { get; set; }
     }
 
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class CompanyCollection
     {
         public CompanyCollection()

@@ -9,8 +9,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface IEnterClient
     {
-        ResultOrError<List<Enter>> SearchByInternalOrder(List<Guid> internalOrderId);
-
         ResultOrError<List<Enter>> SearchNewEnter(string updated);
 
         ResultOrError<List<Enter>> SearchDeletedEnter(string deleted);

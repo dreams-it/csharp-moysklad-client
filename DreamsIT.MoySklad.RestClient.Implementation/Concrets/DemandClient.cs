@@ -16,8 +16,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         {
             requestGenerator = new RequestGenerator<DemandCollection>(login, password, host);
         }
-        private RequestGenerator<Demand> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Demand/list";
+        private RequestGenerator<DemandCollection> requestGenerator = null;
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Demand";
         public Models.ResultOrError<List<Models.Demand>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrder");
@@ -74,7 +74,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 string daysInString = ConvertParamsInString<string>.ConvertList(days, "day");
                 paramsInString = paramsInString + ";" + daysInString;
             }
-            var requestResult = requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = !string.IsNullOrWhiteSpace(paramsInString) ? requestGenerator.getItemsFromAPI(paramsInString.Substring(1)) : requestGenerator.getItemsFromAPI(paramsInString);
             return getDemands(requestResult);
         }
 

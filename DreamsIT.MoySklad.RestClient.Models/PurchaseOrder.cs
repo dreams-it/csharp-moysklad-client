@@ -40,21 +40,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public List<Guid> IncoicesUuid { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public List<Guid> PaymentsUuid { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PurchaseOrderPosition PurchaseOrderPosition { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public List<Guid> SuppliesUuid { get; set; }
     }
 }

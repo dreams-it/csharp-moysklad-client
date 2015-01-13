@@ -41,7 +41,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public Guid ChangeMode { get; set; }
+        public ChangeMode ChangeMode { get; set; }
         /// <summary>
         /// Идентификатор пользователя создавшего запись
         /// </summary>

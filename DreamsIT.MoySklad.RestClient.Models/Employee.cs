@@ -27,7 +27,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Идентификатор работника
         /// </summary>
-        public Guid Uid { get; set; }
+        public string Uid { get; set; }
 
         /// <summary>
         /// 

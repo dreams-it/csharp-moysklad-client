@@ -30,7 +30,20 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 string namesInString = ConvertParamsInString<string>.ConvertList(names, "name");
                 paramsInString = paramsInString + ";" + namesInString;
             }
-            return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            paramsInString = !string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString;
+            return requestGenerator.getItemsFromAPI(paramsInString);
+        }
+
+        public ResultOrError<List<MyCompany>> GetDeletedMyCompanies(string deleted)
+        {
+            string requestParams = "deleted=" + deleted;
+            return requestGenerator.getItemsFromAPI(requestParams);
+        }
+
+        public ResultOrError<List<MyCompany>> GetNewMyCompanies(string updated)
+        {
+            string requestParams = "updated=" + updated;
+            return requestGenerator.getItemsFromAPI(requestParams);
         }
     }
 }

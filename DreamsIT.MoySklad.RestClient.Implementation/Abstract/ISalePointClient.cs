@@ -16,7 +16,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         /// Метод получения точек продажу через API
         /// </summary>
         /// <returns>Возвращает список точек продажу, полученные из API за указанными параметрами</returns>
-       ResultOrError<List<RetailStore>> GetSalePoints();
-        
+        ResultOrError<List<RetailStore>> GetSalePoints();
+
+        ResultOrError<List<RetailStore>> GetSalePointsById(List<Guid> ids);
     }
 }

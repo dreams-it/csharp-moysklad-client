@@ -4,17 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DD175C88-FBB5-4347-8018-78755D1AF34F}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{4E9535F6-50AC-4D3E-9D85-7FF1D41286B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DreamsIT.MoySklad.RestClient.Implementation</RootNamespace>
-    <AssemblyName>DreamsIT.MoySklad.RestClient.Implementation</AssemblyName>
+    <RootNamespace>DreamsIT.MoySklad.IntegrationService</RootNamespace>
+    <AssemblyName>DreamsIT.MoySklad.IntegrationService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,90 +34,87 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.2.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="DreamsIT.Data">
       <HintPath>..\packages\DreamsIT.Data.1.0.0\lib\DreamsIT.Data.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.2-beta2\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.2-beta2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.3\lib\net40\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Web" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IGoodClient.cs" />
-    <Compile Include="Abstract\IGoodFolderClient.cs" />
-    <Compile Include="Abstract\IMyCompanyClient.cs" />
-    <Compile Include="Abstract\IContragentClient.cs" />
-    <Compile Include="Abstract\IDemandClient.cs">
-      <SubType>Code</SubType>
+    <Compile Include="EnviromentServices\UnixDateTimeConverter.cs" />
+    <Compile Include="Integration.cs" />
+    <Compile Include="IntegrationJob.cs" />
+    <Compile Include="IntegrationJobService.cs" />
+    <Compile Include="IntegrationServiceInstaller.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Abstract\IEnterClient.cs">
-      <SubType>Code</SubType>
+    <Compile Include="IntegrationServiceInstaller.Designer.cs">
+      <DependentUpon>IntegrationServiceInstaller.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abstract\IIncomingPaymentClient.cs">
-      <SubType>Code</SubType>
+    <Compile Include="IntegrationService.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Abstract\ILossClient.cs">
-      <SubType>Code</SubType>
+    <Compile Include="IntegrationService.Designer.cs">
+      <DependentUpon>IntegrationService.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abstract\IMoveClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\IOutcomingPaymentClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\ISalePointClient.cs" />
-    <Compile Include="Abstract\IStockClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\IStorageClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\ISupplyClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Abstract\IWarehousesClient.cs" />
-    <Compile Include="Concrets\ContragentClient.cs" />
-    <Compile Include="Concrets\DemandClient.cs" />
-    <Compile Include="Concrets\EnterClient.cs" />
-    <Compile Include="Concrets\GoodClient.cs" />
-    <Compile Include="Concrets\GoodFolderClient.cs" />
-    <Compile Include="Concrets\EnterClient.cs" />
-    <Compile Include="Concrets\IncomingPaymentClient.cs" />
-    <Compile Include="Concrets\LossClient.cs" />
-    <Compile Include="Concrets\MyCompanyClient.cs" />
-    <Compile Include="Concrets\OutcomingPaymentClient.cs" />
-    <Compile Include="Concrets\SalePointClient.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Concrets\StockClient.cs" />
-    <Compile Include="Concrets\StorageClient.cs" />
-    <Compile Include="Concrets\SupplyClient.cs" />
-    <Compile Include="Concrets\WarehousesClient.cs" />
-    <Compile Include="EnvitomentMethods\ConvertParamsInString.cs" />
-    <Compile Include="EnvitomentMethods\RequestGenerator.cs" />
+    <Compile Include="Integrators\ContragentIntegrator.cs" />
+    <Compile Include="Integrators\DemandIntegrator.cs" />
+    <Compile Include="Integrators\EnterIntegrator.cs" />
+    <Compile Include="Integrators\GoodFolderIntegrator.cs" />
+    <Compile Include="Integrators\GoodsIntegrator.cs" />
+    <Compile Include="Integrators\SalePointsIntegrator.cs" />
+    <Compile Include="Integrators\WarehousesIntegrator.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IntegrationServiceInstaller.resx">
+      <DependentUpon>IntegrationServiceInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DreamsIT.MoySklad.DataAccess\DreamsIT.MoySklad.DataAccess.csproj">
+      <Project>{0d3f0502-b9a5-43c4-957e-3920deba84fb}</Project>
+      <Name>DreamsIT.MoySklad.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DreamsIT.MoySklad.RestClient.Implementation\DreamsIT.MoySklad.RestClient.Implementation.csproj">
+      <Project>{dd175c88-fbb5-4347-8018-78755d1af34f}</Project>
+      <Name>DreamsIT.MoySklad.RestClient.Implementation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DreamsIT.MoySklad.RestClient.Models\DreamsIT.MoySklad.RestClient.Models.csproj">
       <Project>{f13781ac-4b9c-451c-ae3f-2b247338703e}</Project>
       <Name>DreamsIT.MoySklad.RestClient.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

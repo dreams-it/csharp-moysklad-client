@@ -13,5 +13,9 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
     public interface IMyCompanyClient
     {
         ResultOrError<List<MyCompany>> GetMyCompanies(List<Guid> ids = null, List<string> names = null);
+
+        ResultOrError<List<MyCompany>> GetDeletedMyCompanies(string deleted);
+
+        ResultOrError<List<MyCompany>> GetNewMyCompanies(string updated);
     }
 }

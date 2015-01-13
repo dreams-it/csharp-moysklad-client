@@ -18,7 +18,11 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         ResultOrError<List<Demand>> SearchByCustomerOrder(List<Guid> customerOrderIds);
 
         ResultOrError<List<Demand>> SearchByParameters(List<Guid> uuids = null, List<string> updated = null, List<string> names = null,
-            List<Guid> customerOrderIds = null, List<double> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
+            List<Guid> customerOrderIds = null, List<string> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
             List<string> days = null);
+
+        ResultOrError<List<Demand>> SearchDeletedDemands(string deleted);
+
+        ResultOrError<List<Demand>> SearchNewDemands(string updated);
     }
 }

@@ -9,6 +9,11 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface IEnterClient
     {
+        ResultOrError<List<Enter>> SearchByInternalOrder(List<Guid> internalOrderId);
+
+        ResultOrError<List<Enter>> SearchNewEnter(string updated);
+
+        ResultOrError<List<Enter>> SearchDeletedEnter(string deleted);
         /// <summary>
         /// Метод получения документов из API с помощью идентификатора инвентаризации
         /// </summary>

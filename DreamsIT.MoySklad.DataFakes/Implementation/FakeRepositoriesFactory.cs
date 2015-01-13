@@ -54,14 +54,290 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
             get { throw new NotImplementedException(); }
         }
 
+
+        private List<GoodFolder> _goodFolders = new List<GoodFolder>()
+        {
+            new GoodFolder()
+            {
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.SELF, 
+                Externalcode="eyKCqoDfgAyZqrAulGSlh0", 
+                Id=Guid.Parse("07bef3ae-8cee-11e4-90a2-8ecb000a1289"), 
+                Name="SelfX", 
+                ProductCode="", 
+                ReadMode=ReadMode.ALL, 
+                Updated="2014-12-26T13:57:48.802+03:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("07bef3ae-8cee-11e4-90a2-8ecb000a1289")
+            },
+            new GoodFolder()
+            {
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.SELF, 
+                Externalcode="xrgHawfZihiJNxpBidSAE0", 
+                Id=Guid.Parse("0c8d01cb-3ff4-11e4-90a2-8eca000b8b09"), 
+                Name="Дополнительные расходные материалы", 
+                ProductCode="", 
+                ReadMode=ReadMode.ALL, 
+                Updated="2014-09-19T15:56:54.310+04:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("0c8d01cb-3ff4-11e4-90a2-8eca000b8b09")
+            },
+            new GoodFolder()
+            {
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.SELF, 
+                Externalcode="jtDm2qMHi8yFYKMsHXeus3", 
+                Id=Guid.Parse("0cc6d4ed-3ff4-11e4-90a2-8eca000b8bf6"), 
+                Name="Кальяны в сборе", 
+                ProductCode="", 
+                ReadMode=ReadMode.ALL, 
+                Updated="2014-09-19T15:56:54.689+04:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("0cc6d4ed-3ff4-11e4-90a2-8eca000b8bf6")
+            }
+        };
+
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.GoodFolder, Guid> GoodFolders
         {
-            get { throw new NotImplementedException(); }
+            get { return constructRepo("GoodFolders", () => new BaseFakeRepository<GoodFolder, Guid>(_goodFolders)) as IRepository<GoodFolder, Guid>; }
         }
 
+        private List<Good> _goods = new List<Good>()
+        {
+            new Good()
+            {
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
+                Archived=false, 
+                BuyPrice=0.0, 
+                ChangeMode=ChangeMode.SELF, 
+                Code="", 
+                Description="", 
+                Externalcode="tr_xoxxegViPnBGHWvzOu0", 
+                Id=Guid.Parse("003a1f1a-43db-11e4-90a2-8eca00258a8f"), 
+                Uuid=Guid.Parse("003a1f1a-43db-11e4-90a2-8eca00258a8f"), 
+                Images=null, 
+                IsSerialTrackable=false, 
+                MinPrice=120250.0,
+                Name="Tangiers Birquq 250 гр. Sour Grape", 
+                ParentUuid=Guid.Parse("e94b9ac0-43d9-11e4-90a2-8eca00254323"), 
+                Preferences=null, 
+                ProductCode="", 
+                ReadMode=ReadMode.ALL, 
+                SalePrice=185000.0, 
+                UomUuid=Guid.Parse("19f1edc0-fc42-4001-94cb-c9ec9c62ec10"), 
+                Updated="2014-09-24T15:07:40.866+04:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Volume=0.0, 
+                Weight=0.0, 
+                SalePrices=new List<Price>()
+                {
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("003a25b9-43db-11e4-90a2-8eca00258a94"), 
+                        PriceTypeUuid=Guid.Parse("5ab3ad2c-13fd-11e4-4810-002590a28eca"), 
+                        Uuid=Guid.Parse("003a25b9-43db-11e4-90a2-8eca00258a94"), 
+                        Value=138750.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("003a2560-43db-11e4-90a2-8eca00258a92"), 
+                        PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
+                        Uuid=Guid.Parse("003a2560-43db-11e4-90a2-8eca00258a92"), 
+                        Value=120250.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("003a24a0-43db-11e4-90a2-8eca00258a91"), 
+                        PriceTypeUuid=Guid.Parse("5ab3aba2-13fd-11e4-7dd7-002590a28eca"), 
+                        Uuid=Guid.Parse("003a24a0-43db-11e4-90a2-8eca00258a91"), 
+                        Value=166200.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("003a260c-43db-11e4-90a2-8eca00258a95"), 
+                        PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
+                        Uuid=Guid.Parse("003a260c-43db-11e4-90a2-8eca00258a95"), 
+                        Value=185000.0
+                    }
+                }
+            },
+            new Good()
+            {
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
+                Archived=false, 
+                BuyPrice=0.0, 
+                ChangeMode=ChangeMode.SELF, 
+                Code="", 
+                Description="", 
+                Externalcode="RWuW7hqSgSmDWecjiZvLK0", 
+                Id=Guid.Parse("00d157bf-77da-11e4-90a2-8eca00379a51"), 
+                Uuid=Guid.Parse("00d157bf-77da-11e4-90a2-8eca00379a51"), 
+                Images=null, 
+                IsSerialTrackable=false, 
+                MinPrice=19000.0,
+                Name="Табак Afzal 40 гр. Черника", 
+                ParentUuid=Guid.Parse("4142de4f-6024-11e4-90a2-8ecb005b0fa4"), 
+                Preferences=null, 
+                ProductCode="", 
+                ReadMode=ReadMode.ALL, 
+                SalePrice=29000.0, 
+                UomUuid=Guid.Parse("19f1edc0-fc42-4001-94cb-c9ec9c62ec10"), 
+                Updated="2014-11-29T18:13:44.884+03:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Volume=0.0, 
+                Weight=0.0, 
+                SalePrices=new List<Price>()
+                {
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("00d15ca8-77da-11e4-90a2-8eca00379a53"), 
+                        PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
+                        Uuid=Guid.Parse("00d15ca8-77da-11e4-90a2-8eca00379a53"), 
+                        Value=29000.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("00d15d53-77da-11e4-90a2-8eca00379a54"), 
+                        PriceTypeUuid=Guid.Parse("5ab3aba2-13fd-11e4-7dd7-002590a28eca"), 
+                        Uuid=Guid.Parse("00d15d53-77da-11e4-90a2-8eca00379a54"), 
+                        Value=26100.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
+                        ChangeMode=ChangeMode.All,
+                        ReadMode=ReadMode.ALL,
+                        Id=Guid.Parse("00d15d9f-77da-11e4-90a2-8eca00379a55"), 
+                        PriceTypeUuid=Guid.Parse("5ab3ad2c-13fd-11e4-4810-002590a28eca"), 
+                        Uuid=Guid.Parse("00d15d9f-77da-11e4-90a2-8eca00379a55"), 
+                        Value=20300.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("00d15de8-77da-11e4-90a2-8eca00379a56"), 
+                        PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
+                        Uuid=Guid.Parse("00d15de8-77da-11e4-90a2-8eca00379a56"), 
+                        Value=19000.0
+                    }
+                }
+            },
+            new Good()
+            {
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
+                Archived=false, 
+                BuyPrice=0.0, 
+                ChangeMode=ChangeMode.SELF, 
+                Code="", 
+                Description="", 
+                Externalcode="HWQZg6LMhcq7qTOsP4z5c3", 
+                Id=Guid.Parse("015065e3-77dc-11e4-90a2-8eca0037bbc8"), 
+                Uuid=Guid.Parse("015065e3-77dc-11e4-90a2-8eca0037bbc8"), 
+                Images=null, 
+                IsSerialTrackable=false, 
+                MinPrice=13000.0,
+                Name="Безникотиновая смесь для кальяна Соекс Черешня 50 г", 
+                ParentUuid=Guid.Parse("8393d2c0-77da-11e4-90a2-8eca0037a354"), 
+                Preferences=null, 
+                ProductCode="", 
+                ReadMode=ReadMode.ALL, 
+                SalePrice=20000.0, 
+                UomUuid=Guid.Parse("19f1edc0-fc42-4001-94cb-c9ec9c62ec10"), 
+                Updated="2014-11-29T18:25:48.377+03:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Volume=0.0, 
+                Weight=0.0, 
+                SalePrices=new List<Price>()
+                {
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("01506bab-77dc-11e4-90a2-8eca0037bbcb"), 
+                        PriceTypeUuid=Guid.Parse("5ab3ad2c-13fd-11e4-4810-002590a28eca"), 
+                        Uuid=Guid.Parse("01506bab-77dc-11e4-90a2-8eca0037bbcb"), 
+                        Value=15000.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("01506c3d-77dc-11e4-90a2-8eca0037bbcd"), 
+                        PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
+                        Uuid=Guid.Parse("01506c3d-77dc-11e4-90a2-8eca0037bbcd"), 
+                        Value=13000.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
+                        ChangeMode=ChangeMode.All,
+                        ReadMode=ReadMode.ALL,
+                        Id=Guid.Parse("01506bf7-77dc-11e4-90a2-8eca0037bbcc"), 
+                        PriceTypeUuid=Guid.Parse("5ab3aba2-13fd-11e4-7dd7-002590a28eca"), 
+                        Uuid=Guid.Parse("01506bf7-77dc-11e4-90a2-8eca0037bbcc"), 
+                        Value=18000.0
+                    },
+                    new Price()
+                    {
+                        AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                        ChangeMode=ChangeMode.All, 
+                        ReadMode=ReadMode.ALL, 
+                        Id=Guid.Parse("00d15de8-77da-11e4-90a2-8eca00379a56"), 
+                        PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
+                        Uuid=Guid.Parse("00d15de8-77da-11e4-90a2-8eca00379a56"), 
+                        Value=19000.0
+                    }
+                }
+            }
+
+        };
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Good, Guid> Goods
         {
-            get { throw new NotImplementedException(); }
+            get { return constructRepo("Goods", () => new BaseFakeRepository<Good, Guid>(_goods)) as IRepository<Good, Guid>; }
         }
 
 
@@ -70,9 +346,73 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
             get { throw new NotImplementedException(); }
         }
 
+
+        private List<Employee> _employeeses = new List<Employee>(){
+            new Employee(){
+                Id=Guid.Parse("0c7f4b7e-456d-11e4-90a2-8eca0022bfab"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.All, 
+                Description="", 
+                Email="061412@gmail.com", 
+                ExternalCode="hsSOfC1diM62IbD4UUjn13", 
+                FirstName="Станислав", 
+                LastName="Медков", 
+                MiddleName="Сергеевич", 
+                Name="Медков С. С.", 
+                Phone="8-911-702-23-91", 
+                ReadMode=ReadMode.ALL, 
+                Uid="stas@ооо нарджилия",
+                Updated="2014-09-26T15:05:39.138+04:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("0c7f4b7e-456d-11e4-90a2-8eca0022bfab")
+            },
+            new Employee(){
+                Id=Guid.Parse("1f5ac880-7f94-11e4-90a2-8ecb00259772"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false,
+                ChangeMode=ChangeMode.All, 
+                Description="", 
+                Email="", 
+                ExternalCode="NVugPUPQi-qrSODD75afj1", 
+                FirstName="Вадим и Артем", 
+                LastName="The LOFT СПБ", 
+                MiddleName="", 
+                Name="The LOFT СПБ В.", 
+                Phone="", 
+                ReadMode=ReadMode.ALL, 
+                Uid="loft-spb@ооо нарджилия",
+                Updated="2014-12-09T14:11:26.405+03:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("1f5ac880-7f94-11e4-90a2-8ecb00259772")
+            },
+            new Employee(){
+                Id=Guid.Parse("be01fb87-1326-11e4-c801-002590a28eca"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                Archived=false, 
+                ChangeMode=ChangeMode.All, 
+                Description="Кладовщик-продавец", 
+                Email="", 
+                ExternalCode="BcxvDPR0iqiGFBKftqKqF0", 
+                FirstName="Кирилл", 
+                LastName="Федорищев", 
+                MiddleName="Максимович", 
+                Name="Федорищев К. М.", 
+                Phone="8-981-839-34-88", 
+                ReadMode=ReadMode.ALL, 
+                Uid="klad.prod.@ооо нарджилия",
+                Updated="2014-09-19T15:39:15.628+04:00", 
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("be01fb87-1326-11e4-c801-002590a28eca")
+            }
+        };
+
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Employee, Guid> Employees
         {
-            get { throw new NotImplementedException(); }
+            get { return constructRepo("Employees", () => new BaseFakeRepository<Employee, Guid>(_employeeses)) as IRepository<Employee, Guid>; }
         }
 
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Enter, Guid> Enters
@@ -163,59 +503,59 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
             new RetailStore()
             {
                 Id=Guid.Parse("4870a47a-7f94-11e4-90a2-8ecb0025a5ab"),
-                accountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                accountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Active=true, 
-                address="", 
+                Address="", 
                 ChangeMode=RestClient.Models.Enums.ChangeMode.SELF, 
-                description="", 
+                Description="", 
                 Externalcode="ETcWX1ASilKcdq-WNhvyj2", 
-                myCompanyUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
-                name="The LOFT СПБ", 
-                priceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
+                MyCompanyUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
+                Name="The LOFT СПБ", 
+                PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
                 ReadMode=RestClient.Models.Enums.ReadMode.SELF, 
                 Updated="2014-12-09T14:12:35.335+03:00", 
-                updatedBy="admin@ооо нарджилия", 
-                uuid=Guid.Parse("4870a47a-7f94-11e4-90a2-8ecb0025a5ab"), 
-                warehouseUuid=Guid.Parse("570c7c96-7f91-11e4-90a2-8ecb0024f582")
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("4870a47a-7f94-11e4-90a2-8ecb0025a5ab"), 
+                WarehouseUuid=Guid.Parse("570c7c96-7f91-11e4-90a2-8ecb0024f582")
             },
             new RetailStore()
             {
                 Id=Guid.Parse("afb8aace-1328-11e4-03e3-002590a28eca"),
-                accountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                accountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Active=true, 
-                address="Спб, Рубинштейна, д. 30, лит. А", 
+                Address="Спб, Рубинштейна, д. 30, лит. А", 
                 ChangeMode=RestClient.Models.Enums.ChangeMode.NONE, 
-                description="", 
+                Description="", 
                 Externalcode="QMMJBUAChlKbgVXCeomn-0", 
-                myCompanyUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
-                name="THE OFFICE", 
-                priceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
+                MyCompanyUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
+                Name="THE OFFICE", 
+                PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
                 ReadMode=RestClient.Models.Enums.ReadMode.NONE,
                 Updated="2014-07-24T15:50:19.569+04:00", 
-                updatedBy="admin@ооо нарджилия", 
-                uuid=Guid.Parse("afb8aace-1328-11e4-03e3-002590a28eca"), 
-                warehouseUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("afb8aace-1328-11e4-03e3-002590a28eca"), 
+                WarehouseUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
             },
             new RetailStore()
             {
                 Id=Guid.Parse("d755aa8f-43c5-11e4-90a2-8eca002101ad"),
-                accountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                accountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
+                AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Active=true, 
-                address="", 
+                Address="", 
                 ChangeMode=RestClient.Models.Enums.ChangeMode.SELF, 
-                description="", 
+                Description="", 
                 Externalcode="U3RZu-q8ibiVUoWIa2ycr0", 
-                myCompanyUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
-                name="ОПТ", 
-                priceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
+                MyCompanyUuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"), 
+                Name="ОПТ", 
+                PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
                 ReadMode=RestClient.Models.Enums.ReadMode.SELF,
                 Updated="2014-09-24T12:36:12.829+04:00", 
-                updatedBy="admin@ооо нарджилия", 
-                uuid=Guid.Parse("d755aa8f-43c5-11e4-90a2-8eca002101ad"), 
-                warehouseUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
+                UpdatedBy="admin@ооо нарджилия", 
+                Uuid=Guid.Parse("d755aa8f-43c5-11e4-90a2-8eca002101ad"), 
+                WarehouseUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
             }
         };
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.RetailStore, Guid> RetailStores

@@ -34,5 +34,21 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
 
         }
+
+
+        public ResultOrError<List<Company>> GetNewContragent(string updated)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResultOrError<List<Company>> GetDeletedContragent(string deleted)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResultOrError<List<Company>> GetOldContragent(string updated)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

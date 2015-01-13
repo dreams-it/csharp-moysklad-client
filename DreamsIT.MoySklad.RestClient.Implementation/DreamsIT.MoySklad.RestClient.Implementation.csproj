@@ -99,6 +99,7 @@
     <Compile Include="Concrets\SupplyClient.cs" />
     <Compile Include="Concrets\WarehousesClient.cs" />
     <Compile Include="EnvitomentMethods\ConvertParamsInString.cs" />
+    <Compile Include="EnvitomentMethods\HeaderConverter.cs" />
     <Compile Include="EnvitomentMethods\RequestGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

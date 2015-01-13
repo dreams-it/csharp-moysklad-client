@@ -25,4 +25,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         public string ChiefAccountant { get; set; }
     }
+
+    public class MyCompanyCollection
+    {
+        public List<MyCompany> MyCompanies { get; set; }
+    }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
@@ -91,5 +92,15 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         public List<Guid> PurchaseReturnsUuid { get; set; }
+    }
+
+    public class SupplyCollection
+    {
+        public SupplyCollection()
+        {
+            Items = new List<Supply>();
+        }
+        [XmlElement(ElementName="supply")]
+        public List<Supply> Items { get; set; }
     }
 }

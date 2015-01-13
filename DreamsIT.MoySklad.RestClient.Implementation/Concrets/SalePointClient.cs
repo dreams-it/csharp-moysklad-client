@@ -9,6 +9,7 @@ using System.Net;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 {
@@ -27,8 +28,12 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         {
             string address = string.Format("{0}/ms/xml/RetailStore/list", host);
             WebClient client = new WebClient();
-            client.Credentials = new NetworkCredential(_login, _password);
+            //client.Credentials = new NetworkCredential(_login, _password);
+            
+            var authHeader = HeaderConverter.GetAuthHeaders(_login, _password);
+            client.Headers.Add("Authorization: Basic " + authHeader);
             client.Headers.Add(HttpRequestHeader.ContentType, "application/xml");
+            
             string error = "";
             byte[] data = null;
             try
@@ -39,14 +44,18 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             {
                 error = exc.Message;
             }
-            DataContractSerializer serializer = new DataContractSerializer(typeof(List<RetailStore>));
-
             var ms = new MemoryStream(data);
 
-            var result = serializer.ReadObject(ms) as List<RetailStore>;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(RetailStores));
+
+            var result = xmlSerializer.Deserialize(ms) as RetailStores;
+
+            //DataContractSerializer serializer = new DataContractSerializer(typeof(RetailStores));
+
+            //var result = serializer.ReadObject(ms) as RetailStores;
 
             return new ResultOrError<List<RetailStore>>() { 
-                Result = result, Error = error, Success = result != null && string.IsNullOrWhiteSpace(error) };
+                Result = result.Items, Error = error, Success = result != null && string.IsNullOrWhiteSpace(error) };
         }
 
 

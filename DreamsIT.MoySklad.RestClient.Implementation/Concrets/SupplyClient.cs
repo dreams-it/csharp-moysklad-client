@@ -17,28 +17,44 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
     {
         public SupplyClient(string login, string password)
         {
-            reqestGenerator = new RequestGenerator<Supply>(login, password, host);
+            reqestGenerator = new RequestGenerator<SupplyCollection>(login, password, host);
         }
 
-        private RequestGenerator<Supply> reqestGenerator = null;
+        private RequestGenerator<SupplyCollection> reqestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Supply";
 
         public ResultOrError<List<Supply>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
             string customerOrderIdsInString = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrder");
-            return reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
+            var requestResult= reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
+
+            return getSupplyResult(requestResult);
+
+            //var requestResult= reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
+            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingDate(List<string> incomingDates)
         {
             string dates = ConvertParamsInString<string>.ConvertList(incomingDates, "incomingDate");
-            return reqestGenerator.getItemsFromAPI(dates);
+
+            var requestResult = reqestGenerator.getItemsFromAPI(dates);
+
+            return getSupplyResult(requestResult);
+
+            //var requestResult= reqestGenerator.getItemsFromAPI(dates);
+            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingNumber(List<long> incomingNumbers)
         {
             string incomingNumbersInString = ConvertParamsInString<long>.ConvertList(incomingNumbers, "incomingNumber");
-            return reqestGenerator.getItemsFromAPI(incomingNumbersInString);
+
+            var requestResult = reqestGenerator.getItemsFromAPI(incomingNumbersInString);
+
+            return getSupplyResult(requestResult);
+            //var requestResult = reqestGenerator.getItemsFromAPI(incomingNumbersInString);
+            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
 
         public ResultOrError<List<Supply>> SearchByParameters(List<Guid> customerOrderIds = null, List<string> incomingDates = null, List<long> incomingNumbers = null,
@@ -103,7 +119,16 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
             #endregion params for methods
-            return reqestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+
+            var requestResult = reqestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            return getSupplyResult(requestResult);
+            //ResultOrError<SupplyCollection> requestResult = reqestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
+        }
+
+        private ResultOrError<List<Supply>> getSupplyResult(ResultOrError<SupplyCollection> requestResult)
+        {
+            return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
     }
 }

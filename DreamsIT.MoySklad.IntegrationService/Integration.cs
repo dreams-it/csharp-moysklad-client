@@ -4,17 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using DreamsIT.MoySklad.IntegrationService.Integrators;
 
 namespace DreamsIT.MoySklad.IntegrationService
 {
-    public class Integration:ApiController
+    public class IntegrationController:ApiController
     {
-        [HttpPost]
+        [HttpGet]
         public bool Start(string login, string password, int refreshTime)
         {
-            IntegrationJobService jobService = new IntegrationJobService();
-            jobService.StartJob(login, password, refreshTime);
-            return jobService.JobExist(login);
+            //IntegrationJobService jobService = new IntegrationJobService();
+            //jobService.StartJob(login, password, refreshTime);
+
+            GoodFolderIntegrator integrator = new GoodFolderIntegrator();
+            integrator.Synchronization(login, password);
+            //return jobService.JobExist(login);
+            return false;
         }
 
         [HttpDelete]

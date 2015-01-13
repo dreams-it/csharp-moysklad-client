@@ -13,9 +13,9 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
     {
         public ContragentClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<Company>(login, password, host);
+            requestGenerator = new RequestGenerator<CompanyCollection>(login, password, host);
         }
-        private RequestGenerator<Company> requestGenerator = null;
+        private RequestGenerator<CompanyCollection> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Company";
 
         public ResultOrError<List<Company>> GetContragent(List<Guid> ids = null, List<string> names = null)
@@ -31,8 +31,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 string namesInString = ConvertParamsInString<string>.ConvertList(names, "name");
                 paramsInString = paramsInString + ";" + namesInString;
             }
-            return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
-
+            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            return getCompanies(requestResult);
         }
 
 
@@ -49,6 +49,12 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         public ResultOrError<List<Company>> GetOldContragent(string updated)
         {
             throw new NotImplementedException();
+        }
+
+
+        public ResultOrError<List<Company>> getCompanies(ResultOrError<CompanyCollection> companyCollection)
+        {
+            return new ResultOrError<List<Company>>() { Error = companyCollection.Error, Success = companyCollection.Success, Result = companyCollection.Result.Companies };
         }
     }
 }

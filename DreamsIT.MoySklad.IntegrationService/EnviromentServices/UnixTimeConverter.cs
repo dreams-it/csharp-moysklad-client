@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.IntegrationService.EnviromentServices
 {
-    public static class UnixDateTimeConverter
+    public static class UnixTimeConverter
     {
         public static double ToUnixTime(this DateTime dateTime)
         {

@@ -68,4 +68,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Extension Extension { get; set; }
 
     }
+
+    public class DemandCollection
+    {
+        public List<Demand> Demands { get; set; }
+    }
 }

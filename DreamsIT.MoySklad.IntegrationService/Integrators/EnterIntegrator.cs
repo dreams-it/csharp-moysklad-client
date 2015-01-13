@@ -23,7 +23,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
         public void Syncronization(string login, string password)
         {
-            IEnterClient _enterClient = new EnterClient(login, password);
+            EnterClient _enterClient = new EnterClient(login, password);
 
             var maxDate = _factory.Enters.Max(r => DateTime.Parse(r.Updated));
 

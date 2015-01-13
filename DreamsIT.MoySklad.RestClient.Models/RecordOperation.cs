@@ -5,24 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using DreamsIT.MoySklad.RestClient.Models.Enums;
 using DreamsIT.Data.BaseTypes;
+using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     public class RecordOperation : IKeyItem<Guid>
     {
+        [XmlIgnore]
         public Guid Id { get; set; }
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "payerVat")]
         public bool PayerVat { get; set; }
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName="rate")]
         public double Rate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        
         public bool VatIcluded { get; set; }
 
         /// <summary>

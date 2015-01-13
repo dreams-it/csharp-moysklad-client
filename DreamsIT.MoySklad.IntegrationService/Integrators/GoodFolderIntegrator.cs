@@ -2,6 +2,7 @@
 using DreamsIT.MoySklad.IntegrationService.EnviromentServices;
 using DreamsIT.MoySklad.RestClient.Implementation.Abstract;
 using DreamsIT.MoySklad.RestClient.Implementation.Concrets;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +15,22 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
     public class GoodFolderIntegrator
     {
         private IMsContextFactory _factory = null;
-        private IDependencyResolver _dependencyResolver = null;
+        //private IDependencyResolver _dependencyResolver = null;
+
+        private StandardKernel kernel;
 
         public GoodFolderIntegrator()
         {
-            _factory = _factory ?? _dependencyResolver.GetService<IMsContextFactory>();
+            kernel = new StandardKernel(new IntegrationServiceKernel());
+            _factory = kernel.Get<IMsContextFactory>();
+            //_factory = _factory ?? _dependencyResolver.GetService<IMsContextFactory>();
         }
 
         public void Synchronization(string login, string password)
         {
-            IGoodFolderClient _goodFolderCient=new GoodFolderClient(login, password);
+            GoodFolderClient _goodFolderCient = new GoodFolderClient(login, password);
 
-            var maxDate=_factory.GoodFolders.Max(r=>DateTime.Parse(r.Updated));
+            var maxDate = _factory.GoodFolders.Max(r => DateTime.Parse(r.Updated));
 
             var goodFolderForRemove = _goodFolderCient.SearchDeletedGoodFolders(maxDate.ToMoySkladFormatDate()).Result.ToList();
 

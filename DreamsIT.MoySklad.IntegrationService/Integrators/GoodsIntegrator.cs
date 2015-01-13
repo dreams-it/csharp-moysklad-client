@@ -23,7 +23,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
         public void Synchronization(string login, string password)
         {
-            IGoodClient _goodsCient=new GoodClient(login, password);
+            GoodClient _goodsCient=new GoodClient(login, password);
 
             var maxDate=_factory.GoodFolders.Max(r=>DateTime.Parse(r.Updated));
 

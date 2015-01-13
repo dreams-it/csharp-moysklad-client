@@ -23,7 +23,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
         public void Synchronization(string login, string password)
         {
-            ISalePointClient _salePointsClient = new SalePointClient(login, password);
+            SalePointClient _salePointsClient = new SalePointClient(login, password);
 
             var allSalePoints = _salePointsClient.GetSalePoints().Result;
 

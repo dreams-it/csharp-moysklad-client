@@ -14,14 +14,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public DemandClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<Demand>(login, password, host);
+            requestGenerator = new RequestGenerator<DemandCollection>(login, password, host);
         }
         private RequestGenerator<Demand> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Demand/list";
         public Models.ResultOrError<List<Models.Demand>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrder");
-            return requestGenerator.getItemsFromAPI(filters);
+            return getDemands(requestGenerator.getItemsFromAPI(filters));
         }
 
         public Models.ResultOrError<List<Models.Demand>> SearchByParameters(List<Guid> uuids = null, List<string> updated = null,
@@ -74,7 +74,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 string daysInString = ConvertParamsInString<string>.ConvertList(days, "day");
                 paramsInString = paramsInString + ";" + daysInString;
             }
-            return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            return getDemands(requestResult);
         }
 
 
@@ -86,6 +87,11 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         public ResultOrError<List<Demand>> SearchNewDemands(string updated)
         {
             throw new NotImplementedException();
+        }
+
+        private ResultOrError<List<Demand>> getDemands(ResultOrError<DemandCollection> demandCollection)
+        {
+            return new ResultOrError<List<Demand>>() { Error = demandCollection.Error, Success = demandCollection.Success, Result = demandCollection.Result.Demands };
         }
     }
 }

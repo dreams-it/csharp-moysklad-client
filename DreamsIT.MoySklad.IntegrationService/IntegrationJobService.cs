@@ -1,4 +1,5 @@
 ﻿using Quartz;
+using Quartz.Impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,17 @@ namespace DreamsIT.MoySklad.IntegrationService
         private ISchedulerFactory factory;
         private IScheduler scheduler;
 
+        public IntegrationJobService()
+        {
+            if (scheduler!=null)
+            {
+                return;
+            }
+
+            factory = new StdSchedulerFactory();
+            scheduler = factory.GetScheduler();
+            scheduler.Start();
+        }
 
         public void StartJob(string login, string password, int refreshTimeInHours)
         {

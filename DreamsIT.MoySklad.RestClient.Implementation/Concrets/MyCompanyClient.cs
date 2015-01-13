@@ -13,7 +13,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
     {
         public MyCompanyClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<MyCompany>(login, password, host);
+            requestGenerator = new RequestGenerator<MyCompanyCollection>(login, password, host);
         }
         private RequestGenerator<MyCompany> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/MyCompany/list";
@@ -31,19 +31,29 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + namesInString;
             }
             paramsInString = !string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString;
-            return requestGenerator.getItemsFromAPI(paramsInString);
+            var requestResult= requestGenerator.getItemsFromAPI(paramsInString);
+            return getMyCompanies(requestResult);
         }
 
         public ResultOrError<List<MyCompany>> GetDeletedMyCompanies(string deleted)
         {
             string requestParams = "deleted=" + deleted;
-            return requestGenerator.getItemsFromAPI(requestParams);
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getMyCompanies(requestResult);
         }
 
         public ResultOrError<List<MyCompany>> GetNewMyCompanies(string updated)
         {
             string requestParams = "updated=" + updated;
-            return requestGenerator.getItemsFromAPI(requestParams);
+            var requestResult= requestGenerator.getItemsFromAPI(requestParams);
+            return getMyCompanies(requestResult);
+        }
+
+        public ResultOrError<List<MyCompany>> getMyCompanies(ResultOrError<MyCompanyCollection> myCompanyCollection)
+        {
+            return new ResultOrError<List<MyCompany>>() { 
+                Error = myCompanyCollection.Error, Success = myCompanyCollection.Success, Result = myCompanyCollection.Result.MyCompanies 
+            };
         }
     }
 }

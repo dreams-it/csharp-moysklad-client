@@ -23,7 +23,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
         public void Syncronization(string login, string password)
         {
-            IContragentClient _contractorCient = new ContragentClient(login, password);
+            ContragentClient _contractorCient = new ContragentClient(login, password);
 
             var maxDate = _factory.Companies.Max(r => DateTime.Parse(r.Updated));
 

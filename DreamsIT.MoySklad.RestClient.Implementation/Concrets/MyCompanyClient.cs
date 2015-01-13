@@ -44,7 +44,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public ResultOrError<List<MyCompany>> GetNewMyCompanies(string updated)
         {
-            string requestParams = "updated=" + updated;
+            string requestParams = "updated>" + updated;
             var requestResult= requestGenerator.getItemsFromAPI(requestParams);
             return getMyCompanies(requestResult);
         }

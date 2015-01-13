@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
@@ -13,59 +14,26 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     public class CustomerOrder : Order
     {
-
         /// <summary>
         /// Идентификатор записи о заказе покупателя
         /// </summary>
+        [XmlElement(ElementName = "uuid")]
         public Guid Uuid { get; set; }
         /// <summary>
         /// 
         /// </summary>
+        [XmlAttribute(AttributeName = "sourceStoreUuid")]
         public Guid SourceStoreUuid { get; set; }
-                
         /// <summary>
         /// 
         /// </summary>
-        public bool VatIncluded { get; set; }
-
-        /// <summary>
-        /// Дата создания
-        /// </summary>
-        public string Created { get; set; }
-
-        /// <summary>
-        /// Имя того, кто создал запись
-        /// </summary>
-        public string CreatedBy { get; set; }
-
-        /// <summary>
-        /// Идентификатор работника, который сделал запись
-        /// </summary>
-        public Guid EmployeeUuid { get; set; }
-
-        /// <summary>
-        /// Название заказа покупателя
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Дата последнего обновления информации о заказе покупателя (запись)
-        /// </summary>
-        public string Updated { get; set; }
-
-        /// <summary>
-        /// Имя того, кто последний обновлял информацию о заказе покупателя (запись)
-        /// </summary>
-        public string UpdatedBy { get; set; }
-                
-        /// <summary>
-        /// 
-        /// </summary>
+        [XmlElement(ElementName = "demandsUuid")]
         public List<Guid> DemandsUuid { get; set; }
                 
         /// <summary>
         /// 
         /// </summary>
+        [XmlArray(ElementName = "purchaseOrdersUuid")]
         public List<Guid> PurchaseOrdersUuid { get; set; }
     }
 }

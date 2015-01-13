@@ -333,7 +333,6 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     }
                 }
             }
-
         };
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Good, Guid> Goods
         {

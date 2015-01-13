@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IEmployeeClient.cs" />
     <Compile Include="Abstract\IGoodClient.cs" />
     <Compile Include="Abstract\IGoodFolderClient.cs" />
     <Compile Include="Abstract\IMyCompanyClient.cs" />

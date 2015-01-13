@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DreamsIT.MoySklad.RestClient.Models.Enums
+namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
-    public enum CompanyType
+    public interface IEmployeeClient
     {
-        URLI
+
     }
 }

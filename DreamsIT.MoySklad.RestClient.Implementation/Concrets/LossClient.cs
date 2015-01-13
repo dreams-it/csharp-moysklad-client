@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 {
-   public class LossClient : ILossClient
+    public class LossClient : ILossClient
     {
-         public LossClient (string login, string password)
+        public LossClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<Loss>(login, password, host);
+            requestGenerator = new RequestGenerator<LossCollection>(login, password, host);
         }
-        private RequestGenerator<Loss> requestGenerator = null;
+        private RequestGenerator<LossCollection> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Loss/list";
         public Models.ResultOrError<List<Models.Loss>> SearchByInventoryId(List<Guid> inentoryIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(inentoryIds, "inentoryId");
-            return requestGenerator.getItemsFromAPI(filters);
+            var requestResult= requestGenerator.getItemsFromAPI(filters);
+            return getLosses(requestResult);
         }
 
         public Models.ResultOrError<List<Models.Loss>> SearchByParameters(List<Guid> inentoryIds = null, List<Guid> ids = null, List<string> updateds = null,
@@ -42,7 +43,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             {
                 string updatedsInString = ConvertParamsInString<string>.ConvertList(updateds, "updated");
                 paramsInString = paramsInString + ";" + updatedsInString;
-            }   
+            }
             if (names != null)
             {
                 string namesInString = ConvertParamsInString<string>.ConvertList(names, "name");
@@ -79,7 +80,13 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            return getLosses(requestResult);
+        }
+
+        private ResultOrError<List<Loss>> getLosses(ResultOrError<LossCollection> requestResult)
+        {
+            return new ResultOrError<List<Loss>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.LossList };
         }
     }
 }

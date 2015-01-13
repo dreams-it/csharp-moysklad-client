@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 {
-    class EnterClient : IEnterClient
+    public class EnterClient : IEnterClient
     {
         public EnterClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<Enter>(login, password, host);
+            requestGenerator = new RequestGenerator<EnterCollection>(login, password, host);
         }
-        private RequestGenerator<Enter> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Enter/list";
+        private RequestGenerator<EnterCollection> requestGenerator = null;
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Enter";
 
         public ResultOrError<List<Enter>> SearchByInternalOrder(List<Guid> internalOrderId)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(internalOrderId, "internalOrderId");
-            return requestGenerator.getItemsFromAPI(filters);
+            var requestResult= requestGenerator.getItemsFromAPI(filters);
+            return getEnters(requestResult);
         }
 
         public ResultOrError<List<Enter>> SearchByParameters(List<Guid> internalOrderIds = null, List<Guid> ids = null,
@@ -80,7 +81,23 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            return getEnters(requestResult);
+        }
+
+        public ResultOrError<List<Enter>> SearchNewEnter(string updated)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResultOrError<List<Enter>> SearchDeletedEnter(string deleted)
+        {
+            throw new NotImplementedException();
+        }
+
+        private ResultOrError<List<Enter>> getEnters(ResultOrError<EnterCollection> requestResult)
+        {
+            return new ResultOrError<List<Enter>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Enters };
         }
     }
 }

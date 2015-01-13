@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         {
             requestGenerator = new RequestGenerator<MyCompanyCollection>(login, password, host);
         }
-        private RequestGenerator<MyCompany> requestGenerator = null;
+        private RequestGenerator<MyCompanyCollection> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/MyCompany/list";
         public Models.ResultOrError<List<Models.MyCompany>> GetMyCompanies(List<Guid> ids = null, List<string> names = null)
         {

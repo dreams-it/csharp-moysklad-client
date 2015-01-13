@@ -17,9 +17,9 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
     {
         public StockClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<StockTO>(login, password, host);
+            requestGenerator = new RequestGenerator<StockTOCollection>(login, password, host);
                     }
-        private RequestGenerator<StockTO> requestGenerator = null;
+        private RequestGenerator<StockTOCollection> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/stock/xml";
         public Models.ResultOrError<List<Models.StockTO>> StockBalance(Models.Enums.StockMode stockMode = StockMode.AllStock, string moment = "",
 Guid? goodUuid = null, string goodName = "", Guid? storeId = null, bool includeAboardOperations = false, bool showConsignments = false)
@@ -57,7 +57,8 @@ Guid? goodUuid = null, string goodName = "", Guid? storeId = null, bool includeA
                 paramsInString = paramsInString + ";" + showConsignments;
             }
 
-            return requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            return new ResultOrError<List<StockTO>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.StockTOList };
         }
     }
 }

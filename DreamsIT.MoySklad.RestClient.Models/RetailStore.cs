@@ -8,7 +8,6 @@ using DreamsIT.Data.BaseTypes;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
-using DreamsIT.MoySklad.RestClient.Models.Abstract;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {

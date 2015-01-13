@@ -162,6 +162,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             GoodList = new List<Good>();
         }
 
+        [XmlElement(ElementName = "good")]
         public List<Good> GoodList { get; set; }
     }
 }

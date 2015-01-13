@@ -21,7 +21,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         }
 
         private RequestGenerator<SupplyCollection> reqestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Supply/list";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Supply";
 
         public ResultOrError<List<Supply>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
@@ -120,7 +120,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             }
             #endregion params for methods
 
-            var requestResult = reqestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = reqestGenerator.getItemsFromAPI(!string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString);
             return getSupplyResult(requestResult);
             //ResultOrError<SupplyCollection> requestResult = reqestGenerator.getItemsFromAPI(paramsInString.Substring(1));
             //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };

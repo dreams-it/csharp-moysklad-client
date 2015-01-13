@@ -70,6 +70,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             LossList = new List<Loss>();
         }
 
+        [XmlElement(ElementName = "loss")]
         public List<Loss> LossList { get; set; }
     }
 }

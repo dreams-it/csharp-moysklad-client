@@ -31,19 +31,19 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlAttribute(AttributeName = "targetAgentUuid")]
-        public Guid TargetSourceUuid { get; set; }
+        [XmlAttribute(AttributeName = "targetStoreUuid")]
+        public Guid TargetStoreUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [XmlAttribute(AttributeName = "targetAgentUuid")]
+        [XmlAttribute(AttributeName = "applicable")]
         public bool Applicable { get; set; }
 
         /// <summary>
         /// Время оприходования
         /// </summary>
-        [XmlAttribute(AttributeName = "targetAgentUuid")]
+        [XmlAttribute(AttributeName = "moment")]
         public string Moment { get; set; }
 
         /// <summary>
@@ -75,6 +75,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             Enters = new List<Enter>();
         }
 
+        [XmlElement(ElementName = "enter")]
         public List<Enter> Enters { get; set; }
     }
 }

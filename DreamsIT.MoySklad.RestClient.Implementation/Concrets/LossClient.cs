@@ -16,7 +16,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             requestGenerator = new RequestGenerator<LossCollection>(login, password, host);
         }
         private RequestGenerator<LossCollection> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Loss/list";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Loss";
         public Models.ResultOrError<List<Models.Loss>> SearchByInventoryId(List<Guid> inentoryIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(inentoryIds, "inentoryId");
@@ -80,7 +80,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            var requestResult = requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = requestGenerator.getItemsFromAPI(!string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString);
             return getLosses(requestResult);
         }
 

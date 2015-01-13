@@ -60,7 +60,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return getGood(requestResult);
         }
         
-        public Models.ResultOrError<List<Models.Good>> SearchGoodsByParams(List<string> names, List<Guid> ids)
+        public Models.ResultOrError<List<Models.Good>> SearchGoodsByParams(List<string> names=null, List<Guid> ids=null)
         {
             string paramsInString = "";
             if (names != null)

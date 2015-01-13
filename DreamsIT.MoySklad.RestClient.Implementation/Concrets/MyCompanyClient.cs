@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 {
-    class MyCompanyClient : IMyCompanyClient
+    public class MyCompanyClient : IMyCompanyClient
     {
         public MyCompanyClient(string login, string password)
         {
             requestGenerator = new RequestGenerator<MyCompanyCollection>(login, password, host);
         }
         private RequestGenerator<MyCompanyCollection> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/MyCompany/list";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/MyCompany";
         public Models.ResultOrError<List<Models.MyCompany>> GetMyCompanies(List<Guid> ids = null, List<string> names = null)
         {
             string paramsInString = "";
@@ -49,7 +49,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return getMyCompanies(requestResult);
         }
 
-        public ResultOrError<List<MyCompany>> getMyCompanies(ResultOrError<MyCompanyCollection> myCompanyCollection)
+        private ResultOrError<List<MyCompany>> getMyCompanies(ResultOrError<MyCompanyCollection> myCompanyCollection)
         {
             return new ResultOrError<List<MyCompany>>() { 
                 Error = myCompanyCollection.Error, Success = myCompanyCollection.Success, Result = myCompanyCollection.Result.MyCompanies 

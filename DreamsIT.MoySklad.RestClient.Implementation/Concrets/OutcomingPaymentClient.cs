@@ -16,7 +16,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             requestGenerator = new RequestGenerator<PaymentOutCollection>(login, password, host);
         }
         private RequestGenerator<PaymentOutCollection> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/PaymentOut/list";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/PaymentOut";
 
         public Models.ResultOrError<List<Models.PaymentOut>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
@@ -124,7 +124,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = requestGenerator.getItemsFromAPI(!string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString);
             return getPaymentOuts(requestResult);
         }
 

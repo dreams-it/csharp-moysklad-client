@@ -86,6 +86,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             GoodFolders = new List<GoodFolder>();
         }
 
+        [XmlElement(ElementName = "goodFolder")]
         public List<GoodFolder> GoodFolders { get; set; }
     }
 }

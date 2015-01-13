@@ -81,7 +81,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = requestGenerator.getItemsFromAPI(!string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString);
             return getEnters(requestResult);
         }
 

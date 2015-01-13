@@ -132,6 +132,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             EmployeesList = new List<Employee>();
         }
 
+        [XmlElement(ElementName = "employee")]
         public List<Employee> EmployeesList { get; set; }
     }
 }

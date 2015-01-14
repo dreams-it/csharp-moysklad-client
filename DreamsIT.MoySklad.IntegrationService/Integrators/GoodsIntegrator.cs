@@ -25,7 +25,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         {
             GoodClient _goodsCient=new GoodClient(login, password);
 
-            var maxDate=_factory.GoodFolders.Max(r=>DateTime.Parse(r.Updated));
+            var maxDate=_factory.Goods.Max(r=>DateTime.Parse(r.Updated));
 
             var goodsForRemove = _goodsCient.SearchDeletedGoods(maxDate.ToMoySkladFormatDate()).Result.ToList();
 

@@ -17,7 +17,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             requestGenerator = new RequestGenerator<GoodCollection>(login, password, host);
         }
         private RequestGenerator<GoodCollection> requestGenerator = null;
-        private string host = "";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Good";
         public Models.ResultOrError<List<Models.Good>> SearchGoodsByName(List<string> names)
         {
             string paramsInString = "";

@@ -70,8 +70,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlElement(ElementName = "paymentsUuid")]
-        public List<Guid> PaymentsUuid { get; set; }
+        [XmlArray("paymentsUuid")]
+        [XmlArrayItem(ElementName = "financeInRef")]
+        public List<string> PaymentsUuid { get; set; }
 
         /// <summary>
         /// 
@@ -79,14 +80,22 @@ namespace DreamsIT.MoySklad.RestClient.Models
         [XmlElement(ElementName = "shipmentOut")]
         public List<ShipmentOut> ShipmentOut { get; set; }
 
-        [XmlArray(ElementName = "salesReturnsUuid")]
-        public List<Guid> SalesReturnUuid { get; set; }
+        [XmlElement(ElementName = "salesReturnsUuid")]
+        public List<string> SalesReturnUuid { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [XmlElement(ElementName = "extension")]
         public Extension Extension { get; set; }
 
+
+        public Demand()
+        {
+            InvoicesOutUuid = new List<Guid>();
+            PaymentsUuid = new List<string>();
+            ShipmentOut = new List<ShipmentOut>();
+            SalesReturnUuid = new List<string>();
+        }
     }
 
     [SerializableAttribute()]

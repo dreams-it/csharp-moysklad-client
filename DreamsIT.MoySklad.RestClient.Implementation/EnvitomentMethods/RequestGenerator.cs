@@ -22,7 +22,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.EnvitomentMethods
             _host = host;
         }
 
-
         private string _login = "";
         private string _password = "";
         private string _host = "";
@@ -33,7 +32,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.EnvitomentMethods
             string address = string.Format("{0}/list?filter={1}", _host, encodedParams);
 
             WebClient client = new WebClient();
-            //client.Credentials = new NetworkCredential(_login, _password);
 
             var authHeader = HeaderConverter.GetAuthHeaders(_login, _password);
             client.Headers.Add("Authorization: Basic " + authHeader);
@@ -51,12 +49,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.EnvitomentMethods
             }
             var ms = new MemoryStream(data);
 
-            //DataContractSerializer serializer = new DataContractSerializer(typeof(List<T>));
-            //var result = serializer.ReadObject(ms) as List<T>;
-
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             var result = xmlSerializer.Deserialize(ms) as T;
-
 
             return new ResultOrError<T>() { Error = error, Result = result, Success = result != null && string.IsNullOrWhiteSpace(error) };
         }

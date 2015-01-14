@@ -21,7 +21,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         /// <param name="includeAboardOperations"> - нужно ли подсчитывать остатки по не проведенных документах</param>
         /// <param name="showConsignments"> - группировать результаты по сериям</param>
         /// <returns>Возвращает остатки на складе, полученные из API за указанными параметрами</returns>
-       ResultOrError<List<StockTO>> StockBalance(StockMode stockMode = StockMode.AllStock, string moment = "",
+       ResultOrError<List<StockTO>> StockBalance(StockMode stockMode = StockMode.ALL_STOCK, string moment = "",
             Guid? goodUuid = null, string goodName = "", Guid? storeId = null, 
             bool includeAboardOperations = false, bool showConsignments = false);
     }

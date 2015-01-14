@@ -23,14 +23,12 @@ namespace DreamsIT.MoySklad.IntegrationService.EnviromentServices
         public static string ToMoySkladFormatDate(this double dateTime)
         {
             var dateInDtFormat = dateTime.FromUnixTime();
-            //2011 05 01 01 0000
-            //1 мая 2011
-            return dateInDtFormat.Year.ToString() + dateInDtFormat.Month.ToString() + dateInDtFormat.Day.ToString() + dateInDtFormat.Hour.ToString() + dateInDtFormat.Minute.ToString() + dateInDtFormat.Second.ToString();// "0000";
+            return dateInDtFormat.ToString("yyyyMMddHHmmss");
         }
 
         public static string ToMoySkladFormatDate(this DateTime dateTime)
         {
-            return dateTime.Year.ToString() + dateTime.Month.ToString() + dateTime.Day.ToString() + dateTime.Hour.ToString() + dateTime.Minute.ToString() + dateTime.Second.ToString();//"0000";
+            return dateTime.ToString("yyyyMMddHHmmss");
         }
     }
 }

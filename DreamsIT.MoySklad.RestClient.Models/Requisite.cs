@@ -59,6 +59,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public string Ogrnip { get; set; }
 
         [XmlAttribute(AttributeName = "nomerSvidetelstva")]
-        public string noverSvidetelstva { get; set; }
+        public string NoverSvidetelstva { get; set; }
     }
 }

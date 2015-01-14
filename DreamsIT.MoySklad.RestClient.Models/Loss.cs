@@ -56,7 +56,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlArray(ElementName = "lossPosition")]
+        [XmlElement(ElementName = "lossPosition")]
         public List<LossPosition> LossPositions { get; set; }
     }
 

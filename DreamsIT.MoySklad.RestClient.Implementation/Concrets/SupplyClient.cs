@@ -58,7 +58,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         }
 
         public ResultOrError<List<Supply>> SearchByParameters(List<Guid> customerOrderIds = null, List<string> incomingDates = null, List<long> incomingNumbers = null,
-            List<Guid> uuids = null, List<string> updated = null, List<string> names = null, List<string> created = null, List<string> createdBy = null, 
+            List<Guid> uuids = null, List<DateTime> updated = null, List<string> names = null, List<string> created = null, List<string> createdBy = null, 
             List<string> years = null, List<string> months = null, List<string> days = null)
         {
             string paramsInString = "";
@@ -85,7 +85,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             }
             if (updated!=null)
             {
-                string updatedInString = ConvertParamsInString<string>.ConvertList(updated, "updated");
+                string updatedInString = ConvertParamsInString<DateTime>.ConvertList(updated, "updated");
                 paramsInString = paramsInString + ";" + updatedInString;
             }
             if (names!=null)

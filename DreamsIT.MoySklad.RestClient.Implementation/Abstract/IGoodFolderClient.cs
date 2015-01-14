@@ -18,21 +18,21 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         /// </summary>
         /// <param name="updated"></param>
         /// <returns></returns>
-        ResultOrError<List<GoodFolder>> SearchNewGoodFolders(string updated);
+        ResultOrError<List<GoodFolder>> SearchNewGoodFolders( DateTime updated);
 
         /// <summary>
         /// Поиск категорий продуктов, дата удаления которых больше указанной
         /// </summary>
         /// <param name="updated"></param>
         /// <returns></returns>
-        ResultOrError<List<GoodFolder>> SearchDeletedGoodFolders(string deleted);
+        ResultOrError<List<GoodFolder>> SearchDeletedGoodFolders( DateTime deleted);
 
         /// <summary>
         /// Поиск категорий продуктов, дата обновления которых меньше указанной
         /// </summary>
         /// <param name="updated"></param>
         /// <returns></returns>
-        ResultOrError<List<GoodFolder>> SearchOldGoodFolders(string updated);
+        ResultOrError<List<GoodFolder>> SearchOldGoodFolders( DateTime updated);
 
         ResultOrError<List<GoodFolder>> SearchGoodFoldersByParams(List<string> names = null, List<Guid> ids = null);
     }

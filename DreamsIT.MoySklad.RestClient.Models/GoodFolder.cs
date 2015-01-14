@@ -38,12 +38,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         ///Дата последнего обновления категории
         /// </summary>
         [XmlAttribute(AttributeName = "updated")]
-        public string Updated { get; set; }
+        public  DateTime updated { get; set; }
         /// <summary>
         /// Имя того, кто последний обновил запись
         /// </summary>
         [XmlAttribute(AttributeName = "updatedBy")]
-        public string UpdatedBy { get; set; }
+        public  DateTime updatedBy { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -9,9 +9,9 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
 {
     public interface IEnterClient
     {
-        ResultOrError<List<Enter>> SearchNewEnter(string updated);
+        ResultOrError<List<Enter>> SearchNewEnter(DateTime updated);
 
-        ResultOrError<List<Enter>> SearchDeletedEnter(string deleted);
+        ResultOrError<List<Enter>> SearchDeletedEnter(DateTime deleted);
         /// <summary>
         /// Метод получения документов из API с помощью идентификатора инвентаризации
         /// </summary>

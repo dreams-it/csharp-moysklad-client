@@ -21,8 +21,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
             List<Guid> customerOrderIds = null, List<string> created = null, List<string> createdBy = null, List<string> years = null, List<string> months = null,
             List<string> days = null);
 
-        ResultOrError<List<Demand>> SearchDeletedDemands(string deleted);
+        ResultOrError<List<Demand>> SearchDeletedDemands(DateTime deleted);
 
-        ResultOrError<List<Demand>> SearchNewDemands(string updated);
+        ResultOrError<List<Demand>> SearchNewDemands(DateTime updated);
     }
 }

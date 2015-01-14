@@ -22,10 +22,10 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         /// <returns></returns>
         ResultOrError<List<Company>> GetContragent(List<Guid> ids = null, List<string> names = null);
 
-        ResultOrError<List<Company>> GetNewContragent(string updated);
+        ResultOrError<List<Company>> GetNewContragent(DateTime updated);
 
-        ResultOrError<List<Company>> GetDeletedContragent(string deleted);
+        ResultOrError<List<Company>> GetDeletedContragent(DateTime deleted);
 
-        ResultOrError<List<Company>> GetOldContragent(string updated);
+        ResultOrError<List<Company>> GetOldContragent(DateTime updated);
     }
 }

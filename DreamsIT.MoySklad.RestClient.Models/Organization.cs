@@ -60,13 +60,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Дата последнего обновления
         /// </summary>
         [XmlAttribute(AttributeName = "updated")]
-        public string Updated { get; set; }
+        public DateTime Updated { get; set; }
 
         /// <summary>
         /// Имя того, кто делал последнее обновление
         /// </summary>
         [XmlAttribute(AttributeName = "updatedBy")]
-        public string UpdatedBy { get; set; }
+        public  DateTime updatedBy { get; set; }
         /// <summary>
         /// 
         /// </summary>

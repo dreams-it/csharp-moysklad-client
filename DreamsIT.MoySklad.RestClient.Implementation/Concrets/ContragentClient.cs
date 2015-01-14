@@ -36,19 +36,25 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         }
 
 
-        public ResultOrError<List<Company>> GetNewContragent(string updated)
+        public ResultOrError<List<Company>> GetNewContragent(DateTime updated)
         {
-            throw new NotImplementedException();
+            string requestParams = "updated>" + updated;
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getCompanies(requestResult);
         }
 
-        public ResultOrError<List<Company>> GetDeletedContragent(string deleted)
+        public ResultOrError<List<Company>> GetDeletedContragent(DateTime deleted)
         {
-            throw new NotImplementedException();
+            string requestParams = "deleted=" + deleted;
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getCompanies(requestResult);
         }
 
-        public ResultOrError<List<Company>> GetOldContragent(string updated)
+        public ResultOrError<List<Company>> GetOldContragent(DateTime updated)
         {
-            throw new NotImplementedException();
+            string requestParams = "updated<" + updated;
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getCompanies(requestResult);
         }
 
 

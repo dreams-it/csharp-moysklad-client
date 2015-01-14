@@ -46,14 +46,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return getGood(requestResult);
         }
 
-        public Models.ResultOrError<List<Models.Good>> SearchNewGoods(string updated)
+        public Models.ResultOrError<List<Models.Good>> SearchNewGoods( DateTime updated)
         {
             string requestParams = "updated>" + updated;
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGood(requestResult);
         }
 
-        public Models.ResultOrError<List<Models.Good>> SearchOldGoods(string updated)
+        public Models.ResultOrError<List<Models.Good>> SearchOldGoods( DateTime updated)
         {
             string requestParams = "updated<" + updated;
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
@@ -78,14 +78,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return getGood(requestResult);
         }
       
-        public Models.ResultOrError<List<Models.Good>> SearchDeletedGoods(string deleted)
+        public Models.ResultOrError<List<Models.Good>> SearchDeletedGoods( DateTime deleted)
         {
             string requestParams = "deleted=" + deleted;
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGood(requestResult);
         }
        
-        public ResultOrError<List<Good>> getGood(ResultOrError<GoodCollection> GoodCollection)
+        private ResultOrError<List<Good>> getGood(ResultOrError<GoodCollection> GoodCollection)
         {
             return new ResultOrError<List<Good>>()
             {

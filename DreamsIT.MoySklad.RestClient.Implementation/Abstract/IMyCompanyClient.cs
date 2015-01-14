@@ -14,8 +14,8 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
     {
         ResultOrError<List<MyCompany>> GetMyCompanies(List<Guid> ids = null, List<string> names = null);
 
-        ResultOrError<List<MyCompany>> GetDeletedMyCompanies(string deleted);
+        ResultOrError<List<MyCompany>> GetDeletedMyCompanies( DateTime deleted);
 
-        ResultOrError<List<MyCompany>> GetNewMyCompanies(string updated);
+        ResultOrError<List<MyCompany>> GetNewMyCompanies( DateTime updated);
     }
 }

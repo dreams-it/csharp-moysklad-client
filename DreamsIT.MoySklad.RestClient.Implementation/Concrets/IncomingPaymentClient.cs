@@ -86,7 +86,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             }
             if (updateds != null)
             {
-                string updatedsInString = ConvertParamsInString<string>.ConvertList(updateds, "updated");
+                 string updatedsInString = ConvertParamsInString<string>.ConvertList(updateds, "updated");
                 paramsInString = paramsInString + ";" + updatedsInString;
             }
             if (names != null)

@@ -21,7 +21,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         public ResultOrError<List<Enter>> SearchByInternalOrder(List<Guid> internalOrderId)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(internalOrderId, "internalOrderId");
-            var requestResult= requestGenerator.getItemsFromAPI(filters);
+            var requestResult = requestGenerator.getItemsFromAPI(filters);
             return getEnters(requestResult);
         }
 
@@ -81,18 +81,22 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
             return getEnters(requestResult);
         }
 
-        public ResultOrError<List<Enter>> SearchNewEnter(string updated)
+        public ResultOrError<List<Enter>> SearchNewEnter(DateTime updated)
         {
-            throw new NotImplementedException();
+            string requestParams = "updated>" + updated;
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getEnters(requestResult);
         }
 
-        public ResultOrError<List<Enter>> SearchDeletedEnter(string deleted)
+        public ResultOrError<List<Enter>> SearchDeletedEnter(DateTime deleted)
         {
-            throw new NotImplementedException();
+            string requestParams = "deleted=" + deleted;
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getEnters(requestResult);
         }
 
         private ResultOrError<List<Enter>> getEnters(ResultOrError<EnterCollection> requestResult)

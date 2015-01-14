@@ -25,17 +25,17 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             throw new NotImplementedException();
         }
 
-        public Models.ResultOrError<List<Models.GoodFolder>> SearchNewGoodFolders(string updated)
+        public Models.ResultOrError<List<Models.GoodFolder>> SearchNewGoodFolders( DateTime updated)
         {
             throw new NotImplementedException();
         }
 
-        public Models.ResultOrError<List<Models.GoodFolder>> SearchDeletedGoodFolders(string deleted)
+        public Models.ResultOrError<List<Models.GoodFolder>> SearchDeletedGoodFolders( DateTime deleted)
         {
             throw new NotImplementedException();
         }
 
-        public Models.ResultOrError<List<Models.GoodFolder>> SearchOldGoodFolders(string updated)
+        public Models.ResultOrError<List<Models.GoodFolder>> SearchOldGoodFolders( DateTime updated)
         {
             throw new NotImplementedException();
         }

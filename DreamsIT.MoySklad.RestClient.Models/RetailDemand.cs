@@ -79,12 +79,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Дата последнего обновления записи
         /// </summary>
-        public string Updated { get; set; }
+        public  DateTime updated { get; set; }
 
         /// <summary>
         /// Имя того, кто последний обновлял запись
         /// </summary>
-        public string UpdatedBy { get; set; }
+        public  DateTime updatedBy { get; set; }
 
         /// <summary>
         /// Идентификатор пользователя создавшего запись

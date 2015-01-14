@@ -18,21 +18,21 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
         /// </summary>
         /// <param name="updated"></param>
         /// <returns></returns>
-        ResultOrError<List<Warehouse>> SearchNewWarehouses(string updated);
+        ResultOrError<List<Warehouse>> SearchNewWarehouses( DateTime updated);
 
         /// <summary>
         /// Поиск складов, дата удаления которых больше указанной
         /// </summary>
-        /// <param name="updated"></param>
+        /// <param name="deleted"></param>
         /// <returns></returns>
-        ResultOrError<List<Warehouse>> SearchDeletedWarehouses(string updated);
+        ResultOrError<List<Warehouse>> SearchDeletedWarehouses(DateTime deleted);
 
         /// <summary>
         /// Поиск складов, дата обновления которых меньше указанной
         /// </summary>
         /// <param name="updated"></param>
         /// <returns></returns>
-        ResultOrError<List<Warehouse>> SearchOldWarehouses(string updated);
+        ResultOrError<List<Warehouse>> SearchOldWarehouses( DateTime updated);
 
         ResultOrError<List<Warehouse>> SearchWarehousesByParams(List<string> names = null, List<Guid> ids = null);
     }

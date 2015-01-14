@@ -35,14 +35,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             return getMyCompanies(requestResult);
         }
 
-        public ResultOrError<List<MyCompany>> GetDeletedMyCompanies(string deleted)
+        public ResultOrError<List<MyCompany>> GetDeletedMyCompanies( DateTime deleted)
         {
             string requestParams = "deleted=" + deleted;
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getMyCompanies(requestResult);
         }
 
-        public ResultOrError<List<MyCompany>> GetNewMyCompanies(string updated)
+        public ResultOrError<List<MyCompany>> GetNewMyCompanies( DateTime updated)
         {
             string requestParams = "updated>" + updated;
             var requestResult= requestGenerator.getItemsFromAPI(requestParams);

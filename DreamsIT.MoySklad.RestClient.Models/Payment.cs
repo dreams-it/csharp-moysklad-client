@@ -80,12 +80,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlAttribute(AttributeName = "updated")]
-        public String Updated { get; set; }
+        public  DateTime updated { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [XmlAttribute(AttributeName = "updatedBy")]
-        public String UpdatedBy { get; set; }
+        public  DateTime updatedBy { get; set; }
         /// <summary>
         /// 
         /// </summary>

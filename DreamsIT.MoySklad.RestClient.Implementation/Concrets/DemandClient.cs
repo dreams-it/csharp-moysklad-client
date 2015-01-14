@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 {
-    public class DemandClient:IDemandClient
+    public class DemandClient : IDemandClient
     {
 
         public DemandClient(string login, string password)
@@ -25,7 +25,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         }
 
         public Models.ResultOrError<List<Models.Demand>> SearchByParameters(List<Guid> uuids = null, List<string> updated = null,
-            List<string> names = null, List<Guid> customerOrderIds = null, List<string> created = null, List<string> createdBy = null, 
+            List<string> names = null, List<Guid> customerOrderIds = null, List<string> created = null, List<string> createdBy = null,
             List<string> years = null, List<string> months = null, List<string> days = null)
         {
             string paramsInString = "";
@@ -77,16 +77,18 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             var requestResult = !string.IsNullOrWhiteSpace(paramsInString) ? requestGenerator.getItemsFromAPI(paramsInString.Substring(1)) : requestGenerator.getItemsFromAPI(paramsInString);
             return getDemands(requestResult);
         }
-
-
-        public ResultOrError<List<Demand>> SearchDeletedDemands(string deleted)
+        public ResultOrError<List<Demand>> SearchDeletedDemands(DateTime deleted)
         {
-            throw new NotImplementedException();
+            string requestParams = "deleted=" + deleted;
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getDemands(requestResult);
         }
 
-        public ResultOrError<List<Demand>> SearchNewDemands(string updated)
+        public ResultOrError<List<Demand>> SearchNewDemands(DateTime updated)
         {
-            throw new NotImplementedException();
+            string requestParams = "updated>" + updated;
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getDemands(requestResult);
         }
 
         private ResultOrError<List<Demand>> getDemands(ResultOrError<DemandCollection> demandCollection)

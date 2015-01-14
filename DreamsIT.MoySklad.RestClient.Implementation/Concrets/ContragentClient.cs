@@ -38,21 +38,21 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public ResultOrError<List<Company>> GetNewContragent(DateTime updated)
         {
-            string requestParams = "updated>" + updated;
+            string requestParams = "updated>" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getCompanies(requestResult);
         }
 
         public ResultOrError<List<Company>> GetDeletedContragent(DateTime deleted)
         {
-            string requestParams = "deleted=" + deleted;
+            string requestParams = "deleted=" + deleted.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getCompanies(requestResult);
         }
 
         public ResultOrError<List<Company>> GetOldContragent(DateTime updated)
         {
-            string requestParams = "updated<" + updated;
+            string requestParams = "updated<" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getCompanies(requestResult);
         }

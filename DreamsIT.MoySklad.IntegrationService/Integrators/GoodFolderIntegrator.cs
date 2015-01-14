@@ -1,5 +1,4 @@
 ﻿using DreamsIT.MoySklad.DataAccess.Abstracts;
-using DreamsIT.MoySklad.IntegrationService.EnviromentServices;
 using DreamsIT.MoySklad.RestClient.Implementation.Abstract;
 using DreamsIT.MoySklad.RestClient.Implementation.Concrets;
 using Ninject;

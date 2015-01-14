@@ -87,14 +87,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public ResultOrError<List<Enter>> SearchNewEnter(DateTime updated)
         {
-            string requestParams = "updated>" + updated;
+            string requestParams = "updated>" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getEnters(requestResult);
         }
 
         public ResultOrError<List<Enter>> SearchDeletedEnter(DateTime deleted)
         {
-            string requestParams = "deleted=" + deleted;
+            string requestParams = "deleted=" + deleted.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getEnters(requestResult);
         }

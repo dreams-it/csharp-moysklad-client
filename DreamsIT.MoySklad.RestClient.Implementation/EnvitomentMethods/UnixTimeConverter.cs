@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DreamsIT.MoySklad.IntegrationService.EnviromentServices
+namespace DreamsIT.MoySklad.RestClient.Implementation.EnvitomentMethods
 {
     public static class UnixTimeConverter
     {

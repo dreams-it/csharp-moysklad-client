@@ -128,7 +128,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnviromentServices\UnixTimeConverter.cs" />
     <Compile Include="Integration.cs" />
     <Compile Include="IntegrationJob.cs" />
     <Compile Include="IntegrationJobService.cs" />
@@ -184,6 +183,9 @@
       <Project>{f13781ac-4b9c-451c-ae3f-2b247338703e}</Project>
       <Name>DreamsIT.MoySklad.RestClient.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EnviromentServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -9,16 +9,15 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 {
-    public class WarehousesClient:IWarehousesClient
+    public class EmployeeClient : IEmployeeClient
     {
-        public WarehousesClient(string login, string password)
+        public EmployeeClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<WarehouseColllection>(login, password, host);
+            requestGenerator = new RequestGenerator<EmployeeCollection>(login, password, host);
         }
-        private RequestGenerator<WarehouseColllection> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Warehouse";
-
-        public Models.ResultOrError<List<Models.Warehouse>> GetWarehousesByName(List<string> names)
+        private RequestGenerator<EmployeeCollection> requestGenerator = null;
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Employee";
+        public Models.ResultOrError<List<Models.Employee>> SearchEmployeesByName(List<string> names)
         {
             string paramsInString = "";
             if (names != null)
@@ -29,10 +28,10 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
             paramsInString = !string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString;
             var requestResult = requestGenerator.getItemsFromAPI(paramsInString);
-            return getWarehouse(requestResult);
+            return getEmployee(requestResult);
         }
 
-        public Models.ResultOrError<List<Models.Warehouse>> SearchWarehousesById(List<Guid> ids)
+        public Models.ResultOrError<List<Models.Employee>> SearchEmployeeById(List<Guid> ids)
         {
             string paramsInString = "";
             if (ids != null)
@@ -43,24 +42,31 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
             paramsInString = !string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString;
             var requestResult = requestGenerator.getItemsFromAPI(paramsInString);
-            return getWarehouse(requestResult);
+            return getEmployee(requestResult);
         }
 
-        public Models.ResultOrError<List<Models.Warehouse>> SearchNewWarehouses( DateTime updated)
+        public Models.ResultOrError<List<Models.Employee>> SearchNewEmployees(DateTime updated)
         {
             string requestParams = "updated>" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
-            return getWarehouse(requestResult);
+            return getEmployee(requestResult);
         }
 
-        public Models.ResultOrError<List<Models.Warehouse>> SearchOldWarehouses( DateTime updated)
+        public Models.ResultOrError<List<Models.Employee>> SearchDeletedEmployees(DateTime deleted)
+        {
+            string requestParams = "deleted=" + deleted.ToMoySkladFormatDate();
+            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
+            return getEmployee(requestResult);
+        }
+
+        public Models.ResultOrError<List<Models.Employee>> SearchOldEmployees(DateTime updated)
         {
             string requestParams = "updated<" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
-            return getWarehouse(requestResult);
+            return getEmployee(requestResult);
         }
 
-        public Models.ResultOrError<List<Models.Warehouse>> SearchWarehousesByParams(List<string> names = null, List<Guid> ids = null)
+        public Models.ResultOrError<List<Models.Employee>> SearchEmployeesByParams(List<string> names = null, List<Guid> ids = null)
         {
             string paramsInString = "";
             if (ids != null)
@@ -75,22 +81,15 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             }
             paramsInString = !string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString;
             var requestResult = requestGenerator.getItemsFromAPI(paramsInString);
-            return getWarehouse(requestResult);
+            return getEmployee(requestResult);
         }
-
-        public Models.ResultOrError<List<Models.Warehouse>> SearchDeletedWarehouses( DateTime deleted)
+        private ResultOrError<List<Employee>> getEmployee(ResultOrError<EmployeeCollection> EmployeeCollection)
         {
-            string requestParams = "deleted=" + deleted.ToMoySkladFormatDate();
-            var requestResult = requestGenerator.getItemsFromAPI(requestParams);
-            return getWarehouse(requestResult);
-        }
-        private ResultOrError<List<Warehouse>> getWarehouse(ResultOrError<WarehouseColllection> WarehouseColllection)
-        {
-            return new ResultOrError<List<Warehouse>>()
+            return new ResultOrError<List<Employee>>()
             {
-                Error = WarehouseColllection.Error,
-                Success = WarehouseColllection.Success,
-                Result = WarehouseColllection.Result.WarehouseList
+                Error = EmployeeCollection.Error,
+                Success = EmployeeCollection.Success,
+                Result = EmployeeCollection.Result.EmployeesList
             };
         }
     }

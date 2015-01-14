@@ -48,14 +48,14 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public Models.ResultOrError<List<Models.Good>> SearchNewGoods( DateTime updated)
         {
-            string requestParams = "updated>" + updated;
+            string requestParams = "updated>" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGood(requestResult);
         }
 
         public Models.ResultOrError<List<Models.Good>> SearchOldGoods( DateTime updated)
         {
-            string requestParams = "updated<" + updated;
+            string requestParams = "updated<" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGood(requestResult);
         }
@@ -80,7 +80,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
       
         public Models.ResultOrError<List<Models.Good>> SearchDeletedGoods( DateTime deleted)
         {
-            string requestParams = "deleted=" + deleted;
+            string requestParams = "deleted=" + deleted.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGood(requestResult);
         }

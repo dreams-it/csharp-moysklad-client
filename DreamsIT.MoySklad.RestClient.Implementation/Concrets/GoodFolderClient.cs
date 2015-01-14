@@ -47,21 +47,21 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
         public Models.ResultOrError<List<Models.GoodFolder>> SearchNewGoodFolders( DateTime updated)
         {
-            string requestParams = "updated>" + updated;
+            string requestParams = "updated>" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGoodFolders(requestResult);
         }
 
         public Models.ResultOrError<List<Models.GoodFolder>> SearchDeletedGoodFolders( DateTime deleted)
         {
-            string requestParams = "deleted=" + deleted;
+            string requestParams = "deleted=" + deleted.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGoodFolders(requestResult);
         }
 
         public Models.ResultOrError<List<Models.GoodFolder>> SearchOldGoodFolders( DateTime updated)
         {
-            string requestParams = "updated<" + updated;
+            string requestParams = "updated<" + updated.ToMoySkladFormatDate();
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getGoodFolders(requestResult);
         }

@@ -89,6 +89,7 @@
     <Compile Include="Abstract\IWarehousesClient.cs" />
     <Compile Include="Concrets\ContragentClient.cs" />
     <Compile Include="Concrets\DemandClient.cs" />
+    <Compile Include="Concrets\EmployeeClient.cs" />
     <Compile Include="Concrets\EnterClient.cs" />
     <Compile Include="Concrets\GoodClient.cs" />
     <Compile Include="Concrets\GoodFolderClient.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="EnvitomentMethods\ConvertParamsInString.cs" />
     <Compile Include="EnvitomentMethods\HeaderConverter.cs" />
     <Compile Include="EnvitomentMethods\RequestGenerator.cs" />
+    <Compile Include="EnvitomentMethods\UnixTimeConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

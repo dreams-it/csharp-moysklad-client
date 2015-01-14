@@ -15,6 +15,11 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlRootAttribute(Namespace = "", ElementName = "good", IsNullable = false)]
     public class Good : IKeyItem<Guid>
     {
+        public Good()
+        {
+            SalePrices = new List<Price>();
+        }
+
         /// <summary>
         /// Модель продукта
         /// </summary>
@@ -129,7 +134,8 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlArray(ElementName = "salePrice")]
+        [XmlArray("salePrices")]
+        [XmlArrayItem("price")]
         public List<Price> SalePrices { get; set; }
         /// <summary>
         /// 
@@ -155,6 +161,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
     //    public List<Price> SalePrices { get; set; }
     //}
 
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class GoodCollection
     {
         public GoodCollection()

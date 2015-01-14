@@ -61,7 +61,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Список значений оприходования
         /// </summary>
-        [XmlArray(ElementName = "enterPosition")]
+        [XmlElement(ElementName = "enterPosition")]
         public List<EnterPosition> EnterPositions { get; set; }
     }
 

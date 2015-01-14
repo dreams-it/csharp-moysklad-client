@@ -50,10 +50,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
             var result = xmlSerializer.Deserialize(ms) as RetailStores;
 
-            //DataContractSerializer serializer = new DataContractSerializer(typeof(RetailStores));
-
-            //var result = serializer.ReadObject(ms) as RetailStores;
-
             return new ResultOrError<List<RetailStore>>() { 
                 Result = result.Items, Error = error, Success = result != null && string.IsNullOrWhiteSpace(error) };
         }

@@ -140,6 +140,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="RetailStore.cs" />
+    <Compile Include="Shipment.cs" />
     <Compile Include="ShipmentIn.cs">
       <SubType>Code</SubType>
     </Compile>

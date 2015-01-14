@@ -29,9 +29,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             var requestResult= reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
 
             return getSupplyResult(requestResult);
-
-            //var requestResult= reqestGenerator.getItemsFromAPI(customerOrderIdsInString);
-            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingDate(List<string> incomingDates)
@@ -41,9 +38,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             var requestResult = reqestGenerator.getItemsFromAPI(dates);
 
             return getSupplyResult(requestResult);
-
-            //var requestResult= reqestGenerator.getItemsFromAPI(dates);
-            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
 
         public ResultOrError<List<Supply>> SearchByIncomingNumber(List<long> incomingNumbers)
@@ -53,8 +47,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             var requestResult = reqestGenerator.getItemsFromAPI(incomingNumbersInString);
 
             return getSupplyResult(requestResult);
-            //var requestResult = reqestGenerator.getItemsFromAPI(incomingNumbersInString);
-            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
 
         public ResultOrError<List<Supply>> SearchByParameters(List<Guid> customerOrderIds = null, List<string> incomingDates = null, List<long> incomingNumbers = null,
@@ -122,8 +114,6 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 
             var requestResult = reqestGenerator.getItemsFromAPI(!string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString);
             return getSupplyResult(requestResult);
-            //ResultOrError<SupplyCollection> requestResult = reqestGenerator.getItemsFromAPI(paramsInString.Substring(1));
-            //return new ResultOrError<List<Supply>>() { Error = requestResult.Error, Success = requestResult.Success, Result = requestResult.Result.Items };
         }
 
         private ResultOrError<List<Supply>> getSupplyResult(ResultOrError<SupplyCollection> requestResult)

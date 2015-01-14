@@ -9,32 +9,32 @@ namespace DreamsIT.MoySklad.RestClient.Models.Enums
     public enum StockMode
     {
         /// <summary>
-        /// ALL_STOCK
+        /// все товары
         /// </summary>
-        AllStock,
+        ALL_STOCK,
         /// <summary>
-        /// POSITIVE_ONLY
+        /// только положительные остатки
         /// </summary>
-        PositiveOnly,
+        POSITIVE_ONLY,
         /// <summary>
-        /// POSITIVE_INCLUDING_RESERVE_ONLY
+        /// только положительные остатки, с учетом резерва
         /// </summary>
-        PositiveOnlyIncludingReserveOnly,
+        POSITIVE_INCLUDING_RESERVE_ONLY,
         /// <summary>
-        /// NEGATIVE_ONLY
+        /// только отрицательные значения
         /// </summary>
-        NegativeOnly,
+        NEGATIVE_ONLY,
         /// <summary>
-        /// NON_EMPTY
+        /// отрицательные и положительные значения
         /// </summary>
-        NonEmpty,
+        NON_EMPTY,
         /// <summary>
-        /// UNDER_MINIMUM_BALANCE_ONLY
+        /// ниже неснижаемого остатка
         /// </summary>
-        UnderMinimymBalanceOnly,
+        UNDER_MINIMUM_BALANCE_ONLY,
         /// <summary>
-        /// USE_RESERVES
+        /// с учетом резерва
         /// </summary>
-        UseReserves
+        USE_RESERVES
     }
 }

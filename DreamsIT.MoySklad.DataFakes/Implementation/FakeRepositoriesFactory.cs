@@ -363,7 +363,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Phone="8-911-702-23-91", 
                 ReadMode=ReadMode.ALL, 
                 Uid="stas@ооо нарджилия",
-                Updated="2014-09-26T15:05:39.138+04:00", 
+                Updated=DateTime.Parse("2014-09-26T15:05:39.138+04:00"),
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("0c7f4b7e-456d-11e4-90a2-8eca0022bfab")
             },
@@ -383,7 +383,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Phone="", 
                 ReadMode=ReadMode.ALL, 
                 Uid="loft-spb@ооо нарджилия",
-                Updated="2014-12-09T14:11:26.405+03:00", 
+                Updated=DateTime.Parse("2014-12-09T14:11:26.405+03:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("1f5ac880-7f94-11e4-90a2-8ecb00259772")
             },
@@ -403,7 +403,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Phone="8-981-839-34-88", 
                 ReadMode=ReadMode.ALL, 
                 Uid="klad.prod.@ооо нарджилия",
-                Updated="2014-09-19T15:39:15.628+04:00", 
+                Updated=DateTime.Parse("2014-09-19T15:39:15.628+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("be01fb87-1326-11e4-c801-002590a28eca")
             }
@@ -461,7 +461,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Updated=DateTime.Parse("2010-09-27T02:30:22.529+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"),
-                BankAccount=new BankAccount(){AccountNumber="", BankLocation="", BankName="", Bic="", ChangeMode=RestClient.Models.Enums.ChangeMode.ALL, CorrectspondentAccount="", IsDefault=true, ReadMode=RestClient.Models.Enums.ReadMode.ALL, Updated="2014-05-28T00:19:29.207+04:00", UpdatedBy="admin@ооо нарджилия"}
+                BankAccount=new BankAccount(){AccountNumber="", BankLocation="", BankName="", Bic="", ChangeMode=RestClient.Models.Enums.ChangeMode.ALL, CorrectspondentAccount="", IsDefault=true, ReadMode=RestClient.Models.Enums.ReadMode.ALL, Updated=DateTime.Parse("2014-05-28T00:19:29.207+04:00"), UpdatedBy="admin@ооо нарджилия"}
             }
         };
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.MyCompany, Guid> MyCompanies

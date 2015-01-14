@@ -16,18 +16,18 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "",ElementName="retailStore", IsNullable = false)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "retailStore", IsNullable = false)]
     public class RetailStore : IKeyItem<Guid>
     {
         [Key]
         [IgnoreDataMember]
         [XmlIgnore]
         public Guid Id { get; set; }
-        
+
         /// <summary>
         /// Активная ли точка продажа
         /// </summary>
-        [XmlAttributeAttribute(AttributeName="active")]
+        [XmlAttributeAttribute(AttributeName = "active")]
         public bool Active { get; set; }
 
         /// <summary>
@@ -64,13 +64,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Дата последнего обновления
         /// </summary>
         [XmlAttributeAttribute(AttributeName = "updated")]
-        public  DateTime Updated { get; set; }
+        public DateTime Updated { get; set; }
 
         /// <summary>
         /// Имя того, кто последний раз делал обновление
         /// </summary>
         [XmlAttributeAttribute(AttributeName = "updatedBy")]
-        public  string UpdatedBy { get; set; }
+        public string UpdatedBy { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         {
             Items = new List<RetailStore>();
         }
-        [XmlElement(ElementName="retailStore")]
+        [XmlElement(ElementName = "retailStore")]
         public List<RetailStore> Items { get; set; }
     }
 }

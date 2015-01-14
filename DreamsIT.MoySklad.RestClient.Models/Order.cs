@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace DreamsIT.MoySklad.RestClient.Models
 {
 
-    public class Order:IKeyItem<Guid>
+    public class Order : IKeyItem<Guid>
     {
         [XmlIgnore]
         public Guid Id { get; set; }
@@ -100,13 +100,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Дата последнего обновления информации о заказе покупателя (запись)
         /// </summary>
         [XmlAttribute(AttributeName = "updated")]
-        public  DateTime updated { get; set; }
+        public DateTime updated { get; set; }
 
         /// <summary>
         /// Имя того, кто последний обновлял информацию о заказе покупателя (запись)
         /// </summary>
         [XmlAttribute(AttributeName = "updatedBy")]
-        public  DateTime updatedBy { get; set; }
+        public string updatedBy { get; set; }
         /// <summary>
         /// 
         /// </summary>

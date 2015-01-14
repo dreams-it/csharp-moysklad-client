@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Payment: IKeyItem<Guid>
+    public class Payment : IKeyItem<Guid>
     {
         [Key]
         [XmlIgnore]
@@ -80,12 +80,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlAttribute(AttributeName = "updated")]
-        public  string Updated { get; set; }
+        public string Updated { get; set; }
         /// <summary>
         /// 
         /// </summary>
         [XmlAttribute(AttributeName = "updatedBy")]
-        public  string UpdatedBy { get; set; }
+        public string UpdatedBy { get; set; }
         /// <summary>
         /// 
         /// </summary>

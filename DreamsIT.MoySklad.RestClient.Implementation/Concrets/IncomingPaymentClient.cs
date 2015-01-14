@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
 {
-    class IncomingPaymentClient : IIncomingPaymentClient
+    public class IncomingPaymentClient : IIncomingPaymentClient
     {
         public IncomingPaymentClient(string login, string password)
         {
             requestGenerator = new RequestGenerator<PaymentInCollection>(login, password, host);
         }
         private RequestGenerator<PaymentInCollection> requestGenerator = null;
-        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/PaymentIn/list";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/PaymentIn";
         public Models.ResultOrError<List<Models.PaymentIn>> SearchByCustomerOrder(List<Guid> customerOrderIds)
         {
             var filters = ConvertParamsInString<Guid>.ConvertList(customerOrderIds, "customerOrderId");
@@ -120,7 +120,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
                 paramsInString = paramsInString + ";" + daysInString;
             }
 
-            var requestResult= requestGenerator.getItemsFromAPI(paramsInString.Substring(1));
+            var requestResult = requestGenerator.getItemsFromAPI(!string.IsNullOrWhiteSpace(paramsInString) ? paramsInString.Substring(1) : paramsInString);
             return getPaymentIns(requestResult);
         }
 

@@ -34,6 +34,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Guid SourceAccountUuid { get; set; }
     }
 
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class PaymentOutCollection
     {
         public PaymentOutCollection()
@@ -41,6 +44,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             PaymentOutList = new List<PaymentOut>();
         }
 
+        [XmlElement(ElementName = "paymentOut")]
         public List<PaymentOut> PaymentOutList { get; set; }
     }
 }

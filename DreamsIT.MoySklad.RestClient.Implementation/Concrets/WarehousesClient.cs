@@ -16,7 +16,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             requestGenerator = new RequestGenerator<WarehouseColllection>(login, password, host);
         }
         private RequestGenerator<WarehouseColllection> requestGenerator = null;
-        private string host = "";
+        private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Warehouse";
 
         public Models.ResultOrError<List<Models.Warehouse>> GetWarehousesByName(List<string> names)
         {

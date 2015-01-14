@@ -24,11 +24,11 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         public void Synchronization(string login, string password)
         {
             WarehousesClient warehouseClient=new WarehousesClient(login,password);
-            var maxDate = _factory.Warehouses.Max(r => DateTime.Parse(r.Updated));
+            var maxDate = _factory.Warehouses.Max(r => r.Updated);
 
-            var deletedWarehouses = warehouseClient.SearchDeletedWarehouses(maxDate.ToMoySkladFormatDate());
+            var deletedWarehouses = warehouseClient.SearchDeletedWarehouses(maxDate);
 
-            var newWarehouses=warehouseClient.SearchNewWarehouses(maxDate.ToMoySkladFormatDate());
+            var newWarehouses=warehouseClient.SearchNewWarehouses(maxDate);
 
             var warehousesIdsForAdd = newWarehouses.Result.Select(r => r.Uuid).Except(_factory.Warehouses.Select(r => r.Uuid)).ToList();
 

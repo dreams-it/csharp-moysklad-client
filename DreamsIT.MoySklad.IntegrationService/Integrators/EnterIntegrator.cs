@@ -25,11 +25,11 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         {
             EnterClient _enterClient = new EnterClient(login, password);
 
-            var maxDate = _factory.Enters.Max(r => DateTime.Parse(r.Updated));
+            var maxDate = _factory.Enters.Max(r => r.Updated);
 
-            var entersForRemove = _enterClient.SearchDeletedEnter(maxDate.ToMoySkladFormatDate()).Result.ToList();
+            var entersForRemove = _enterClient.SearchDeletedEnter(maxDate).Result.ToList();
 
-            var newEntersFromApi = _enterClient.SearchNewEnter(maxDate.ToMoySkladFormatDate());
+            var newEntersFromApi = _enterClient.SearchNewEnter(maxDate);
 
             var enterIdsForAdd = newEntersFromApi.Result.Select(r => r.Id).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
 

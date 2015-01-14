@@ -68,7 +68,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Name="SelfX", 
                 ProductCode="", 
                 ReadMode=ReadMode.ALL, 
-                Updated="2014-12-26T13:57:48.802+03:00", 
+                Updated=DateTime.Parse("2014-12-26T13:57:48.802+03:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("07bef3ae-8cee-11e4-90a2-8ecb000a1289")
             },
@@ -83,7 +83,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Name="Дополнительные расходные материалы", 
                 ProductCode="", 
                 ReadMode=ReadMode.ALL, 
-                Updated="2014-09-19T15:56:54.310+04:00", 
+                Updated=DateTime.Parse("2014-09-19T15:56:54.310+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("0c8d01cb-3ff4-11e4-90a2-8eca000b8b09")
             },
@@ -98,7 +98,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Name="Кальяны в сборе", 
                 ProductCode="", 
                 ReadMode=ReadMode.ALL, 
-                Updated="2014-09-19T15:56:54.689+04:00", 
+                Updated=DateTime.Parse("2014-09-19T15:56:54.689+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("0cc6d4ed-3ff4-11e4-90a2-8eca000b8bf6")
             }
@@ -133,7 +133,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 ReadMode=ReadMode.ALL, 
                 SalePrice=185000.0, 
                 UomUuid=Guid.Parse("19f1edc0-fc42-4001-94cb-c9ec9c62ec10"), 
-                Updated="2014-09-24T15:07:40.866+04:00", 
+                Updated=DateTime.Parse("2014-09-24T15:07:40.866+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Volume=0.0, 
                 Weight=0.0, 
@@ -143,7 +143,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("003a25b9-43db-11e4-90a2-8eca00258a94"), 
                         PriceTypeUuid=Guid.Parse("5ab3ad2c-13fd-11e4-4810-002590a28eca"), 
@@ -154,7 +154,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("003a2560-43db-11e4-90a2-8eca00258a92"), 
                         PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
@@ -165,7 +165,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("003a24a0-43db-11e4-90a2-8eca00258a91"), 
                         PriceTypeUuid=Guid.Parse("5ab3aba2-13fd-11e4-7dd7-002590a28eca"), 
@@ -176,7 +176,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("003a260c-43db-11e4-90a2-8eca00258a95"), 
                         PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
@@ -207,7 +207,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 ReadMode=ReadMode.ALL, 
                 SalePrice=29000.0, 
                 UomUuid=Guid.Parse("19f1edc0-fc42-4001-94cb-c9ec9c62ec10"), 
-                Updated="2014-11-29T18:13:44.884+03:00", 
+                Updated=DateTime.Parse("2014-11-29T18:13:44.884+03:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Volume=0.0, 
                 Weight=0.0, 
@@ -217,7 +217,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("00d15ca8-77da-11e4-90a2-8eca00379a53"), 
                         PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
@@ -228,7 +228,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("00d15d53-77da-11e4-90a2-8eca00379a54"), 
                         PriceTypeUuid=Guid.Parse("5ab3aba2-13fd-11e4-7dd7-002590a28eca"), 
@@ -239,7 +239,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
-                        ChangeMode=ChangeMode.All,
+                        ChangeMode=ChangeMode.ALL,
                         ReadMode=ReadMode.ALL,
                         Id=Guid.Parse("00d15d9f-77da-11e4-90a2-8eca00379a55"), 
                         PriceTypeUuid=Guid.Parse("5ab3ad2c-13fd-11e4-4810-002590a28eca"), 
@@ -250,7 +250,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("00d15de8-77da-11e4-90a2-8eca00379a56"), 
                         PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
@@ -281,7 +281,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 ReadMode=ReadMode.ALL, 
                 SalePrice=20000.0, 
                 UomUuid=Guid.Parse("19f1edc0-fc42-4001-94cb-c9ec9c62ec10"), 
-                Updated="2014-11-29T18:25:48.377+03:00", 
+                Updated=DateTime.Parse("2014-11-29T18:25:48.377+03:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Volume=0.0, 
                 Weight=0.0, 
@@ -291,7 +291,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("01506bab-77dc-11e4-90a2-8eca0037bbcb"), 
                         PriceTypeUuid=Guid.Parse("5ab3ad2c-13fd-11e4-4810-002590a28eca"), 
@@ -302,7 +302,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("01506c3d-77dc-11e4-90a2-8eca0037bbcd"), 
                         PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
@@ -313,7 +313,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"),
-                        ChangeMode=ChangeMode.All,
+                        ChangeMode=ChangeMode.ALL,
                         ReadMode=ReadMode.ALL,
                         Id=Guid.Parse("01506bf7-77dc-11e4-90a2-8eca0037bbcc"), 
                         PriceTypeUuid=Guid.Parse("5ab3aba2-13fd-11e4-7dd7-002590a28eca"), 
@@ -324,7 +324,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     {
                         AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                         AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
-                        ChangeMode=ChangeMode.All, 
+                        ChangeMode=ChangeMode.ALL, 
                         ReadMode=ReadMode.ALL, 
                         Id=Guid.Parse("00d15de8-77da-11e4-90a2-8eca00379a56"), 
                         PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
@@ -352,7 +352,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Archived=false, 
-                ChangeMode=ChangeMode.All, 
+                ChangeMode=ChangeMode.ALL, 
                 Description="", 
                 Email="061412@gmail.com", 
                 ExternalCode="hsSOfC1diM62IbD4UUjn13", 
@@ -372,7 +372,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Archived=false,
-                ChangeMode=ChangeMode.All, 
+                ChangeMode=ChangeMode.ALL, 
                 Description="", 
                 Email="", 
                 ExternalCode="NVugPUPQi-qrSODD75afj1", 
@@ -392,7 +392,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 AccountId=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 AccountUuid=Guid.Parse("473d51a0-0e7b-11e2-d8b1-3c4a92f3a0a7"), 
                 Archived=false, 
-                ChangeMode=ChangeMode.All, 
+                ChangeMode=ChangeMode.ALL, 
                 Description="Кладовщик-продавец", 
                 Email="", 
                 ExternalCode="BcxvDPR0iqiGFBKftqKqF0", 
@@ -458,10 +458,10 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Name="ооо нарджилия", 
                 Requisite=new Requisite(){ActualAddress="190031, Спасский пер. д.11\\1", Inn="7838432080", Kpp="783801001", LegalAddress="190031, Спасский пер. д.11\\1", LegalTitle="Общество с ограниченной ответственностью \"Нарджилия\"", Okpo="62993750"},
                 Tags=null, 
-                Updated="2010-09-27T02:30:22.529+04:00", 
+                Updated=DateTime.Parse("2010-09-27T02:30:22.529+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("335df8f8-45c0-4b15-bd11-24aab2e61ded"),
-                BankAccount=new BankAccount(){AccountNumber="", BankLocation="", BankName="", Bic="", ChangeMode=RestClient.Models.Enums.ChangeMode.All, CorrectspondentAccount="", IsDefault=true, ReadMode=RestClient.Models.Enums.ReadMode.ALL, Updated="2014-05-28T00:19:29.207+04:00", UpdatedBy="admin@ооо нарджилия"}
+                BankAccount=new BankAccount(){AccountNumber="", BankLocation="", BankName="", Bic="", ChangeMode=RestClient.Models.Enums.ChangeMode.ALL, CorrectspondentAccount="", IsDefault=true, ReadMode=RestClient.Models.Enums.ReadMode.ALL, Updated="2014-05-28T00:19:29.207+04:00", UpdatedBy="admin@ооо нарджилия"}
             }
         };
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.MyCompany, Guid> MyCompanies
@@ -513,7 +513,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Name="The LOFT СПБ", 
                 PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
                 ReadMode=RestClient.Models.Enums.ReadMode.SELF, 
-                Updated="2014-12-09T14:12:35.335+03:00", 
+                Updated=DateTime.Parse("2014-12-09T14:12:35.335+03:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("4870a47a-7f94-11e4-90a2-8ecb0025a5ab"), 
                 WarehouseUuid=Guid.Parse("570c7c96-7f91-11e4-90a2-8ecb0024f582")
@@ -532,7 +532,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Name="THE OFFICE", 
                 PriceTypeUuid=Guid.Parse("5d441fe3-a9b0-4a52-b1f0-6d256f1d8a7e"), 
                 ReadMode=RestClient.Models.Enums.ReadMode.NONE,
-                Updated="2014-07-24T15:50:19.569+04:00", 
+                Updated=DateTime.Parse("2014-07-24T15:50:19.569+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("afb8aace-1328-11e4-03e3-002590a28eca"), 
                 WarehouseUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
@@ -551,7 +551,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                 Name="ОПТ", 
                 PriceTypeUuid=Guid.Parse("5ab3adfa-13fd-11e4-adb1-002590a28eca"), 
                 ReadMode=RestClient.Models.Enums.ReadMode.SELF,
-                Updated="2014-09-24T12:36:12.829+04:00", 
+                Updated=DateTime.Parse("2014-09-24T12:36:12.829+04:00"), 
                 UpdatedBy="admin@ооо нарджилия", 
                 Uuid=Guid.Parse("d755aa8f-43c5-11e4-90a2-8eca002101ad"), 
                 WarehouseUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
@@ -597,7 +597,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     Name="The LOFT СПБ", 
                     ReadMode=ReadMode.SELF, 
                     Slots=null, 
-                    Updated="2014-12-09T13:51:31.354+03:00", 
+                    Updated=DateTime.Parse("2014-12-09T13:51:31.354+03:00"), 
                     UpdatedBy="admin@ооо нарджилия", 
                     Uuid=Guid.Parse("570c7c96-7f91-11e4-90a2-8ecb0024f582"), 
                     ParentUuid=null
@@ -617,7 +617,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     Name="Владивосток Кацура", 
                     ReadMode=ReadMode.SELF, 
                     Slots=null, 
-                    Updated="2014-09-23T15:26:35.128+04:00", 
+                    Updated=DateTime.Parse("2014-09-23T15:26:35.128+04:00"), 
                     UpdatedBy="admin@ооо нарджилия", 
                     Uuid=Guid.Parse("79e2fd2c-4314-11e4-90a2-8eca000d33f3"), 
                     ParentUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
@@ -637,7 +637,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     Name="The Office", 
                     ReadMode=ReadMode.SELF, 
                     Slots=null, 
-                    Updated="2014-07-24T15:37:58.270+04:00", 
+                    Updated=DateTime.Parse("2014-07-24T15:37:58.270+04:00"), 
                     UpdatedBy="admin@ооо нарджилия", 
                     Uuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8"), 
                     ParentUuid=null

@@ -70,16 +70,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlArray(ElementName = "paymentsUuid")]
+        [XmlElement(ElementName = "paymentsUuid")]
         public List<Guid> PaymentsUuid { get; set; }
-
-        [XmlArray(ElementName = "financeInRef")]
-        public List<Guid> FinanceInRef { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [XmlArray(ElementName = "invoicesOutUuid")]
+        [XmlElement(ElementName = "shipmentOut")]
         public List<ShipmentOut> ShipmentOut { get; set; }
 
         [XmlArray(ElementName = "salesReturnsUuid")]
@@ -97,6 +94,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class DemandCollection
     {
+        public DemandCollection()
+        {
+            Demands = new List<Demand>();
+        }
+
+        [XmlElement(ElementName = "demand")]
         public List<Demand> Demands { get; set; }
     }
 }

@@ -30,11 +30,11 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         {
             GoodFolderClient _goodFolderCient = new GoodFolderClient(login, password);
 
-            var maxDate = _factory.GoodFolders.Max(r => DateTime.Parse(r.Updated));
+            var maxDate = _factory.GoodFolders.Max(r => r.Updated);
 
-            var goodFolderForRemove = _goodFolderCient.SearchDeletedGoodFolders(maxDate.ToMoySkladFormatDate()).Result.ToList();
+            var goodFolderForRemove = _goodFolderCient.SearchDeletedGoodFolders(maxDate).Result.ToList();
 
-            var newGoodFoldersFromApi = _goodFolderCient.SearchNewGoodFolders(maxDate.ToMoySkladFormatDate());
+            var newGoodFoldersFromApi = _goodFolderCient.SearchNewGoodFolders(maxDate);
 
             var goodFolderIdsForAdd = newGoodFoldersFromApi.Result.Select(r => r.Id).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
 

@@ -25,11 +25,11 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         {
             GoodClient _goodsCient=new GoodClient(login, password);
 
-            var maxDate=_factory.GoodFolders.Max(r=>DateTime.Parse(r.Updated));
+            var maxDate=_factory.Goods.Max(r=>r.Updated);
 
-            var goodsForRemove = _goodsCient.SearchDeletedGoods(maxDate.ToMoySkladFormatDate()).Result.ToList();
+            var goodsForRemove = _goodsCient.SearchDeletedGoods(maxDate).Result.ToList();
 
-            var newGoodFromApi = _goodsCient.SearchNewGoods(maxDate.ToMoySkladFormatDate());
+            var newGoodFromApi = _goodsCient.SearchNewGoods(maxDate);
 
             var goodIdsForAdd = newGoodFromApi.Result.Select(r => r.Id).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
 

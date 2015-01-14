@@ -79,12 +79,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Дата последнего обновления записи
         /// </summary>
         [XmlAttribute(AttributeName = "updated")]
-        public  DateTime updated { get; set; }
+        public  DateTime Updated { get; set; }
         /// <summary>
         /// Имя того, кто делал последнеее обновление
         /// </summary>
         [XmlAttribute(AttributeName = "updatedBy")]
-        public  DateTime updatedBy { get; set; }
+        public string UpdatedBy { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -162,6 +162,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             GoodList = new List<Good>();
         }
 
+        [XmlElement(ElementName = "good")]
         public List<Good> GoodList { get; set; }
     }
 }

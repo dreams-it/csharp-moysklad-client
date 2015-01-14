@@ -10,6 +10,6 @@ namespace DreamsIT.MoySklad.RestClient.Models.Enums
     {
         SELF,
         NONE,
-        All
+        ALL
     }
 }

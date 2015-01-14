@@ -24,12 +24,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
         public Models.ResultOrError<List<Models.StockTO>> StockBalance(Models.Enums.StockMode stockMode = StockMode.AllStock, string moment = "",
 Guid? goodUuid = null, string goodName = "", Guid? storeId = null, bool includeAboardOperations = false, bool showConsignments = false)
         {
-            string paramsInString = "";
-            if (stockMode != null)
-            {
-                string goodUuidInString = stockMode.ToString();
-                paramsInString = paramsInString + ";" + goodUuidInString;
-            }
+            string paramsInString = stockMode.ToString();
             if (!string.IsNullOrWhiteSpace(moment))
             {
                 paramsInString = paramsInString + ";" + moment;

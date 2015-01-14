@@ -101,13 +101,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Дата последнего обновления информации об работнике
         /// </summary>
         [XmlAttribute(AttributeName = "updated")]
-        public  DateTime updated { get; set; }
+        public  string Updated { get; set; }
 
         /// <summary>
         /// Имя того, кто обновил информацию о пользователе
         /// </summary>
         [XmlAttribute(AttributeName = "updatedBy")]
-        public  DateTime updatedBy { get; set; }
+        public  string UpdatedBy { get; set; }
 
         /// <summary>
         /// 
@@ -132,6 +132,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             EmployeesList = new List<Employee>();
         }
 
+        [XmlElement(ElementName = "employee")]
         public List<Employee> EmployeesList { get; set; }
     }
 }

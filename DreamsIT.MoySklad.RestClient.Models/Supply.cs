@@ -17,6 +17,11 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlRootAttribute(Namespace = "", ElementName = "supply", IsNullable = false)]
     public class Supply : RecordOperation
     {
+        public Supply()
+        {
+            InvoicesInUuid = new List<Guid>();
+        }
+
         /// <summary>
         /// Идентификатор записи
         /// </summary>
@@ -26,7 +31,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Номер приема товара
         /// </summary>
         [XmlAttribute(AttributeName = "incomingNumber")]
-        public int? IncomingNumber { get; set; }
+        public string IncomingNumber { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +90,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlElement(ElementName = "invoicesInUuid")]
+        [XmlArray(ElementName = "invoicesInUuid")]
         public List<Guid> InvoicesInUuid { get; set; }
 
         /// <summary>
@@ -103,7 +108,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlArray(ElementName = "shipmentIn")]
+        [XmlElement(ElementName = "shipmentIn")]
         public ShipmentIn ShipmentIn { get; set; }
 
         /// <summary>

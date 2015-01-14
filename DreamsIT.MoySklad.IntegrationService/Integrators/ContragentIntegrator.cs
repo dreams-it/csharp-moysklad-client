@@ -25,11 +25,11 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         {
             ContragentClient _contractorCient = new ContragentClient(login, password);
 
-            var maxDate = _factory.Companies.Max(r => DateTime.Parse(r.Updated));
+            var maxDate = _factory.Companies.Max(r => r.Updated);
 
-            var contragentsForRemove = _contractorCient.GetDeletedContragent(maxDate.ToMoySkladFormatDate()).Result.ToList();
+            var contragentsForRemove = _contractorCient.GetDeletedContragent(maxDate).Result.ToList();
 
-            var newContragentsFromApi = _contractorCient.GetNewContragent(maxDate.ToMoySkladFormatDate());
+            var newContragentsFromApi = _contractorCient.GetNewContragent(maxDate);
 
             var contragentIdsForAdd = newContragentsFromApi.Result.Select(r => r.Id).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
 

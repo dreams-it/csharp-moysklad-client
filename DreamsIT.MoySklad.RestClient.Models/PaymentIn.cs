@@ -17,16 +17,21 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlRootAttribute(Namespace = "", ElementName = "paymentIn", IsNullable = false)]
     public class PaymentIn : Payment
     {
+        public PaymentIn()
+        {
+            DemandsUuid = new List<Guid>();
+        }
+
         /// <summary>
         /// 
         /// </summary>
         [XmlAttribute(AttributeName = "incomingNumber")]
-        public Guid incomingNumber { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        [XmlAttribute(AttributeName = "paymentPurpose")]
-        public String paymentPurpose { get; set; }
+        public string incomingNumber { get; set; }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //[XmlAttribute(AttributeName = "paymentPurpose")]
+        //public String paymentPurpose { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -45,8 +50,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlArray(ElementName = "demandsUuid")]
-        [XmlArrayItem(ElementName = "demandRef")]
+        [XmlArrayItem(ElementName = "demandsUuid")]
         public List<Guid> DemandsUuid { get; set; }
     }
 
@@ -60,6 +64,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             PaymentInList = new List<PaymentIn>();
         }
 
+        [XmlElement(ElementName = "paymentIn")]
         public List<PaymentIn> PaymentInList { get; set; }
     }
 }

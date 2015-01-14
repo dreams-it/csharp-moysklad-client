@@ -8,6 +8,6 @@ namespace DreamsIT.MoySklad.RestClient.Models.Enums
 {
     public enum OverheadDistribution
     {
-        ByPrice
+        BY_PRICE
     }
 }

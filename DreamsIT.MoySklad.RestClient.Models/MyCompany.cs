@@ -38,6 +38,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
     public class MyCompanyCollection
     {
+        [XmlElement(ElementName = "myCompany")]
         public List<MyCompany> MyCompanies { get; set; }
     }
 }

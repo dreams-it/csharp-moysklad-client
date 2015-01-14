@@ -25,11 +25,11 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         {
             DemandClient _demandCient = new DemandClient(login, password);
 
-            var maxDate = _factory.Demands.Max(r => DateTime.Parse(r.Updated));
+            var maxDate = _factory.Demands.Max(r => r.Updated);
 
-            var demandsForRemove = _demandCient.SearchDeletedDemands(maxDate.ToMoySkladFormatDate()).Result.ToList();
+            var demandsForRemove = _demandCient.SearchDeletedDemands(maxDate).Result.ToList();
 
-            var newDemandsFromApi = _demandCient.SearchNewDemands(maxDate.ToMoySkladFormatDate());
+            var newDemandsFromApi = _demandCient.SearchNewDemands(maxDate);
 
             var demandIdsForAdd = newDemandsFromApi.Result.Select(r => r.Id).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
 

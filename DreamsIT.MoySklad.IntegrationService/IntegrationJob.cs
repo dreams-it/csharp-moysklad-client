@@ -35,6 +35,7 @@ namespace DreamsIT.MoySklad.IntegrationService
 
             new EnterIntegrator().Syncronization(login, password);
 
+            new StockIntegrator().Syncronization(login, password);
             //TODO: BB. to be continue
         }
     }

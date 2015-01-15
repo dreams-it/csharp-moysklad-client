@@ -19,7 +19,7 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         DbSet<Enter> Enter { get; set; }
         DbSet<EnterPosition> EnterPosition { get; set; }
         DbSet<GoodFolder> GoodFolder { get; set; }
-        DbSet<GoodRef> GoodRef { get; set; }
+        //DbSet<GoodRef> GoodRef { get; set; }
         DbSet<Loss> Loss { get; set; }
         DbSet<MyCompany> MyCompany { get; set; }
         DbSet<PaymentIn> PaymentIn { get; set; }

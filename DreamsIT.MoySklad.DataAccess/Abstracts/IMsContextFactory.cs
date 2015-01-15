@@ -22,7 +22,7 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         IRepository<Employee , Guid> Employees { get; }
         IRepository<Enter , Guid> Enters { get; }
         IRepository<EnterPosition , Guid> EnterPositions { get; }
-        IRepository<GoodRef , Guid> GoodRefs { get; }
+        //IRepository<GoodRef , Guid> GoodRefs { get; }
         IRepository<Loss , Guid> Losses { get; }
         IRepository<MyCompany , Guid> MyCompanies { get; }
         IRepository<PurchaseOrderPosition , Guid> PurchaseOrderPositions { get; }
@@ -39,6 +39,7 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         IRepository<Supply , Guid> Supplies { get; }
         IRepository<Warehouse, Guid> Warehouses { get; }
         IRepository<ShipmentIn, Guid> ShipmentIns { get; }
+        IRepository<LossPosition, Guid> LossPositions { get; }
        
     }
 }

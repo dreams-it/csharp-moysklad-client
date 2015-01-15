@@ -1,6 +1,7 @@
 ﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,8 @@ namespace DreamsIT.MoySklad.RestClient.Models
         [XmlElement(ElementName = "price")]
         public Sum Price { get; set; }
 
-        [XmlElement(ElementName = "things")]
+        //[XmlElement(ElementName = "things")]
+        [NotMapped]
         public Things Things { get; set; }
     }
 }

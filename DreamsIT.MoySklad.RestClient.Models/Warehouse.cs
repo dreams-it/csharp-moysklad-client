@@ -36,8 +36,22 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlAttribute(AttributeName = "parentUuid")]
-        public Guid? ParentUuid { get; set; }
+        //[XmlIgnore]
+        //public Guid? ParentUuid
+        //{
+        //    get
+        //    {
+        //        if (!string.IsNullOrWhiteSpace(_parentUuid))
+        //        {
+        //            return Guid.Parse(_parentUuid);
+        //        }
+        //        return null;
+        //    }
+        //}
+
+        //[XmlAttribute(AttributeName = "parentUuid")]
+        //public string _parentUuid { get; set; }
+
 
         /// <summary>
         /// Имя склада в системе
@@ -114,20 +128,21 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlElement(ElementName = "slots")]
+        [XmlArray(ElementName = "slots")]
         public List<Slot> Slots { get; set; }
     }
 
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class WarehouseColllection
+    public class WarehouseCollection
     {
-        public WarehouseColllection()
+        public WarehouseCollection()
         {
             WarehouseList = new List<Warehouse>();
         }
 
+        [XmlElement(ElementName = "warehouse")]
         public List<Warehouse> WarehouseList { get; set; }
     }
 }

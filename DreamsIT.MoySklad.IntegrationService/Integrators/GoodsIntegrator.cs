@@ -1,6 +1,7 @@
 ﻿using DreamsIT.MoySklad.DataAccess.Abstracts;
 using DreamsIT.MoySklad.RestClient.Implementation.Abstract;
 using DreamsIT.MoySklad.RestClient.Implementation.Concrets;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,24 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
     public class GoodsIntegrator
     {
         private IMsContextFactory _factory = null;
-        private IDependencyResolver _dependencyResolver = null;
 
         public GoodsIntegrator()
         {
-            _factory = _factory ?? _dependencyResolver.GetService<IMsContextFactory>();
+            var kernel = new StandardKernel(new IntegrationServiceKernel());
+            _factory = kernel.Get<IMsContextFactory>();
         }
 
         public void Synchronization(string login, string password)
         {
             GoodClient _goodsCient=new GoodClient(login, password);
 
-            var maxDate=_factory.Goods.Max(r=>r.Updated);
+            var maxDate = _factory.Goods.Any() ? _factory.Goods.Max(r => r.Updated) : DateTime.MinValue;
 
             var goodsForRemove = _goodsCient.SearchDeletedGoods(maxDate).Result.ToList();
 
             var newGoodFromApi = _goodsCient.SearchNewGoods(maxDate);
 
-            var goodIdsForAdd = newGoodFromApi.Result.Select(r => r.Id).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
+            var goodIdsForAdd = newGoodFromApi.Result.Select(r => r.Uuid).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
 
             var goodsForAdd = newGoodFromApi.Result.Where(r => goodIdsForAdd.Contains(r.Uuid)).ToList();
 
@@ -41,6 +42,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
             foreach (var goodFolder in goodsForAdd)
             {
+                goodFolder.Id = goodFolder.Uuid;
                 _factory.Goods.Add(goodFolder);
             }
 

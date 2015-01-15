@@ -1,31 +1,69 @@
-﻿using DreamsIT.MoySklad.RestClient.Models.Enums;
+﻿using DreamsIT.Data.BaseTypes;
+using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
     /// <summary>
     /// Модель позиции списания 
     /// </summary>
-   public class LossPosition
+    [SerializableAttribute()]
+    [XmlTypeAttribute(AnonymousType = true)]
+    [XmlRootAttribute(Namespace = "", ElementName = "lossPosition", IsNullable = false)]
+    public class LossPosition:IKeyItem<Guid>
     {
-       public double Discount { get; set; }
-       public double Quantity { get; set; }
-       public Guid ConsignmentUuid { get; set; }
-       public Guid GoodUuid { get; set; }
-       public int Vat { get; set; }
-       public ReadMode ReadMode { get; set; }
-       public ChangeMode ChangeMode { get; set; }
-       public Guid AccountUuid { get; set; }
-       public Guid AccountId { get; set; }
-       public Guid Uuid { get; set; }
-       public Sum BasePrice { get; set; }
-       public Sum Price { get; set; }
-       public Things Things { get; set; }
-       public Tags Tags { get; set; }
-       
+        [Key]
+        public Guid Id { get; set; }
+
+        [XmlAttribute(AttributeName = "discount")]
+        public double Discount { get; set; }
+
+        [XmlAttribute(AttributeName = "quantity")]
+        public double Quantity { get; set; }
+
+        [XmlAttribute(AttributeName = "consignmentUuid")]
+        public Guid ConsignmentUuid { get; set; }
+
+        [XmlAttribute(AttributeName = "goodUuid")]
+        public Guid GoodUuid { get; set; }
+
+        [XmlAttribute(AttributeName = "vat")]
+        public int Vat { get; set; }
+
+        [XmlAttribute(AttributeName = "readMode")]
+        public ReadMode ReadMode { get; set; }
+
+        [XmlAttribute(AttributeName = "changeMode")]
+        public ChangeMode ChangeMode { get; set; }
+
+        [XmlElement(ElementName = "accountUuid")]
+        public Guid AccountUuid { get; set; }
+
+        [XmlElement(ElementName = "accountId")]
+        public Guid AccountId { get; set; }
+
+        [XmlElement(ElementName = "uuid")]
+        public Guid Uuid { get; set; }
+
+        [XmlElement(ElementName = "basePrice")]
+        public Sum BasePrice { get; set; }
+
+        [XmlElement(ElementName = "price")]
+        public Sum Price { get; set; }
+
+        //[XmlElement(ElementName = "things")]
+        [NotMapped]
+        public Things Things { get; set; }
+
+        //[XmlElement(ElementName = "tags")]
+        [NotMapped]
+        public Tags Tags { get; set; }
     }
 }

@@ -120,15 +120,15 @@ namespace DreamsIT.MoySklad.DataAccess.Concrets
             }
             
         }
-        private IRepository<GoodRef, Guid> _goodRefs;
-        public IRepository<GoodRef, Guid> GoodRefs
-        {
-            get
-            {
-                return _goodRefs ?? (_goodRefs = _dependencyResolver.GetService<IRepository<GoodRef, Guid>>());
-            }
+        //private IRepository<GoodRef, Guid> _goodRefs;
+        //public IRepository<GoodRef, Guid> GoodRefs
+        //{
+        //    get
+        //    {
+        //        return _goodRefs ?? (_goodRefs = _dependencyResolver.GetService<IRepository<GoodRef, Guid>>());
+        //    }
             
-        }
+        //}
         private IRepository<Loss, Guid> _losses;
         public IRepository<Loss, Guid> Losses
         {
@@ -227,6 +227,16 @@ namespace DreamsIT.MoySklad.DataAccess.Concrets
             get
             {
                 return _stockTOs ?? (_stockTOs = _dependencyResolver.GetService<IRepository<StockTO, Guid>>());
+            }
+        }
+
+
+        private IRepository<LossPosition, Guid> _lossPositions;
+        public IRepository<LossPosition, Guid> LossPositions
+        {
+            get
+            {
+                return _lossPositions ?? (_lossPositions = _dependencyResolver.GetService<IRepository<LossPosition, Guid>>());
             }
         }
     }

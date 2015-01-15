@@ -1,6 +1,7 @@
 ﻿using DreamsIT.MoySklad.DataAccess.Abstracts;
 using DreamsIT.MoySklad.RestClient.Implementation.Abstract;
 using DreamsIT.MoySklad.RestClient.Implementation.Concrets;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,23 +14,23 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
     public class WarehousesIntegrator
     {
         private IMsContextFactory _factory = null;
-        private IDependencyResolver _dependencyResolver = null;
 
         public WarehousesIntegrator()
         {
-            _factory = _factory ?? _dependencyResolver.GetService<IMsContextFactory>();
+            var kernel = new StandardKernel(new IntegrationServiceKernel());
+            _factory = kernel.Get<IMsContextFactory>();
         }
 
         public void Synchronization(string login, string password)
         {
             WarehousesClient warehouseClient=new WarehousesClient(login,password);
-            var maxDate = _factory.Warehouses.Max(r => r.Updated);
+            var maxDate = _factory.Warehouses.Any() ? _factory.Warehouses.Max(r => r.Updated) : DateTime.MinValue;
 
             var deletedWarehouses = warehouseClient.SearchDeletedWarehouses(maxDate);
 
             var newWarehouses=warehouseClient.SearchNewWarehouses(maxDate);
 
-            var warehousesIdsForAdd = newWarehouses.Result.Select(r => r.Uuid).Except(_factory.Warehouses.Select(r => r.Uuid)).ToList();
+            var warehousesIdsForAdd = newWarehouses.Result.Select(r => r.Uuid).Except(_factory.Warehouses.Select(r => r.Id)).ToList();
 
             var warehousesForAdd=newWarehouses.Result.Where(r=>warehousesIdsForAdd.Contains(r.Uuid)).ToList();
 
@@ -40,6 +41,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
             foreach (var warehouse in warehousesForAdd)
             {
+                warehouse.Id = warehouse.Uuid;
                 _factory.Warehouses.Add(warehouse);
             }
 

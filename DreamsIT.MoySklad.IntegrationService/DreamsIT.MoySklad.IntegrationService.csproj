@@ -128,7 +128,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Integration.cs" />
+    <Compile Include="Controllers\Integration.cs" />
     <Compile Include="IntegrationJob.cs" />
     <Compile Include="IntegrationJobService.cs" />
     <Compile Include="IntegrationServiceController.cs" />
@@ -153,6 +153,7 @@
     <Compile Include="Integrators\GoodFolderIntegrator.cs" />
     <Compile Include="Integrators\GoodsIntegrator.cs" />
     <Compile Include="Integrators\SalePointsIntegrator.cs" />
+    <Compile Include="Integrators\StockIntegrator.cs" />
     <Compile Include="Integrators\WarehousesIntegrator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

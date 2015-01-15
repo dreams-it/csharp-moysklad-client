@@ -14,7 +14,6 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
     public class GoodFolderIntegrator
     {
         private IMsContextFactory _factory = null;
-        //private IDependencyResolver _dependencyResolver = null;
 
         private StandardKernel kernel;
 
@@ -22,20 +21,19 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
         {
             kernel = new StandardKernel(new IntegrationServiceKernel());
             _factory = kernel.Get<IMsContextFactory>();
-            //_factory = _factory ?? _dependencyResolver.GetService<IMsContextFactory>();
         }
 
         public void Synchronization(string login, string password)
         {
             GoodFolderClient _goodFolderCient = new GoodFolderClient(login, password);
 
-            var maxDate = _factory.GoodFolders.Max(r => r.Updated);
+            var maxDate = _factory.GoodFolders.Any() ? _factory.GoodFolders.Max(r => r.Updated) : DateTime.MinValue;
 
             var goodFolderForRemove = _goodFolderCient.SearchDeletedGoodFolders(maxDate).Result.ToList();
 
             var newGoodFoldersFromApi = _goodFolderCient.SearchNewGoodFolders(maxDate);
 
-            var goodFolderIdsForAdd = newGoodFoldersFromApi.Result.Select(r => r.Id).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
+            var goodFolderIdsForAdd = newGoodFoldersFromApi.Result.Select(r => r.Uuid).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
 
             var goodFoldersForAdd = newGoodFoldersFromApi.Result.Where(r => goodFolderIdsForAdd.Contains(r.Uuid)).ToList();
 
@@ -46,6 +44,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
             foreach (var goodFolder in goodFoldersForAdd)
             {
+                goodFolder.Id = goodFolder.Uuid;
                 _factory.GoodFolders.Add(goodFolder);
             }
 

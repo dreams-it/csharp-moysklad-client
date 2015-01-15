@@ -140,26 +140,16 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlElement(ElementName = "preferences")]
+        //[XmlElement(ElementName = "preferences")]
+        [NotMapped]
         public Preferences Preferences { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        [XmlElement(ElementName = "images")]
+        //[XmlElement(ElementName = "images")]
+        [NotMapped]
         public Images Images { get; set; }
     }
-
-    //[ComplexType]
-    //public class SalePrice
-    //{
-    //    public SalePrice()
-    //    {
-    //        SalePrices = new List<Price>();
-    //    }
-
-    //    [XmlArray(ElementName = "price")]
-    //    public List<Price> SalePrices { get; set; }
-    //}
 
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]

@@ -1,6 +1,7 @@
 ﻿using DreamsIT.Data.BaseTypes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -113,6 +114,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
             StockTOList = new List<StockTO>();
         }
 
+        [XmlElement(ElementName = "stockTO")]
         public List<StockTO> StockTOList { get; set; }
     }
 }

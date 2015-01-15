@@ -13,9 +13,9 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
     {
         public WarehousesClient(string login, string password)
         {
-            requestGenerator = new RequestGenerator<WarehouseColllection>(login, password, host);
+            requestGenerator = new RequestGenerator<WarehouseCollection>(login, password, host);
         }
-        private RequestGenerator<WarehouseColllection> requestGenerator = null;
+        private RequestGenerator<WarehouseCollection> requestGenerator = null;
         private string host = "https://online.moysklad.ru/exchange/rest/ms/xml/Warehouse";
 
         public Models.ResultOrError<List<Models.Warehouse>> GetWarehousesByName(List<string> names)
@@ -84,7 +84,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Concrets
             var requestResult = requestGenerator.getItemsFromAPI(requestParams);
             return getWarehouse(requestResult);
         }
-        private ResultOrError<List<Warehouse>> getWarehouse(ResultOrError<WarehouseColllection> WarehouseColllection)
+        private ResultOrError<List<Warehouse>> getWarehouse(ResultOrError<WarehouseCollection> WarehouseColllection)
         {
             return new ResultOrError<List<Warehouse>>()
             {

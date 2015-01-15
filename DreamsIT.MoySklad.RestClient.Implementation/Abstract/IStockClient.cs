@@ -24,5 +24,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.Abstract
        ResultOrError<List<StockTO>> StockBalance(StockMode stockMode = StockMode.ALL_STOCK, string moment = "",
             Guid? goodUuid = null, string goodName = "", Guid? storeId = null, 
             bool includeAboardOperations = false, bool showConsignments = false);
+
+       ResultOrError<List<StockTO>> StockBalance();
     }
 }

@@ -20,7 +20,7 @@ namespace DreamsIT.MoySklad.DataAccess.DataDbContext
         public DbSet<Enter> Enter { get; set; }
         public DbSet<EnterPosition> EnterPosition { get; set; }
         public DbSet<GoodFolder> GoodFolder { get; set; }
-        public DbSet<GoodRef> GoodRef { get; set; }
+        //public DbSet<GoodRef> GoodRef { get; set; }
         public DbSet<Loss> Loss { get; set; }
         public DbSet<MyCompany> MyCompany { get; set; }
         public DbSet<PaymentIn> PaymentIn { get; set; }
@@ -35,5 +35,7 @@ namespace DreamsIT.MoySklad.DataAccess.DataDbContext
         public DbSet<CustomerOrderPosition> CustomerOrderPosition { get; set; }
 
         public DbSet<ShipmentIn> ShipmentIns { get; set; }
+
+        public DbSet<StockTO> StockTOs { get; set; }
     }
 }

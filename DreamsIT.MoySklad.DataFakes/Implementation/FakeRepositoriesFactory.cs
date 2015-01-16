@@ -600,7 +600,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     Updated=DateTime.Parse("2014-12-09T13:51:31.354+03:00"), 
                     UpdatedBy="admin@ооо нарджилия", 
                     Uuid=Guid.Parse("570c7c96-7f91-11e4-90a2-8ecb0024f582"), 
-                    ParentUuid=null
+                    _parentUuid=null
                 },
                 new Warehouse()
                 {
@@ -620,7 +620,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     Updated=DateTime.Parse("2014-09-23T15:26:35.128+04:00"), 
                     UpdatedBy="admin@ооо нарджилия", 
                     Uuid=Guid.Parse("79e2fd2c-4314-11e4-90a2-8eca000d33f3"), 
-                    ParentUuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8")
+                    _parentUuid="8036ce31-baed-48ff-b365-fcb86ad87fd8"
                 },
                 new Warehouse()
                 {
@@ -640,7 +640,7 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     Updated=DateTime.Parse("2014-07-24T15:37:58.270+04:00"), 
                     UpdatedBy="admin@ооо нарджилия", 
                     Uuid=Guid.Parse("8036ce31-baed-48ff-b365-fcb86ad87fd8"), 
-                    ParentUuid=null
+                    _parentUuid=null
                 }
             };
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.Warehouse, Guid> Warehouses
@@ -649,6 +649,12 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
         }
 
         public IRepository<ShipmentIn, Guid> ShipmentIns
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+
+        public IRepository<LossPosition, Guid> LossPositions
         {
             get { throw new NotImplementedException(); }
         }

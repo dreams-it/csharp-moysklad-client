@@ -2,6 +2,7 @@
 using DreamsIT.MoySklad.RestClient.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,23 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         [XmlElement(ElementName = "externalcode")]
         public String Externalcode { get; set; }
+
+        [XmlAttribute(AttributeName = "parentUuid")]
+        public string ParentUuidString { get; set; }
+
+        [NotMapped]
+        [XmlIgnore]
+        public Guid? ParentUuid
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(ParentUuidString))
+                {
+                    return Guid.Parse(ParentUuidString);
+                }
+                return null;
+            }
+        }
     }
 
     [SerializableAttribute()]

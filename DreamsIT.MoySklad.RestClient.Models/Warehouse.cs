@@ -36,21 +36,21 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        //[XmlIgnore]
-        //public Guid? ParentUuid
-        //{
-        //    get
-        //    {
-        //        if (!string.IsNullOrWhiteSpace(_parentUuid))
-        //        {
-        //            return Guid.Parse(_parentUuid);
-        //        }
-        //        return null;
-        //    }
-        //}
+        [XmlIgnore]
+        public Guid? ParentUuid
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(_parentUuid))
+                {
+                    return Guid.Parse(_parentUuid);
+                }
+                return null;
+            }
+        }
 
-        //[XmlAttribute(AttributeName = "parentUuid")]
-        //public string _parentUuid { get; set; }
+        [XmlAttribute(AttributeName = "parentUuid")]
+        public string _parentUuid { get; set; }
 
 
         /// <summary>

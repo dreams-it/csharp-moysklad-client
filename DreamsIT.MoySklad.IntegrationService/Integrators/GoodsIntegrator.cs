@@ -31,7 +31,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
             var newGoodFromApi = _goodsCient.SearchNewGoods(maxDate);
 
-            var goodIdsForAdd = newGoodFromApi.Result.Select(r => r.Uuid).Except(_factory.GoodFolders.Select(r => r.Uuid)).ToList();
+            var goodIdsForAdd = newGoodFromApi.Result.Select(r => r.Uuid).Except(_factory.Goods.Select(r => r.Uuid)).ToList();
 
             var goodsForAdd = newGoodFromApi.Result.Where(r => goodIdsForAdd.Contains(r.Uuid)).ToList();
 

@@ -29,7 +29,11 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.EnvitomentMethods
         public ResultOrError<T> getItemsFromAPI(string filterParams)
         {
             string encodedParams = HttpUtility.UrlEncode(filterParams);
-            string address = string.Format("{0}/list?filter={1}", _host, encodedParams);
+            string address = string.Format("{0}/list", _host);
+            if (!string.IsNullOrWhiteSpace(filterParams))
+            {
+                address = string.Format("{0}/list?filter={1}", _host, encodedParams);
+            }
 
             WebClient client = new WebClient();
 

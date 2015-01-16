@@ -13,12 +13,9 @@ namespace DreamsIT.MoySklad.IntegrationService.Controllers
         [HttpGet]
         public bool Start(string login, string password, int refreshTime)
         {
-            //IntegrationJobService jobService = new IntegrationJobService();
-            //jobService.StartJob(login, password, refreshTime);
+            IntegrationJobService jobService = new IntegrationJobService();
+            jobService.StartJob(login, password, refreshTime);
 
-            //GoodFolderIntegrator integrator = new GoodFolderIntegrator();
-            //integrator.Synchronization(login, password);
-            
             //new GoodFolderIntegrator().Synchronization(login, password);
 
             //GoodsIntegrator intergrator = new GoodsIntegrator();
@@ -34,10 +31,10 @@ namespace DreamsIT.MoySklad.IntegrationService.Controllers
 
             //new EnterIntegrator().Syncronization(login, password);
 
-            new StockIntegrator().Syncronization(login, password);
+            //new StockIntegrator().Syncronization(login, password);
 
-            //return jobService.JobExist(login);
-            return false;
+            return jobService.JobExist(login);
+            //return false;
         }
 
         [HttpDelete]

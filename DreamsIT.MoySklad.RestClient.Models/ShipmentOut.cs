@@ -19,7 +19,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "shipmentOut", IsNullable = false)]
     [ComplexType]
-    public class ShipmentOut : Shipment, IKeyItem<Guid>
+    public partial class ShipmentOut : Shipment, IKeyItem<Guid>
     {
         [Key]
         public Guid Id { get; set; }

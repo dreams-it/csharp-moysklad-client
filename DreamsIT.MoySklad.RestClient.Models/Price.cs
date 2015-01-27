@@ -16,7 +16,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "price", IsNullable = false)]
-    public class Price: IKeyItem<Guid>
+    public partial class Price: IKeyItem<Guid>
     {
         [Key]
         [XmlIgnore]

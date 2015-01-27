@@ -13,8 +13,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель покупки заказа позиции
     /// </summary>
-    public class PurchaseOrderPosition : IKeyItem<Guid>
+    public partial class PurchaseOrderPosition : IKeyItem<Guid>
     {
+        public PurchaseOrderPosition()
+        {
+            Thinks = new List<Things>();
+        }
         [Key]
         [XmlIgnore]
         public Guid Id { get; set; }
@@ -88,7 +92,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "things")]
-        public List<Things> Thinks { get; set; }
+        public virtual List<Things> Thinks { get; set; }
 
         /// <summary>
         /// 

@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "internalOrder", IsNullable = false)]
-    public class InternalOrder
+    public partial class InternalOrder
     {
 
     }

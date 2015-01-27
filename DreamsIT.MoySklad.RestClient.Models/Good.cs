@@ -13,7 +13,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "good", IsNullable = false)]
-    public class Good : IKeyItem<Guid>
+    public partial class Good : IKeyItem<Guid>
     {
         public Good()
         {
@@ -154,7 +154,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class GoodCollection
+    public partial class GoodCollection
     {
         public GoodCollection()
         {

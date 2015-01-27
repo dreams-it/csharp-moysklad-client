@@ -15,8 +15,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "enterPosition", IsNullable = false)]
-    public class EnterPosition : IKeyItem<Guid>
+    public partial class EnterPosition : IKeyItem<Guid>
     {
+        public EnterPosition()
+        {
+            Tags = new List<Tags>();
+            Things = new List<Things>();
+        }
+
         [XmlIgnore]
         public Guid Id { get; set; }
         /// <summary>

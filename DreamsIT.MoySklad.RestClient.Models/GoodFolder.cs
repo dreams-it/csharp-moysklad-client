@@ -16,7 +16,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "goodFolder", IsNullable = false)]
-    public class GoodFolder : IKeyItem<Guid>
+    public partial class GoodFolder : IKeyItem<Guid>
     {
         [XmlIgnore]
         public Guid Id { get; set; }
@@ -92,12 +92,15 @@ namespace DreamsIT.MoySklad.RestClient.Models
                 return null;
             }
         }
+
+        [NotMapped]
+        public virtual List<GoodFolder> ChildGoodFolders { get; set; }
     }
 
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class GoodFolderCollection
+    public partial class GoodFolderCollection
     {
         public GoodFolderCollection()
         {

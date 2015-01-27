@@ -12,8 +12,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель розничной торговли
     /// </summary>
-    public class RetailDemand : IKeyItem<Guid>
+    public partial class RetailDemand : IKeyItem<Guid>
     {
+        public RetailDemand()
+        {
+            LossPositions = new List<LossPosition>();
+        }
+
         [Key]
         public Guid Id { get; set; }
         /// <summary>
@@ -114,7 +119,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public List<LossPosition> LossPositions { get; set; }
+        public virtual List<LossPosition> LossPositions { get; set; }
 
         /// <summary>
         /// 

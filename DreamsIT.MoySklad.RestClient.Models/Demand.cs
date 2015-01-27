@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "demand", IsNullable = false)]
-    public class Demand: RecordOperation
+    public partial class Demand: RecordOperation
     {
         /// <summary>
         /// Идентификатор записи
@@ -101,7 +101,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class DemandCollection
+    public partial class DemandCollection
     {
         public DemandCollection()
         {

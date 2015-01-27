@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель заказов поставщику
     /// </summary>
-    public class PurchaseOrder : Order
+    public partial class PurchaseOrder : Order
     {
         /// <summary>
         /// Идентификатор записи о заказе покупателя
@@ -30,16 +30,16 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public List<Guid> CustomerOrdersUuid { get; set; }
+        public virtual List<Guid> CustomerOrdersUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public List<InternalOrder> InternalOrders { get; set; }
+        public virtual List<InternalOrder> InternalOrders { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public List<Guid> SuppliesUuid { get; set; }
+        public virtual List<Guid> SuppliesUuid { get; set; }
     }
 }

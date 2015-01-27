@@ -10,7 +10,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     [ComplexType]
     [XmlRoot(ElementName = "extension")]
-    public class Extension
+    public partial class Extension
     {
         [XmlAttribute(AttributeName="opened")]
         public bool Opened { get; set; }

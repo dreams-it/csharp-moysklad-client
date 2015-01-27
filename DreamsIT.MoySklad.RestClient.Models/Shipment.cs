@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public class Shipment
+    public partial class Shipment
     {
         [XmlAttribute(AttributeName = "discount")]
         public double Discount { get; set; }

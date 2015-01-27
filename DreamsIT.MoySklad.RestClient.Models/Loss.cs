@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "loss", IsNullable = false)]
-    public class Loss : RecordOperation
+    public partial class Loss : RecordOperation
     {
         /// <summary>
         /// Идентификатор записи
@@ -57,13 +57,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlElement(ElementName = "lossPosition")]
-        public List<LossPosition> LossPositions { get; set; }
+        public virtual List<LossPosition> LossPositions { get; set; }
     }
 
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class LossCollection
+    public partial class LossCollection
     {
         public LossCollection()
         {

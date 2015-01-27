@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace DreamsIT.MoySklad.RestClient.Models
 {
 
-    public class Order : IKeyItem<Guid>
+    public partial class Order : IKeyItem<Guid>
     {
         [XmlIgnore]
         public Guid Id { get; set; }
@@ -152,12 +152,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "paymentsUuid")]
-        public List<Guid> PaymentsUuid { get; set; }
+        public virtual List<Guid> PaymentsUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [XmlArray(ElementName = "customerOrderPosition")]
-        public List<PurchaseOrderPosition> PurchaseOrderPosition { get; set; }
+        public virtual List<PurchaseOrderPosition> PurchaseOrderPosition { get; set; }
     }
 }

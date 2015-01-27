@@ -14,7 +14,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "goodRef", IsNullable = false)]
-    public class GoodRef : IKeyItem<Guid>
+    public partial class GoodRef : IKeyItem<Guid>
     {
         [XmlIgnore]
         public Guid Id { get; set; }

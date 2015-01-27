@@ -12,7 +12,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель заказ покупателя 
     /// </summary>
-    public class CustomerOrder : Order
+    public partial class CustomerOrder : Order
     {
         /// <summary>
         /// Идентификатор записи о заказе покупателя
@@ -28,12 +28,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlElement(ElementName = "demandsUuid")]
-        public List<Guid> DemandsUuid { get; set; }
+        public virtual List<Guid> DemandsUuid { get; set; }
                 
         /// <summary>
         /// 
         /// </summary>
         [XmlArray(ElementName = "purchaseOrdersUuid")]
-        public List<Guid> PurchaseOrdersUuid { get; set; }
+        public virtual List<Guid> PurchaseOrdersUuid { get; set; }
     }
 }

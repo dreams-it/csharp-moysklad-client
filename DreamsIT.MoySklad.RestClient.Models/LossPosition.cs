@@ -17,8 +17,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "lossPosition", IsNullable = false)]
-    public class LossPosition:IKeyItem<Guid>
+    public partial class LossPosition:IKeyItem<Guid>
     {
+        public LossPosition()
+        {
+            Things = new Things();
+            Tags = new Tags();
+        }
+
         [Key]
         public Guid Id { get; set; }
 

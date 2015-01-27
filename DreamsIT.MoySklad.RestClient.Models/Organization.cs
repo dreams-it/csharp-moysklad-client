@@ -13,7 +13,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
-    public class Organization : IKeyItem<Guid>
+    public partial class Organization : IKeyItem<Guid>
     {
         [Key]
         [XmlIgnore]
@@ -129,6 +129,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public List<Tags> Tags { get; set; }
+        public virtual List<Tags> Tags { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель кассовой выплаты
     /// </summary>
-    public class CashOut : Payment
+    public partial class CashOut : Payment
     {
         /// <summary>
         /// 

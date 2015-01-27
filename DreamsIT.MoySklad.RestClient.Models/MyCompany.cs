@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "myCompany", IsNullable = false)]
-    public class MyCompany : Organization
+    public partial class MyCompany : Organization
     {
         /// <summary>
         /// Идентификатор 
@@ -36,8 +36,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class MyCompanyCollection
+    public partial class MyCompanyCollection
     {
+        public MyCompanyCollection()
+        {
+            MyCompanies = new List<MyCompany>();
+        }
         [XmlElement(ElementName = "myCompany")]
         public List<MyCompany> MyCompanies { get; set; }
     }

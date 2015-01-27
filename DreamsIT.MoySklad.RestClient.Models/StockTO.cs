@@ -15,8 +15,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "stockTO", IsNullable = false)]
-    public class StockTO:IKeyItem<Guid>
+    public partial class StockTO:IKeyItem<Guid>
     {
+        public StockTO()
+        {
+            GoodRefs = new List<GoodRef>();
+        }
+
         [XmlIgnore]
         public Guid Id { get; set; }
         /// <summary>
@@ -107,7 +112,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class StockTOCollection
+    public partial class StockTOCollection
     {
         public StockTOCollection()
         {

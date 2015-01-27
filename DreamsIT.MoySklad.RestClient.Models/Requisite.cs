@@ -14,7 +14,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     [ComplexType]
     [XmlRoot(ElementName = "requisite")]
-    public class Requisite
+    public partial class Requisite
     {
         /// <summary>
         /// Официальное название

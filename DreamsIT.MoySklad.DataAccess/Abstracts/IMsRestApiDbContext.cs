@@ -10,6 +10,8 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
 {
     public interface IMsRestApiDbContext
     {
+        DbSet<Price> Price { get; set; }
+
         DbSet<Good> Goods { get; set; }
         DbSet<CashOut> CashOut { get; set; }
         DbSet<Company> Company { get; set; }
@@ -24,7 +26,6 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         DbSet<MyCompany> MyCompany { get; set; }
         DbSet<PaymentIn> PaymentIn { get; set; }
         DbSet<PaymentOut> PaymentOut { get; set; }
-        DbSet<Price> Price { get; set; }
         DbSet<PurchaseOrder> PurchaseOrder { get; set; }
         DbSet<PurchaseOrderPosition> PurchaseOrderPosition { get; set; }
         DbSet<RetailDemand> RetailDemand { get; set; }
@@ -34,5 +35,8 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         DbSet<CustomerOrderPosition> CustomerOrderPosition { get; set; }
 
         DbSet<ShipmentIn> ShipmentIns { get; set; }
+
+        DbSet<StockTO> StockTOs { get; set; }
+        DbSet<PriceType> PriceTypes { get; set; }
     }
 }

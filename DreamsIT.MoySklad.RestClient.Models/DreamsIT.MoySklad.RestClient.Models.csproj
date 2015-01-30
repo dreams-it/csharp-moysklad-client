@@ -57,6 +57,9 @@
     <Compile Include="BankAccount.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Barcode.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CashOut.cs" />
     <Compile Include="Company.cs">
       <SubType>Code</SubType>
@@ -79,6 +82,7 @@
     <Compile Include="EnterPosition.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Enums\BarcodeType.cs" />
     <Compile Include="Enums\ChangeMode.cs">
       <SubType>Code</SubType>
     </Compile>

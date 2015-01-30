@@ -26,7 +26,7 @@ namespace DreamsIT.MoySklad.RestClient.Implementation.EnvitomentMethods
         private string _password = "";
         private string _host = "";
 
-        public ResultOrError<T> getItemsFromAPI(string filterParams)
+        public ResultOrError<T> getItemsFromAPI(string filterParams="")
         {
             string encodedParams = HttpUtility.UrlEncode(filterParams);
             string address = string.Format("{0}/list", _host);

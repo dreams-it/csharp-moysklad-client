@@ -23,6 +23,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         }
 
         [XmlIgnore]
+        [DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         /// <summary>
         /// единицы измерения
@@ -105,8 +106,11 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// Cписок товаров
         /// </summary>
-        [XmlArray(ElementName = "goodRef ")]
+        [XmlElement(ElementName = "goodRef")]
         public virtual List<GoodRef> GoodRefs { get; set; }
+
+        [XmlAttribute(AttributeName = "productCode")]
+        public string ProductCode { get; set; }
     }
 
     [SerializableAttribute()]

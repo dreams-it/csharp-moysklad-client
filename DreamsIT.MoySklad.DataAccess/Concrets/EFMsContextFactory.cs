@@ -239,5 +239,25 @@ namespace DreamsIT.MoySklad.DataAccess.Concrets
                 return _lossPositions ?? (_lossPositions = _dependencyResolver.GetService<IRepository<LossPosition, Guid>>());
             }
         }
+
+        private IRepository<PriceType, Guid> _priceTypes;
+        public IRepository<PriceType, Guid> PriceTypes
+        {
+            get
+            {
+                return _priceTypes ?? (_priceTypes = 
+                    _dependencyResolver.GetService<IRepository<PriceType, Guid>>());
+            }
+        }
+
+        private IRepository<Barcode, Guid> _barcodes;
+        public IRepository<Barcode, Guid> Barcodes
+        {
+            get
+            {
+                return _barcodes ?? (_barcodes = 
+                    _dependencyResolver.GetService<IRepository<Barcode, Guid>>());
+            }
+        }
     }
 }

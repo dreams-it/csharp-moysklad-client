@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBarcodeClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Abstract\IEmployeeClient.cs" />
     <Compile Include="Abstract\IGoodClient.cs" />
     <Compile Include="Abstract\IGoodFolderClient.cs" />
@@ -76,6 +79,9 @@
     <Compile Include="Abstract\IOutcomingPaymentClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Abstract\IPriceTypeClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Abstract\ISalePointClient.cs" />
     <Compile Include="Abstract\IStockClient.cs">
       <SubType>Code</SubType>
@@ -87,6 +93,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Abstract\IWarehousesClient.cs" />
+    <Compile Include="Concrets\BarcodeClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Concrets\ContragentClient.cs" />
     <Compile Include="Concrets\DemandClient.cs" />
     <Compile Include="Concrets\EmployeeClient.cs" />
@@ -97,6 +106,9 @@
     <Compile Include="Concrets\LossClient.cs" />
     <Compile Include="Concrets\MyCompanyClient.cs" />
     <Compile Include="Concrets\OutcomingPaymentClient.cs" />
+    <Compile Include="Concrets\PriceTypeClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Concrets\SalePointClient.cs">
       <SubType>Code</SubType>
     </Compile>

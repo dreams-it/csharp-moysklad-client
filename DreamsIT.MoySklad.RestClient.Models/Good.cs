@@ -137,6 +137,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         [XmlArray("salePrices")]
         [XmlArrayItem("price")]
         public virtual List<Price> SalePrices { get; set; }
+
+        /// <summary>
+        /// штрих код
+        /// </summary>
+        [XmlElement(ElementName = "barcode")]
+        public Barcode Barcode { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -149,6 +155,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         //[XmlElement(ElementName = "images")]
         [NotMapped]
         public Images Images { get; set; }
+
+        [XmlAttribute(AttributeName = "minimumBalance")]
+        public double MinimumBalance { get; set; }
+
+        [XmlAttribute(AttributeName = "vat")]
+        public int Vat { get; set; }
     }
 
     [SerializableAttribute()]

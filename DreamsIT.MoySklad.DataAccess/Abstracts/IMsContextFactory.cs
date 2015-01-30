@@ -40,6 +40,9 @@ namespace DreamsIT.MoySklad.DataAccess.Abstracts
         IRepository<Warehouse, Guid> Warehouses { get; }
         IRepository<ShipmentIn, Guid> ShipmentIns { get; }
         IRepository<LossPosition, Guid> LossPositions { get; }
+        
+        IRepository<PriceType,Guid> PriceTypes { get; }
+        IRepository<Barcode, Guid> Barcodes { get; }
        
     }
 }

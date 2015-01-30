@@ -35,5 +35,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         [XmlAttribute(AttributeName = "objectType")]
         public string ObjectType { get; set; }
+
+        public string Code { get; set; }
     }
 }

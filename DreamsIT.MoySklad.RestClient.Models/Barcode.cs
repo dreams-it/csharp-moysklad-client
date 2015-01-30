@@ -11,23 +11,17 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
-    [XmlRootAttribute(Namespace = "", ElementName = "priceType", IsNullable = false)]
-    public class PriceType:IKeyItem<Guid>
+    [XmlRootAttribute(Namespace = "", ElementName = "barcode", IsNullable = false)]
+    public class Barcode:IKeyItem<Guid>
     {
         [XmlIgnore]
         public Guid Id { get; set; }
 
-        [XmlAttribute(AttributeName = "index")]
-        public int Index { get; set; }
+        [XmlAttribute(AttributeName = "barcode")]
+        public string BarcodeValue { get; set; }
 
-        [XmlAttribute(AttributeName = "name")]
-        public string Name { get; set; }
-
-        [XmlAttribute(AttributeName = "updated")]
-        public DateTime Updated { get; set; }
-
-        [XmlAttribute(AttributeName = "updatedBy")]
-        public string UpdatedBy { get; set; }
+        [XmlAttribute(AttributeName = "barcodeType")]
+        public BarcodeType BarcodeType { get; set; }
 
         [XmlAttribute(AttributeName = "readMode")]
         public ReadMode ReadMode { get; set; }
@@ -48,14 +42,14 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public class PriceTypeCollection
+    public class BarcodeCollection
     {
-        public PriceTypeCollection()
+        public BarcodeCollection()
         {
-            PriceTypes = new List<PriceType>();
+            Barcodes = new List<Barcode>();
         }
 
-        [XmlElement(ElementName = "priceType")]
-        public List<PriceType> PriceTypes { get; set; }
+        [XmlElement(ElementName = "barcode")]
+        public List<Barcode> Barcodes { get; set; }
     }
 }

@@ -37,5 +37,9 @@ namespace DreamsIT.MoySklad.DataAccess.DataDbContext
         public DbSet<ShipmentIn> ShipmentIns { get; set; }
 
         public DbSet<StockTO> StockTOs { get; set; }
+
+        public DbSet<PriceType> PriceTypes { get; set; }
+
+        public DbSet<Barcode> Barcodes { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель позиции заказа покупателя
     /// </summary>
-    public partial class CustomerOrderPosition : IKeyItem<Guid>
+    public class CustomerOrderPosition : IKeyItem<Guid>
     {
         public CustomerOrderPosition()
         {

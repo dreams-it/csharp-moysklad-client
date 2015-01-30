@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель заказов поставщику
     /// </summary>
-    public partial class PurchaseOrder : Order
+    public class PurchaseOrder : Order
     {
         public PurchaseOrder()
         {

@@ -12,7 +12,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель розничной торговли
     /// </summary>
-    public partial class RetailDemand : IKeyItem<Guid>
+    public class RetailDemand : IKeyItem<Guid>
     {
         public RetailDemand()
         {

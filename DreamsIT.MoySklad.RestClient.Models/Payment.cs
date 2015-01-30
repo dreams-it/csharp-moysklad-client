@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public partial class Payment : IKeyItem<Guid>
+    public class Payment : IKeyItem<Guid>
     {
         [Key]
         [XmlIgnore]

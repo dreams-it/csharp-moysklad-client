@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 namespace DreamsIT.MoySklad.RestClient.Models
 {
 
-    public partial class Order : IKeyItem<Guid>
+    public class Order : IKeyItem<Guid>
     {
         public Order()
         {

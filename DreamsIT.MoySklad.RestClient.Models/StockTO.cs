@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "stockTO", IsNullable = false)]
-    public partial class StockTO:IKeyItem<Guid>
+    public class StockTO:IKeyItem<Guid>
     {
         public StockTO()
         {
@@ -116,7 +116,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public partial class StockTOCollection
+    public class StockTOCollection
     {
         public StockTOCollection()
         {

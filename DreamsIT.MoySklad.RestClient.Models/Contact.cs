@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 {
     [ComplexType]
     [XmlRoot(ElementName="contact")]
-    public partial class Contact
+    public class Contact
     {
         /// <summary>
         /// Адреса

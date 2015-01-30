@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "slot", IsNullable = false)]
-    public partial class Slot
+    public class Slot
     {
     }
 }

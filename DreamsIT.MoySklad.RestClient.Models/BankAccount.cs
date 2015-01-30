@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     [ComplexType]
     [XmlRoot(ElementName = "bankAccount")]
-    public partial class BankAccount
+    public class BankAccount
     {
         /// <summary>
         /// Номер счета

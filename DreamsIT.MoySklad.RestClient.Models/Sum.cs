@@ -16,7 +16,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "sum", IsNullable = false)]
-    public partial class Sum
+    public class Sum
     {
         /// <summary>
         /// Сумма

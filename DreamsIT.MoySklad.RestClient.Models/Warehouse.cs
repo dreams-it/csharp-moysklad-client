@@ -16,7 +16,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "warehouse", IsNullable = false)]
-    public partial class Warehouse : IKeyItem<Guid>
+    public class Warehouse : IKeyItem<Guid>
     {
         public Warehouse()
         {
@@ -140,7 +140,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public partial class WarehouseCollection
+    public class WarehouseCollection
     {
         public WarehouseCollection()
         {

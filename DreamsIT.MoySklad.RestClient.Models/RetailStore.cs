@@ -17,7 +17,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "retailStore", IsNullable = false)]
-    public partial class RetailStore : IKeyItem<Guid>
+    public class RetailStore : IKeyItem<Guid>
     {
         [Key]
         [IgnoreDataMember]
@@ -118,7 +118,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public partial class RetailStores
+    public class RetailStores
     {
         public RetailStores()
         {

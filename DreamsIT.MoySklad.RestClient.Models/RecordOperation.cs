@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace DreamsIT.MoySklad.RestClient.Models
 {
-    public partial class RecordOperation : IKeyItem<Guid>
+    public class RecordOperation : IKeyItem<Guid>
     {
         [XmlIgnore]
         public Guid Id { get; set; }

@@ -11,7 +11,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", ElementName = "tags", IsNullable = false)]
-    public partial class Tags
+    public class Tags
     {
     }
 }

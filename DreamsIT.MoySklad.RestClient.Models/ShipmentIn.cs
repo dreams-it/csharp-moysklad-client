@@ -14,7 +14,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "shipmentIn", IsNullable = false)]
-    public partial class ShipmentIn:Shipment, IKeyItem<Guid>
+    public class ShipmentIn:Shipment, IKeyItem<Guid>
     {
         [Key]
         public Guid Id { get; set; }

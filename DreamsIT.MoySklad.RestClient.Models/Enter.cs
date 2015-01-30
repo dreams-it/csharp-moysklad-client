@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "enter", IsNullable = false)]
-    public partial class Enter : RecordOperation
+    public class Enter : RecordOperation
     {
         public Enter()
         {
@@ -72,7 +72,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public partial class EnterCollection
+    public class EnterCollection
     {
         public EnterCollection()
         {

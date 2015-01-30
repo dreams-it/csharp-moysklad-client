@@ -13,7 +13,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
 
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
-    public partial class Organization : IKeyItem<Guid>
+    public class Organization : IKeyItem<Guid>
     {
         public Organization()
         {

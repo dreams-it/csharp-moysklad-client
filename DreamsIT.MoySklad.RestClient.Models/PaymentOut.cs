@@ -15,7 +15,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "paymentOut", IsNullable = false)]
-    public partial class PaymentOut : Payment
+    public class PaymentOut : Payment
     {
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [SerializableAttribute()]
     [XmlTypeAttribute(AnonymousType = true)]
     [XmlRootAttribute(Namespace = "", ElementName = "collection", IsNullable = false)]
-    public partial class PaymentOutCollection
+    public class PaymentOutCollection
     {
         public PaymentOutCollection()
         {

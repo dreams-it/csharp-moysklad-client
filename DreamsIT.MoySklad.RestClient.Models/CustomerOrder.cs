@@ -12,7 +12,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// <summary>
     /// Модель заказ покупателя 
     /// </summary>
-    public partial class CustomerOrder : Order
+    public class CustomerOrder : Order
     {
         /// <summary>
         /// Идентификатор записи о заказе покупателя

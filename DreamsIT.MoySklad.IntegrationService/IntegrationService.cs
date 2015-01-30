@@ -27,29 +27,6 @@ namespace DreamsIT.MoySklad.IntegrationService
 
         static void Main()
         {
-            //string login="stas@ооо нарджилия";
-            //string password="nargilia2014";
-            //SalePointClient client = new SalePointClient("stas@ооо нарджилия", "nargilia2014");
-            //var salePoints = client.GetSalePoints();
-
-            //ContragentClient caClient = new ContragentClient(login, password);
-            //var contragentAll = caClient.GetContragent();
-            //var contragent1 = caClient.GetContragent(names: new List<string>() { "ООО Любава" });
-
-            //DemandClient demandClient = new DemandClient(login, password);
-
-            //var allData = demandClient.SearchByParameters();
-            //var conc = demandClient.SearchByParameters(names: new List<string>() { "00004" });
-
-            //var data = File.ReadAllBytes(@"C:\logs\testXml.xml");
-            //XmlSerializer xmlSerializer = new XmlSerializer(typeof(CompanyCollection));
-
-            //MemoryStream ms = new MemoryStream(data);
-
-            //var objectDes = xmlSerializer.Deserialize(ms) as CompanyCollection;
-
-
-            //int i = 0;
             IntegrationService service = new IntegrationService();
             service.OnStart(null);
             Console.ReadLine();

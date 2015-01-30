@@ -13,6 +13,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     public partial class PurchaseOrder : Order
     {
+        public PurchaseOrder()
+        {
+            CustomerOrdersUuid = new List<Guid>();
+            InternalOrders = new List<InternalOrder>();
+            SuppliesUuid = new List<Guid>();
+        }
         /// <summary>
         /// Идентификатор записи о заказе покупателя
         /// </summary>

@@ -136,7 +136,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// </summary>
         [XmlArray("salePrices")]
         [XmlArrayItem("price")]
-        public List<Price> SalePrices { get; set; }
+        public virtual List<Price> SalePrices { get; set; }
         /// <summary>
         /// 
         /// </summary>

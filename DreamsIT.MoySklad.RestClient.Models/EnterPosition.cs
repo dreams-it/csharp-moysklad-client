@@ -101,12 +101,12 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlElement(ElementName = "things")]
-        public List<Things> Things { get; set; }
+        public virtual List<Things> Things { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [XmlElement(ElementName = "tags")]
-        public List<Tags> Tags { get; set; }
+        public virtual List<Tags> Tags { get; set; }
     }
 }

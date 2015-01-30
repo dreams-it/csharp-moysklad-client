@@ -15,6 +15,11 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlTypeAttribute(AnonymousType = true)]
     public partial class Organization : IKeyItem<Guid>
     {
+        public Organization()
+        {
+            Tags = new List<Tags>();
+        }
+
         [Key]
         [XmlIgnore]
         public Guid Id { get; set; }

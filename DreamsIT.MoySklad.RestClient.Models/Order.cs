@@ -12,6 +12,13 @@ namespace DreamsIT.MoySklad.RestClient.Models
 
     public partial class Order : IKeyItem<Guid>
     {
+        public Order()
+        {
+            PaymentsUuid = new List<Guid>();
+            InvoicesUuid = new List<Guid>();
+            PurchaseOrderPosition = new List<PurchaseOrderPosition>();
+        }
+
         [XmlIgnore]
         public Guid Id { get; set; }
         /// <summary>
@@ -146,7 +153,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "invoicesOutUuid")]
-        public List<Guid> InvoicesUuid { get; set; }
+        public virtual List<Guid> InvoicesUuid { get; set; }
 
         /// <summary>
         /// 

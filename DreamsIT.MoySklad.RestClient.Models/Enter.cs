@@ -66,7 +66,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Список значений оприходования
         /// </summary>
         [XmlElement(ElementName = "enterPosition")]
-        public List<EnterPosition> EnterPositions { get; set; }
+        public virtual List<EnterPosition> EnterPositions { get; set; }
     }
 
     [SerializableAttribute()]

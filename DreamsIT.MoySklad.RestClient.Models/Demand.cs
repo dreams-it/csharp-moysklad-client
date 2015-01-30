@@ -65,23 +65,23 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "invoicesOutUuid")]
-        public List<Guid> InvoicesOutUuid { get; set; }
+        public virtual List<Guid> InvoicesOutUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [XmlArray("paymentsUuid")]
         [XmlArrayItem(ElementName = "financeInRef")]
-        public List<string> PaymentsUuid { get; set; }
+        public virtual List<string> PaymentsUuid { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [XmlElement(ElementName = "shipmentOut")]
-        public List<ShipmentOut> ShipmentOut { get; set; }
+        public virtual List<ShipmentOut> ShipmentOut { get; set; }
 
         [XmlElement(ElementName = "salesReturnsUuid")]
-        public List<string> SalesReturnUuid { get; set; }
+        public virtual List<string> SalesReturnUuid { get; set; }
         /// <summary>
         /// 
         /// </summary>

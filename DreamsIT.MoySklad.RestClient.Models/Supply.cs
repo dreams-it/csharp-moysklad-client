@@ -20,6 +20,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         public Supply()
         {
             InvoicesInUuid = new List<Guid>();
+            PurchaseReturnsUuid = new List<Guid>();
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "invoicesInUuid")]
-        public List<Guid> InvoicesInUuid { get; set; }
+        public virtual List<Guid> InvoicesInUuid { get; set; }
 
         /// <summary>
         /// Накладные расходы
@@ -103,7 +104,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "paymentsUuid")]
-        public List<Guid> PaymentsUuid { get; set; }
+        public virtual List<Guid> PaymentsUuid { get; set; }
 
         /// <summary>
         /// 
@@ -115,7 +116,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "purchaseReturnsUuid")]
-        public List<Guid> PurchaseReturnsUuid { get; set; }
+        public virtual List<Guid> PurchaseReturnsUuid { get; set; }
     }
 
     [SerializableAttribute()]

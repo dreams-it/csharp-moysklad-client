@@ -18,6 +18,11 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlRootAttribute(Namespace = "", ElementName = "warehouse", IsNullable = false)]
     public partial class Warehouse : IKeyItem<Guid>
     {
+        public Warehouse()
+        {
+            Slots = new List<Slot>();
+        }
+
         [Key]
         [XmlIgnore]
         public Guid Id { get; set; }
@@ -129,7 +134,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArray(ElementName = "slots")]
-        public List<Slot> Slots { get; set; }
+        public virtual List<Slot> Slots { get; set; }
     }
 
     [SerializableAttribute()]

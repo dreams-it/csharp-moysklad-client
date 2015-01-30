@@ -106,7 +106,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Cписок товаров
         /// </summary>
         [XmlArray(ElementName = "goodRef ")]
-        public List<GoodRef> GoodRefs { get; set; }
+        public virtual List<GoodRef> GoodRefs { get; set; }
     }
 
     [SerializableAttribute()]

@@ -51,7 +51,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// 
         /// </summary>
         [XmlArrayItem(ElementName = "demandsUuid")]
-        public List<Guid> DemandsUuid { get; set; }
+        public virtual List<Guid> DemandsUuid { get; set; }
     }
 
     [SerializableAttribute()]

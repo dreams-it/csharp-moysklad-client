@@ -95,6 +95,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
 
         [NotMapped]
         public virtual List<GoodFolder> ChildGoodFolders { get; set; }
+
+        [NotMapped]
+        public bool HasChilds { get; set; }
     }
 
     [SerializableAttribute()]

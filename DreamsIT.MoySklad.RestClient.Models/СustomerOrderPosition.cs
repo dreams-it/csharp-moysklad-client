@@ -13,6 +13,11 @@ namespace DreamsIT.MoySklad.RestClient.Models
     /// </summary>
     public partial class CustomerOrderPosition : IKeyItem<Guid>
     {
+        public CustomerOrderPosition()
+        {
+            Things = new List<Things>();
+        }
+
         public Guid Id { get; set; }
         /// <summary>
         /// скидка
@@ -72,7 +77,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// <summary>
         /// 
         /// </summary>
-        public List<Things> Thinkgs { get; set; }
+        public virtual List<Things> Things { get; set; }
 
         /// <summary>
         /// резерв

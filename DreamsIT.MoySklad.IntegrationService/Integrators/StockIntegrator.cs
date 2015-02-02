@@ -34,10 +34,7 @@ namespace DreamsIT.MoySklad.IntegrationService.Integrators
 
             foreach (var item in stockItems.Result)
             {
-                foreach (var goodRef in item.GoodRefs)
-                {
-                    goodRef.Id = goodRef.Uuid;
-                }
+                item.GoodRef.Id = item.GoodRef.Uuid;
                 item.Id = Guid.NewGuid();
                 _factory.StockTOs.Add(item);
             }

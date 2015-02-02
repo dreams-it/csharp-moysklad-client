@@ -809,7 +809,18 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     ParentUuid=Guid.Parse("e94b9ac0-43d9-11e4-90a2-8eca00254323"), 
                     DefaultConsigment=false, 
                     SalePrice=185000.0, 
-                    Id=Guid.NewGuid()
+                    Id=Guid.NewGuid(), 
+                    GoodRefs=new List<GoodRef>()
+                    {
+                        new GoodRef()
+                        {
+                            Id=Guid.Parse("003a1f1a-43db-11e4-90a2-8eca00258a8f"), 
+                            Name="Tangiers Birquq 250 гр. Sour Grape", 
+                            ObjectType="Good", 
+                            Uuid=Guid.Parse("003a1f1a-43db-11e4-90a2-8eca00258a8f"),
+                            Code=""
+                        }
+                    }
                 },
                 new StockTO()
                 {
@@ -827,7 +838,18 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     ParentUuid=Guid.Parse("4142de4f-6024-11e4-90a2-8ecb005b0fa4"), 
                     DefaultConsigment=false, 
                     SalePrice=29000.0, 
-                    Id=Guid.NewGuid()
+                    Id=Guid.NewGuid(),
+                    GoodRefs=new List<GoodRef>()
+                    {
+                        new GoodRef()
+                        {
+                            Id=Guid.Parse("00d157bf-77da-11e4-90a2-8eca00379a51"), 
+                            Name="Табак Afzal 40 гр. Черника", 
+                            ObjectType="Good", 
+                            Uuid=Guid.Parse("00d157bf-77da-11e4-90a2-8eca00379a51"),
+                            Code=""
+                        }
+                    }
                 },
                 new StockTO()
                 {
@@ -845,7 +867,18 @@ namespace DreamsIT.MoySklad.DataFakes.Implementation
                     ParentUuid=Guid.Parse("8393d2c0-77da-11e4-90a2-8eca0037a354"), 
                     DefaultConsigment=false, 
                     SalePrice=20000.0, 
-                    Id=Guid.NewGuid()
+                    Id=Guid.NewGuid(),
+                    GoodRefs=new List<GoodRef>()
+                    {
+                        new GoodRef()
+                        {
+                            Id=Guid.Parse("015065e3-77dc-11e4-90a2-8eca0037bbc8"), 
+                            Name="Безникотиновая смесь для кальяна Соекс Черешня 50 г", 
+                            ObjectType="Good", 
+                            Uuid=Guid.Parse("015065e3-77dc-11e4-90a2-8eca0037bbc8"),
+                            Code=""
+                        }
+                    }
                 }
             };
         public Data.BaseTypes.IRepository<DreamsIT.MoySklad.RestClient.Models.StockTO, Guid> StockTOs

@@ -17,11 +17,6 @@ namespace DreamsIT.MoySklad.RestClient.Models
     [XmlRootAttribute(Namespace = "", ElementName = "stockTO", IsNullable = false)]
     public class StockTO:IKeyItem<Guid>
     {
-        public StockTO()
-        {
-            GoodRefs = new List<GoodRef>();
-        }
-
         [XmlIgnore]
         [DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
@@ -107,7 +102,7 @@ namespace DreamsIT.MoySklad.RestClient.Models
         /// Cписок товаров
         /// </summary>
         [XmlElement(ElementName = "goodRef")]
-        public virtual List<GoodRef> GoodRefs { get; set; }
+        public GoodRef GoodRef { get; set; }
 
         [XmlAttribute(AttributeName = "productCode")]
         public string ProductCode { get; set; }

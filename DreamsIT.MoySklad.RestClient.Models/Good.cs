@@ -161,6 +161,9 @@ namespace DreamsIT.MoySklad.RestClient.Models
 
         [XmlAttribute(AttributeName = "vat")]
         public int Vat { get; set; }
+
+        [NotMapped]
+        public StockTO StockTO { get; set; }
     }
 
     [SerializableAttribute()]
